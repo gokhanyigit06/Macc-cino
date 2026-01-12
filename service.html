@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Servis | Barista Company</title>
+    <meta name="description" content="7/24 Teknik Servis ve Yerinde Destek. İşiniz durmasın.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/favicon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay">
+        <span class="close-search">&times;</span>
+        <div class="search-content">
+            <input type="text" placeholder="Ne aramıştınız? (örn: Yedek Parça, Arıza, Bakım)">
+            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CUP&CINO</a>
+            <div class="nav-links">
+                <a href="products.html">Kahve Makineleri</a>
+                <a href="index.html#sektorler">Sektörler</a>
+                <a href="index.html#konsept">Konseptimiz</a>
+                <a href="index.html#blog">Haberler</a>
+                <a href="#" class="active">Teknik Servis</a>
+                <a href="index.html#iletisim" class="btn-contact">İletişim</a>
+                <a href="#" id="searchBtn" class="nav-icon"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="hero-bg service-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content service-content">
+            <span class="subtitle fade-up">İşiniz Asla Yarım Kalmasın</span>
+            <h1 class="fade-up delay-1">Premium Teknik Servis</h1>
+            <p class="fade-up delay-2">Kahve makineleriniz için 7/24 kesintisiz, hızlı ve profesyonel teknik destek.</p>
+        </div>
+    </section>
+
+    <!-- Service Infographic -->
+    <section class="section service-infographic">
+        <div class="container">
+            <div class="infographic-wrapper reveal">
+                <!-- Step 1 -->
+                <div class="info-step">
+                    <div class="info-icon-wrapper">
+                        <div class="info-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                        <div class="step-line"></div>
+                    </div>
+                    <h3>Her Şey Dahil</h3>
+                    <p>Kurulum, periyodik bakım, yedek parça ve işçilik maliyetleri tamamen hizmetimize dahildir. Ekstra
+                        sürpriz faturalar yok.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="info-step">
+                    <div class="info-icon-wrapper">
+                        <div class="info-icon"><i class="fas fa-truck-fast"></i></div>
+                        <div class="step-line"></div>
+                    </div>
+                    <h3>Hızlı Yerinde Servis</h3>
+                    <p>Arıza bildiriminizden hemen sonra teknik ekibimiz tam donanımlı araçlarımızla işletmenize gelir
+                        ve yerinde çözüm üretir.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="info-step">
+                    <div class="info-icon-wrapper">
+                        <div class="info-icon"><i class="fas fa-headset"></i></div>
+                    </div>
+                    <h3>Acil Durum Hattı</h3>
+                    <p>Haftanın 7 günü, 24 saati ulaşabileceğiniz acil destek hattımız ile operasyonunuz hiç durmaz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container text-center reveal">
+            <h2>Teknik Destek Mühendislerimiz Hazır</h2>
+            <p>Hemen arayın veya servis talep formu oluşturun.</p>
+            <div class="cta-buttons">
+                <a href="tel:+900000000000" class="btn-hero btn-dark"><i class="fas fa-phone"></i> Hemen Ara</a>
+                <a href="index.html#iletisim" class="btn-hero"><i class="fas fa-envelope"></i> Servis Formu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Reduced) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barista Company. Tüm hakları saklıdır. designed by Antigravity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

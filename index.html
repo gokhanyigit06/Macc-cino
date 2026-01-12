@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadece Kahve Değil | Barista Company</title>
+    <meta name="description"
+        content="Premium kahve makineleri ve profesyonel barista çözümleri. İşletmeniz için en iyi kahve deneyimi.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Sadece Kahve Değil | Barista Company">
+    <meta property="og:description"
+        content="Premium kahve makineleri ve profesyonel barista çözümleri. İşletmeniz için en iyi kahve deneyimi.">
+    <meta property="og:image" content="assets/hero_bg.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/favicon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay">
+        <span class="close-search">&times;</span>
+        <div class="search-content">
+            <input type="text" placeholder="Ne aramıştınız? (örn: Espresso, Latte, Servis)">
+            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <!-- Kahve Makineleri -->
+                <div class="nav-item">
+                    <a href="products.html" class="nav-link">Kahve Makineleri</a>
+                </div>
+
+                <!-- Sektör (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Gastronomi</a>
+                        <a href="#">Ofis</a>
+                        <a href="#">Otel - Pansiyon</a>
+                        <a href="#">Fitness - Sağlık</a>
+                        <a href="#">Benzin İstasyonu</a>
+                        <a href="#">Mağaza Zincirleri</a>
+                    </div>
+                </div>
+
+                <!-- Konseptimiz (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Kahve Konseptimiz</a>
+                        <a href="service.html">Teknik Servis</a>
+                        <a href="#">Kahve Çekirdekleri</a>
+                        <a href="#">Kahve Spesiyalleri</a>
+                        <a href="#">Trend İçecekler</a>
+                    </div>
+                </div>
+
+                <!-- Hakkımızda -->
+                <div class="nav-item">
+                    <a href="#hakkimizda" class="nav-link">Hakkımızda</a>
+                </div>
+
+                <!-- İletişim -->
+                <div class="nav-item">
+                    <a href="#iletisim" class="nav-link">İletişim</a>
+                </div>
+
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="fade-up hero-title">Kahve Satışlarını Artırmak İçin Doğru Çözüm</h1>
+            <div class="hero-separator fade-up delay-1"></div>
+            <h2 class="fade-up delay-2 hero-subtitle">BARISTA COMPANY</h2>
+        </div>
+    </header>
+
+    <!-- Intro Text Section (New) -->
+    <section class="intro-text-section fade-up">
+        <div class="container intro-text-wrapper">
+            <p><strong>Restoran ya da ofis fark etmez:</strong> kahve makinelerimizle sizi, çalışanlarınız ve
+                misafirleriniz üst düzey Barista kahvesinin tadını çıkarabilirsiniz.</p>
+            <p>Mac&Cino'nun konseptine, hasattan kavurmaya ve fincana kadar eşlik ettiğimiz taze kavrulmuş premium kahve
+                çekirdekleri dahildir. Ve tabii ki: hızlı teknik Servis ve kişisel satış desteği.</p>
+            <span class="intro-tagline">Afiyet olsun!</span>
+        </div>
+    </section>
+
+
+
+    <!-- Machines Section -->
+    <section id="makineler" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Kahve Makinelerimiz</h2>
+            <div class="product-grid reveal">
+                <div class="product-card">
+                    <img src="assets/product1.png" alt="Barista Pro XT">
+                    <div class="product-info">
+                        <h3>Barista Pro XT</h3>
+                        <p>Profesyonel kafeler için yüksek performans.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Barista Pro XT"
+                            data-img="assets/product1.png"
+                            data-desc="Yoğun işletmeler için tasarlanmış, çift gruplu ve yüksek buhar kapasiteli profesyonel espresso makinesi.PID sıcaklık kontrolü ve enerji tasarrufu modu ile.">
+                            İncele <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product2.png" alt="Office Master 3000">
+                    <div class="product-info">
+                        <h3>Office Master 3000</h3>
+                        <p>Ofisler için dokunmatik, hızlı ve şık çözüm.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Office Master 3000"
+                            data-img="assets/product2.png"
+                            data-desc="Tek dokunuşla latte, cappuccino ve espresso. Şık dokunmatik ekranı ve tam otomatik temizleme sistemi ile ofislerin vazgeçilmezi.">
+                            İncele <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product1.png" alt="Barista Compact">
+                    <div class="product-info">
+                        <h3>Barista Compact</h3>
+                        <p>Dar alanlar için güçlü espresso performansı.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Barista Compact"
+                            data-img="assets/product1.png"
+                            data-desc="Küçük mekanlar için büyük lezzet. Tek gruplu, kompakt tasarım ancak ödün verilmeyen basınç gücü.">
+                            İncele <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product2.png" alt="Barista Touch Ultra">
+                    <div class="product-info">
+                        <h3>Barista Touch Ultra</h3>
+                        <p>Yapay zeka destekli tam otomatik deneyim.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Barista Touch Ultra"
+                            data-img="assets/product2.png"
+                            data-desc="Akıllı sensörleri ile süt sıcaklığını ve köpük oranını otomatik ayarlar. Her fincanda mükemmel standart.">
+                            İncele <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Detail Section (New) -->
+    <section id="konsept-detay" class="concept-section reveal">
+        <div class="container">
+            <div class="concept-grid">
+                <!-- Left: Image -->
+                <div class="concept-img-wrapper">
+                    <img src="assets/coffee_concept.png" alt="Barista Concept Success">
+                    <div class="concept-img-overlay">
+                        <h4>Satış / Resmi</h4>
+                        <p>Daha Fazla Satış Garantisi</p>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="concept-content">
+                    <h2>Başarı Böyle Tat Verir: Bütünsel <span class="brand-highlight">Macc & Cino</span> Barista Kahve
+                        Konsepti</h2>
+                    <ul class="concept-list">
+                        <li><i class="fas fa-check-circle"></i> Her sektör için modern Kahve Makineleri: Satış ve
+                            Kiralama</li>
+                        <li><i class="fas fa-check-circle"></i> Taze kavrulmuş premium Kahve Çekirdekleri</li>
+                        <li><i class="fas fa-check-circle"></i> Hızlı Teknik Hizmet</li>
+                        <li><i class="fas fa-check-circle"></i> Daha yüksek satışlar için tam Satış Desteği sunuyoruz
+                        </li>
+                    </ul>
+
+                    <a href="#iletisim-form" class="concept-cta-link">
+                        <div class="concept-cta-wrapper">
+                            <h4>DAHA FAZLA BİLGİ AL !</h4>
+                            <p>Her Sektör İçin Doğru Makine</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sektorler" class="section sectors">
+        <div class="container">
+            <h2 class="section-title reveal">Hizmet Verdiğimiz Sektörler</h2>
+            <div class="sector-grid reveal">
+                <div class="sector-item" data-text="Lezzet tutkunları için premium deneyim">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Gastronomi</h3>
+                </div>
+                <div class="sector-item" data-text="Motivasyonu yüksek çalışanlar">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Ofis / Şirketler</h3>
+                </div>
+                <div class="sector-item" data-text="Misafirleriniz için unutulmaz anlar">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Otel</h3>
+                </div>
+                <div class="sector-item" data-text="Yolculukta premium mola">
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>Benzin İstasyonu</h3>
+                </div>
+                <div class="sector-item" data-text="Enerji dolu antrenmanlar">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Fitness & Fazlası</h3>
+                </div>
+            </div>
+
+            <!-- Consultancy Bar (New) -->
+            <div class="consultancy-wrapper reveal">
+                <div class="consultancy-content">
+                    <h4>Size çevrimiçi, bireysel, canlı ve kişisel olarak danışmanlık yapıyoruz!</h4>
+                </div>
+                <a href="#iletisim-form" class="btn-hero btn-consultancy">Bilgi talep et</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Split Section (Konsept) -->
+    <section id="konsept" class="section features-split">
+        <div class="container">
+            <!-- Full Width Header -->
+            <h3 class="concept-wide-title reveal">Mac&Cino Barista kalitesinde kahve özellikleri her makine ile her
+                kullanıcı tarafından kullanmaya müsait</h3>
+
+            <div class="grid-2 reverse-mobile reveal">
+                <!-- Left: Image -->
+                <div class="feature-image-wrapper">
+                    <img src="assets/machine_shop.png" alt="Barista Machine Shop"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <!-- Right: Text -->
+                <div class="feature-text">
+                    <h2>Sadece bir kahve makinesi değil!</h2>
+                    <p>Kahve Çekirdekleri, Servis, uygun ekipman, fiyat etiketleri ve satış destek ürünleri dahil olmak
+                        üzere kapsamlı konseptimizle size ve müşterilerinize heyecan verecek bir kahve deneyimi
+                        sunuyoruz!</p>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="icon"><i class="fas fa-seedling"></i></span>
+                            <div>
+                                <strong>Premium Çekirdekler</strong>
+                                <p>Dünyanın en iyi çiftliklerinden özenle seçilmiş.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-wrench"></i></span>
+                            <div>
+                                <strong>Tam Kapsamlı Servis</strong>
+                                <p>Bakım, onarım ve yedek parça garantisi.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section (New) -->
+    <section id="deger-onerisi" class="section features-split" style="background-color: #f9f9f9;">
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="grid-2 reveal" style="align-items: flex-start;">
+                <!-- Left: Text -->
+                <div class="feature-text">
+                    <h2 style="font-size: 2rem; margin-bottom: 10px;">Siz ve Müşterilerinize sadece enfes Kahve
+                        sunmaktan çok daha</h2>
+                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 30px;">
+                        Fazlasını sağlıyoruz.</p>
+                    <p style="margin-bottom: 20px;">Kapsamlı Barista Kahve Konseptimizle örneğin bunları elde edersiniz:
+                    </p>
+
+                    <ul class="feature-list no-icon-bg"
+                        style="font-weight: 500; font-size: 1.1rem; color: #444; list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;">- Tüm kahve çeşitleri</li>
+                        <li style="margin-bottom: 10px;">- EILES Çay çeşitleri</li>
+                        <li style="margin-bottom: 10px;">- İçilebilir Çikolata</li>
+                        <li style="margin-bottom: 10px;">- Mevsimsel trend içecekler</li>
+                        <li style="margin-bottom: 10px;">- Tüm içecekler To Go servis olarak da sunabilirsiniz</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="feature-image-wrapper">
+                    <img src="assets/crema_cup.png" alt="Perfect Crema Coffee"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+
+            <!-- Spacer -->
+            <div style="height: 100px;"></div>
+
+            <!-- Row 2 -->
+            <div class="grid-2 reverse-mobile reveal" style="align-items: center;">
+                <!-- Left: Image -->
+                <div class="feature-image-wrapper">
+                    <img src="assets/machine_detail.png" alt="Italian Machine Quality"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <!-- Right: Text -->
+                <div class="feature-text">
+                    <h2 style="font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px;">İtalyan Kahve Makinesinde
+                        Kalitesinde mükemmel krema</h2>
+                    <p style="margin-bottom: 15px;">Tüm <span class="brand-highlight">Macc & Cino</span> kahve
+                        Makinelerle otomatik öğütücü ayarlarıyla her zaman mükemmel krema sunar.</p>
+                    <p>Daha fazla gelir için özel kahve çeşitleri tüm To Go içecekleride Barista kalitesinde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milk Foam Section & Philosophy -->
+    <section id="sut-kopugu" class="section features-split">
+        <div class="container">
+            <!-- Milk Foam Feature -->
+            <div class="grid-2 reveal">
+                <!-- Left: Text -->
+                <div class="feature-text">
+                    <h2 style="font-size: 2rem; margin-bottom: 25px;">Düğmeye basarak premium süt köpüğü</h2>
+                    <ul class="feature-list no-icon-bg"
+                        style="font-weight: 500; font-size: 1.1rem; color: #444; list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 15px;">- Sıcak ve Soğuk seçenek</li>
+                        <li style="margin-bottom: 15px;">- Vegan Süt çeşitleri mümkün</li>
+                        <li style="margin-bottom: 15px;">- Çeşitli Kremalar</li>
+                        <li style="margin-bottom: 15px;">- Barista kalitesinde Süt Köpüğü</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="feature-image-wrapper">
+                    <img src="assets/milk_foam.png" alt="Premium Milk Foam"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+
+            <!-- Consultancy Bar (Repeated) -->
+            <div class="consultancy-wrapper reveal" style="margin-top: 80px; margin-bottom: 80px;">
+                <div class="consultancy-content">
+                    <h4>Size çevrimiçi, Bireysel, Canlı ve Kişisel olarak danışmanlık yapıyoruz</h4>
+                </div>
+                <a href="#iletisim-form" class="btn-consultancy">Bilgi Talep et</a>
+            </div>
+
+            <!-- Philosophy Text (Harika Kahvenin Yolu) -->
+            <div class="coffee-way reveal" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h3
+                    style="font-size: 2rem; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; color: var(--primary-dark);">
+                    Harika Kahvenin Yolu</h3>
+
+                <div
+                    style="font-size: 1.2rem; line-height: 1.8; color: #555; display: flex; flex-direction: column; gap: 20px;">
+                    <p><span class="brand-highlight">Mac & Cino</span>, mükemmel kahve keyfine giden yolda tüm
+                        faktörleri dikkate alan piyasadaki tek kahve Kavurma Şirketidir.</p>
+                    <p>Hasattan bardağa kadar her adımı Kontrol ediyor ve yönetiyoruz.</p>
+                    <p style="font-weight: 600; color: var(--primary-dark);">Çünkü her şey tek bir elden gelmediği
+                        sürece sonuç birinci sınıf olamaz.</p>
+                    <p>Bu sorumluluğu sadece ürünlerimiz için değil, aynı zamanda şirketinizde veya iş yerinizdeki keyif
+                        başarısı için de üstleniyoruz.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About Us Section -->
+    <section id="hakkimizda" class="section about-section">
+        <div class="container">
+            <div class="about-content reveal">
+                <h2 class="section-title">Hakkımızda</h2>
+                <div class="about-text-block">
+                    <p class="lead">CUP&CINO, kahve tutkusunu profesyonel çözümlerle birleştiren global bir markadır.
+                    </p>
+                    <p>Yılların deneyimiyle, işletmelere sadece makine değil, tam kapsamlı bir "Barista" deneyimi
+                        sunuyoruz. Amacımız, müşterilerinizin her yudumda gerçek kaliteyi hissetmesini sağlamak.</p>
+                    <a href="#iletisim" class="btn-hero btn-dark">Bizimle Tanışın</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section (Logo Slider) -->
+    <section class="section references-section">
+        <div class="container">
+            <h2 class="section-title reveal">Referanslarımız</h2>
+            <div class="slider-container reveal">
+                <div class="logo-track">
+                    <!-- Duplicate slides for infinite check -->
+                    <div class="slide"><img src="assets/client1.png" alt="Grand Hotel"></div>
+                    <div class="slide"><img src="assets/client2.png" alt="Tech Plaza"></div>
+                    <div class="slide"><img src="assets/client3.png" alt="Power Gym"></div>
+                    <div class="slide"><img src="assets/client1.png" alt="Grand Hotel"></div>
+                    <div class="slide"><img src="assets/client2.png" alt="Tech Plaza"></div>
+                    <div class="slide"><img src="assets/client3.png" alt="Power Gym"></div>
+                    <div class="slide"><img src="assets/client1.png" alt="Grand Hotel"></div>
+                    <div class="slide"><img src="assets/client2.png" alt="Tech Plaza"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title reveal">Müşteri Yorumları</h2>
+            <div class="testimonial-grid reveal">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Grand Hotel olarak misafirlerimize en iyi kahveyi sunmak istedik ve Barista Company ile
+                        tanıştık. Sonuç mükemmel."</p>
+                    <h4>Ahmet Yılmaz</h4>
+                    <span>F&B Müdürü, Grand Hotel</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Ofis çalışanlarımız kahve makinasının başından ayrılmıyor. Motivasyonumuz ve verimliliğimiz
+                        arttı."</p>
+                    <h4>Ayşe Demir</h4>
+                    <span>İK Direktörü, Tech Plaza</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Sporcularımız için kafeinsiz ve bitkisel sütlü seçenekler harika oldu. Teknik servis ise çok
+                        hızlı."</p>
+                    <h4>Mehmet Kaya</h4>
+                    <span>İşletme Sahibi, Power Gym</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Crema Section -->
+    <section id="crema" class="section parallax-crema">
+        <div class="crema-container">
+            <div class="crema-image" style="background-image: url('assets/crema.png');"></div>
+            <div class="crema-overlay">
+                <h2>Mükemmel Krema</h2>
+                <p>Barista kalitesinde köpük, her fincanda standart.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog-section">
+        <div class="container">
+            <h2 class="section-title reveal">Haberler & Trendler</h2>
+            <div class="blog-grid reveal">
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="assets/blog1.png" alt="Kahve Trendleri">
+                        <span class="blog-date">12 Oca 2026</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>2026 Kahve Trendleri</h3>
+                        <p>3. Dalga kahve akımının ofislere yansıması ve yeni demleme teknikleri.</p>
+                        <a href="#" class="read-more">Devamını Oku</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="assets/blog2.png" alt="Barista Eğitimi">
+                        <span class="blog-date">08 Oca 2026</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Barista Eğitimleri Başladı</h3>
+                        <p>Kendi ekibinizi profesyonel birer baristaya dönüştürmek için ipuçları.</p>
+                        <a href="#" class="read-more">Devamını Oku</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="assets/blog3.png" alt="Sürdürülebilirlik">
+                        <span class="blog-date">01 Oca 2026</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Sürdürülebilir Kahve</h3>
+                        <p>Adil ticaret ve organik tarımın kahve kalitesine etkisi.</p>
+                        <a href="#" class="read-more">Devamını Oku</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim-form" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info-box">
+                    <h3>Bizimle İletişime Geçin</h3>
+                    <p>Kahve çözümünüzü birlikte planlayalım.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="sector">
+                                <option value="" disabled selected>Sektörünüz</option>
+                                <option value="ofis">Ofis</option>
+                                <option value="gastronomi">Gastronomi</option>
+                                <option value="otel">Otel</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
+                        </div>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Kahve Makinesi">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle">Ürün Başlığı</h2>
+                    <p id="modalDesc" class="modal-desc">Ürün açıklaması burada yer alacak.</p>
+                    <ul class="modal-specs">
+                        <li><i class="fas fa-check"></i> Dokunmatik Ekran</li>
+                        <li><i class="fas fa-check"></i> Otomatik Temizleme</li>
+                        <li><i class="fas fa-check"></i> 15+ İçecek Seçeneği</li>
+                    </ul>
+                    <a href="#iletisim-form" class="btn-hero btn-dark modal-cta">Teklif Al</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="iletisim" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>CUP&CINO</h2>
+                <p>Barista Company</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>7/24 Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@baristacompany.com</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Barista Company. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Başvurunuz Ailemize Ulaştı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
+                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
+        </div>
+    </div>
+
+    <!-- Bottom Slogan Section -->
+    <section class="bottom-slogan-section reveal">
+        <div class="container">
+            <h2>Better Coffee.<br>Better Business.</h2>
+            <p>Barista Company</p>
+        </div>
+        <!-- Floating Decorative Beans -->
+        <img src="assets/favicon.png" class="floating-bean"
+            style="top: 20%; left: 10%; width: 50px; filter: brightness(0.5);">
+        <img src="assets/favicon.png" class="floating-bean"
+            style="bottom: 20%; right: 10%; width: 70px; animation-delay: 2s; filter: brightness(0.5);">
+    </section>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
