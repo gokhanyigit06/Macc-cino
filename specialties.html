@@ -67,6 +67,24 @@
             height: 3px;
             background: var(--accent-gold);
         }
+
+        /* Magazine Style Watermark */
+        .watermark-number {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.03);
+            font-family: 'Outfit', sans-serif;
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .feature-text {
+            position: relative;
+        }
     </style>
 </head>
 
@@ -197,7 +215,9 @@
                     </div>
 
                     <!-- Text Right -->
+                    <!-- Text Right -->
                     <div class="feature-text">
+                        <span class="watermark-number">01</span>
                         <h2
                             style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
                             Espresso</h2>
@@ -226,11 +246,13 @@
             </div>
 
             <!-- Latte Macchiato Section (Text Left, Image Right) -->
-            <div class="section features-split" style="padding: 60px 0; border-bottom: 1px solid #eee;">
+            <div class="section features-split"
+                style="padding: 80px 0; border-bottom: none; background-color: #fcfcfc;">
                 <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
 
                     <!-- Text Left -->
                     <div class="feature-text">
+                        <span class="watermark-number" style="left: auto; right: 0;">02</span>
                         <h2
                             style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
                             Latte Macchiato</h2>
@@ -260,7 +282,7 @@
             </div>
 
             <!-- Flat White Section (Image Left, Text Right) -->
-            <div class="section features-split" style="padding: 60px 0; border-bottom: 1px solid #eee;">
+            <div class="section features-split" style="padding: 80px 0; border-bottom: none;">
                 <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
 
                     <!-- Image Left -->
@@ -275,6 +297,7 @@
 
                     <!-- Text Right -->
                     <div class="feature-text">
+                        <span class="watermark-number">03</span>
                         <h2
                             style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
                             Flat White</h2>
@@ -295,11 +318,12 @@
             </div>
 
             <!-- Cafe Crema Section (Text Left, Image Right) -->
-            <div class="section features-split" style="padding: 60px 0;">
+            <div class="section features-split" style="padding: 80px 0; background-color: #fcfcfc;">
                 <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
 
                     <!-- Text Left -->
                     <div class="feature-text">
+                        <span class="watermark-number" style="left: auto; right: 0;">04</span>
                         <h2
                             style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
                             Cafe Crema</h2>
