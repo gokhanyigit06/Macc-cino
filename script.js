@@ -77,28 +77,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu Toggle (Simple implementation)
+    // Mobile Menu Toggle (Full Screen Overlay)
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
-    if (mobileToggle) {
+    if (mobileToggle && navLinks) {
         mobileToggle.addEventListener('click', () => {
-            // In a real app we'd toggle a class to show/hide
-            // For this skeleton, let's just alert or log, or add a simple class
-            const isFlex = navLinks.style.display === 'flex';
+            navLinks.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
 
-            if (!isFlex && window.innerWidth <= 900) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = '#2C241B';
-                navLinks.style.padding = '20px';
+            // Toggle body scroll
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
             } else {
-                navLinks.style.display = ''; // Reset
+                body.style.overflow = '';
             }
+        });
+
+        // Close menu when clicking a link (unless it's a dropdown toggle)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const parent = link.parentElement;
+                const dropdown = parent.querySelector('.dropdown-menu');
+
+                // If it's a dropdown toggle in mobile view
+                if (dropdown && window.innerWidth <= 900) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                } else {
+                    // Regular link, close menu
+                    navLinks.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    body.style.overflow = '';
+                }
+            });
         });
     }
 
