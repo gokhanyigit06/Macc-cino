@@ -64,9 +64,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Matches Template Top Image) -->
+    <!-- Hero Section -->
     <header class="hero-section"
-        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('C:/Users/PC/.gemini/antigravity/brain/ffca89f1-9f5e-442c-9edf-969f2eb73cc5/gastronomy_hero_machine_1768294236899.png'); background-position: center; background-size: cover; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('C:/Users/PC/.gemini/antigravity/brain/ffca89f1-9f5e-442c-9edf-969f2eb73cc5/gastronomy_hero_machine_1768294236899.png'); background-position: center; background-size: cover; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
         <div class="container reveal">
             <span
                 style="display: block; color: var(--accent-gold); font-size: 1.1rem; letter-spacing: 4px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase;">GASTRONOMİ
@@ -88,57 +88,95 @@
         </a>
     </header>
 
-    <!-- Content Section (Matches Template Body) -->
+    <!-- Content Section -->
     <section id="intro" class="section" style="padding: 100px 0; background-color: #fff;">
         <div class="container reveal">
 
-            <!-- 1. Centered Text Block -->
-            <div style="max-width: 950px; margin: 0 auto 80px auto; text-align: center;">
+            <!-- 1. Intro & Features Grid -->
+            <div style="max-width: 1100px; margin: 0 auto 80px auto; text-align: center;">
                 <h2
-                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 40px; font-family: 'Playfair Display', serif;">
+                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
                     Doğru Kahve Çözümü <span style="color: var(--accent-gold); font-style: italic;">Fark Yaratır</span>
                 </h2>
+                <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto 50px;"></div>
 
-                <div style="font-size: 1.25rem; line-height: 2; color: #555; text-align: left;">
-                    <p style="margin-bottom: 30px;">
-                        İster seçici misafirler olsun, ister sadık müşteriler — doğru kahve çözümü fark yaratır. Kahve
-                        makinelerimiz, gastronomide ihtiyacınız olan her şeyi sunar:
-                        <strong style="color: var(--primary-dark); font-weight: 600;">Yüksek kaliteli kahve çeşitlerini
-                            güvenle hazırlamanızı sağlar</strong> ve aynı zamanda içecek satışlarınızı artırır.
-                    </p>
+                <!-- Lead Paragraph -->
+                <p style="font-size: 1.25rem; color: #555; max-width: 800px; margin: 0 auto 60px; line-height: 1.8;">
+                    İster seçici misafirler olsun, ister sadık müşteriler — doğru kahve çözümü fark yaratır. Kahve
+                    makinelerimiz, gastronomide ihtiyacınız olan her şeyi tek bir pakette sunar.
+                </p>
 
-                    <p style="margin-bottom: 30px;">
-                        Peki neden bu kadar etkili? Çünkü neyin önemli olduğunu çok iyi biliyoruz. Kendi
-                        Coffee-House’larımızı başarıyla işletmiş olmamız sayesinde geniş bir deneyime sahibiz.
-                        Baristalarımız ise her fincanda sürekli yüksek kalite sunmanızı sağlar.
-                    </p>
+                <!-- 3-Column Feature Grid -->
+                <div class="grid-3"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; margin-bottom: 60px;">
 
-                    <p style="margin-bottom: 30px;">
-                        Özellikle pratik olan tarafı: <strong style="color: var(--primary-dark); font-weight: 600;">Zor
-                            ve zaman alıcı temizlikle uğraşmanıza gerek yok</strong>, makinelerimiz kolay ve hızlı bir
-                        şekilde temizlenebilir —
-                        böylece misafirlerinize daha fazla zaman ayırabilirsiniz.
-                    </p>
-
-                    <p style="margin-bottom: 50px;">
-                        Bir diğer avantaj: Premium çekirdeklerimiz her zaman taze şekilde size ulaşır — <strong
-                            style="color: var(--primary-dark); font-weight: 600;">kavrulduktan 10 gün içinde.</strong>
-                        Böylece kahveniz misafirleriniz için gerçek bir keyif anı olmaya devam eder.
-                    </p>
-
-                    <div
-                        style="background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%); padding: 40px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center;">
-                        <p
-                            style="margin: 0 0 25px 0; font-family: 'Playfair Display', serif; font-style: italic; color: var(--primary-dark); font-weight: 500; font-size: 1.5rem;">
-                            "Merak ettiniz mi? Size memnuniyetle danışmanlık yapar ve işletmeniz için en uygun kahve
-                            makinesini birlikte buluruz!"
+                    <!-- Feature 1: Expertise -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-user-tie" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Barista Deneyimi</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem;">
+                            Kendi Coffee-House’larımızı başarıyla işletmiş olmamız sayesinde geniş bir deneyime sahibiz.
+                            Baristalarımız her fincanda yüksek kaliteyi garanti eder.
                         </p>
-                        <a href="#iletisim-form" class="btn-primary">Hemen Danışın</a>
                     </div>
+
+                    <!-- Feature 2: Easy Cleaning -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-magic" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Zahmetsiz Temizlik</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem;">
+                            Zor ve zaman alıcı temizlikle uğraşmanıza gerek yok. Makinelerimiz kolay ve hızlı
+                            temizlenir, böylece misafirlerinize daha fazla zaman ayırırsınız.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Freshness -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-stopwatch" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Daima Taze</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem;">
+                            Premium çekirdeklerimiz her zaman taptaze. Kavrulduktan sonra <strong>10 gün içinde</strong>
+                            size ulaşır, gerçek lezzet korunur.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- CTA Box -->
+                <div
+                    style="background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%); padding: 50px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 40px rgba(0,0,0,0.05); max-width: 850px; margin: 0 auto;">
+                    <p
+                        style="margin: 0 0 30px 0; font-family: 'Playfair Display', serif; font-style: italic; color: var(--primary-dark); font-weight: 500; font-size: 1.6rem; line-height: 1.4;">
+                        "Merak ettiniz mi? Size memnuniyetle danışmanlık yapar ve işletmeniz için en uygun kahve
+                        makinesini birlikte buluruz!"
+                    </p>
+                    <a href="#iletisim-form" class="btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Hemen
+                        Teklif Alın</a>
                 </div>
             </div>
 
-            <!-- 2. Large Image Grid Below Text (Side by Side) -->
+            <!-- 2. Large Image Grid (Side by Side) -->
             <div class="grid-2" style="gap: 40px; margin-bottom: 40px;">
                 <!-- Image 1 -->
                 <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); height: 500px; transform: rotate(-1deg); transition: all 0.5s ease;"
