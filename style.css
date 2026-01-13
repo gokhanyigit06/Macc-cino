@@ -2555,16 +2555,17 @@ ul {
     .feature-text {
         padding: 0;
     }
-}/ *   - - -   G r i d   S y s t e m s   - - -   * /  
- . g r i d - 3   {  
-         d i s p l a y :   g r i d ;  
-         g r i d - t e m p l a t e - c o l u m n s :   r e p e a t ( 3 ,   1 f r ) ;  
-         g a p :   4 0 p x ;  
- }  
-  
- @ m e d i a   ( m a x - w i d t h :   9 0 0 p x )   {  
-         . g r i d - 3   {  
-                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
-         }  
- }  
- 
+}
+
+/* --- Grid Systems --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
