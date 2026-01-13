@@ -1511,6 +1511,25 @@ ul {
     .footer-info p {
         justify-content: center;
     }
+
+    /* Contact Responsive */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-info-box {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .contact-details li {
+        justify-content: center;
+    }
+
+    .contact-form-box {
+        padding: 40px 20px;
+    }
 }
 
 /* --- Service Page Styles --- */
