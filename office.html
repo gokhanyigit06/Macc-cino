@@ -313,7 +313,8 @@
                         Günlük 10+ Fincan</div>
                     <h3 style="font-size: 2.2rem; margin-bottom: 25px; color: var(--primary-dark);">Kompakt Ofis</h3>
                     <div style="font-size: 3rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 10px;">350
-                        <span style="font-size: 1.2rem; font-weight: 400;">TL / Gün</span></div>
+                        <span style="font-size: 1.2rem; font-weight: 400;">TL / Gün</span>
+                    </div>
                     <ul
                         style="list-style: none; padding: 0; margin: 30px 0; color: #666; font-size: 1rem; line-height: 2.2; text-align: left;">
                         <li><i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px;"></i> Kompakt
@@ -338,7 +339,8 @@
                         Günlük 50+ Fincan</div>
                     <h3 style="font-size: 2.2rem; margin-bottom: 25px; color: #fff;">Enterprise Ofis</h3>
                     <div style="font-size: 3rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 10px;">500
-                        <span style="font-size: 1.2rem; font-weight: 400; color: #fff;">TL / Gün</span></div>
+                        <span style="font-size: 1.2rem; font-weight: 400; color: #fff;">TL / Gün</span>
+                    </div>
                     <ul
                         style="list-style: none; padding: 0; margin: 30px 0; color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 2.2; text-align: left;">
                         <li><i class="fas fa-check" style="color: var(--accent-gold); margin-right: 10px;"></i> Yüksek
@@ -388,64 +390,38 @@
         <div class="container">
             <div class="contact-wrapper reveal">
                 <div class="contact-info-box">
-                    <h3>Ofisiniz İçin Görüşelim</h3>
-                    <p>Çalışanlarınızın motivasyonunu ve kahve keyfini birlikte artıralım.</p>
-                    <div class="contact-list">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Adres</strong>
-                                <p>İstanbul, Türkiye</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <strong>Telefon</strong>
-                                <p>+90 532 123 45 67</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>E-posta</strong>
-                                <p>info@baristacompany.com</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Bizimle İletişime Geçin</h3>
+                    <p>Ofisiniz için en doğru kahve çözümünü birlikte planlayalım.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                    </ul>
                 </div>
-                <div class="contact-form">
-                    <form action="#">
-                        <div class="input-row">
-                            <div class="input-group">
-                                <label>Ad</label>
-                                <input type="text" placeholder="Adınız">
-                            </div>
-                            <div class="input-group">
-                                <label>Soyad</label>
-                                <input type="text" placeholder="Soyadınız">
-                            </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
                         </div>
                         <div class="input-group">
-                            <label>E-posta</label>
-                            <input type="email" placeholder="E-posta adresiniz">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
                         </div>
                         <div class="input-group">
-                            <label>Sektör</label>
-                            <select
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;">
-                                <option value="office" selected>Ofis</option>
-                                <option value="gastronomy">Gastronomi / Otel</option>
-                                <option value="bakery">Fırın / Pastane</option>
-                                <option value="other">Diğer</option>
+                            <select id="sector">
+                                <option value="" disabled>Sektörünüz</option>
+                                <option value="ofis" selected>Ofis</option>
+                                <option value="gastronomi">Gastronomi</option>
+                                <option value="otel">Otel</option>
+                                <option value="diger">Diğer</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label>Mesajınız</label>
-                            <textarea rows="4" placeholder="Size nasıl yardımcı olabiliriz?"></textarea>
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
                         </div>
-                        <button type="submit" class="btn-primary"
-                            style="width: 100%; border: none; cursor: pointer;">TEKLİF ALIN</button>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
                     </form>
                 </div>
             </div>
@@ -454,63 +430,74 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="logo" style="color: #fff;">
-                    <span style="color: var(--accent-gold);">BARISTA</span> COMPANY
-                </a>
-                <p style="margin-top: 20px; opacity: 0.7;">Profesyonel kahve çözümleri ile işletmenize değer katıyoruz.
-                    Kiralama ve satış seçenekleri ile yanınızdayız.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Hızlı Bağlantılar</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="bakery.html">Fırınlar</a></li>
-                    <li><a href="office.html">Ofisler</a></li>
-                    <li><a href="index.html#iletisim-form">İletişim</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Hizmetler</h4>
-                <ul class="footer-links">
-                    <li><a href="beans.html">Kahve Çekirdekleri</a></li>
-                    <li><a href="service.html">Teknik Servis</a></li>
-                    <li><a href="gastronomy.html">Gastronomi</a></li>
-                    <li><a href="specialties.html">Spesiyaliteler</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Takip Edin</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-logo"><span style="color: var(--accent-gold);">BARISTA</span> COMPANY</h2>
+                    <p>Kahve tutkusunu profesyonel çözümlerle buluşturuyoruz.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Hızlı Erişim</h3>
+                    <ul>
+                        <li><a href="concept.html">Konsept</a></li>
+                        <li><a href="beans.html">Çekirdekler</a></li>
+                        <li><a href="service.html">Servis</a></li>
+                        <li><a href="trends.html">Trendler</a></li>
+                        <li><a href="office.html">Ofisler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Barista Company. Tüm Hakları Saklıdır.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barista Company. Tüm hakları saklıdır.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Reveal Script -->
+    <!-- Scripts -->
     <script>
+        // Scroll Reveal
+        window.addEventListener('scroll', reveal);
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
+            var reveals = document.querySelectorAll('.reveal');
             for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
                 }
             }
         }
-        window.addEventListener("scroll", reveal);
         reveal(); // Initial check
-    </script>
 
+        // Navbar Scrolled Effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 
 </html>
