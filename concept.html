@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahve Konseptimiz | Barista Company</title>
-    <meta name="description" content="Mac&Cino Kahve Konsepti: Hasattan bardağa mükemmel kahve deneyimi.">
+    <meta name="description" content="Mac&Cino Kahve Konsepti: Hasattan bardaÄŸa mÃ¼kemmel kahve deneyimi.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -23,10 +23,10 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Bu sayfa için özel stil düzeltmeleri */
+        /* Bu sayfa iÃ§in Ã¶zel stil dÃ¼zeltmeleri */
         .page-hero {
             margin-top: 0;
-            /* Navbar position relative olduğu için */
+            /* Navbar position relative olduÄŸu iÃ§in */
         }
 
         /* Navbar solid background */
@@ -52,56 +52,64 @@
     <div id="searchOverlay">
         <span class="close-search">&times;</span>
         <div class="search-content">
-            <input type="text" placeholder="Ne aramıştınız? (örn: Espresso, Latte, Servis)">
+            <input type="text" placeholder="Ne aramÄ±ÅŸtÄ±nÄ±z? (Ã¶rn: Espresso, Latte, Servis)">
             <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
         </div>
     </div>
 
-    <!-- Sticky Navbar (Solid) -->
-    <nav class="navbar header-solid" id="navbar">
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">MAC&Cino</a>
             <div class="nav-links">
+                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products.html" class="nav-link">Kahve Makineleri</a>
                 </div>
+
+                <!-- SektÃ¶r (Dropdown) -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                    <a href="#" class="nav-link">SektÃ¶r <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#">Gastronomi</a>
-                        <a href="#">Ofis</a>
-                        <a href="#">Otel - Pansiyon</a>
-                        <a href="#">Fitness - Sağlık</a>
-                        <a href="#">Benzin İstasyonu</a>
-                        <a href="#">Mağaza Zincirleri</a>
+                        <a href="gastronomy.html">Gastronomi</a>
+                        <a href="office.html">Ofis</a>
+                        <a href="bakery.html">FÄ±rÄ±nlar / Pastane</a>
+                        <a href="hotel.html">Otel - Pansiyon</a>
+                        <a href="fitness.html">Fitness - SaÄŸlÄ±k</a>
+                        <a href="gas-station.html">Benzin Ä°stasyonu</a>
+                        <a href="chains.html">MaÄŸaza Zincirleri</a>
                     </div>
                 </div>
-                <!-- Aktif Menü -->
+
+                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link active">Konseptimiz <i class="fas fa-chevron-down"
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="concept.html">Kahve Konseptimiz</a>
-                        <a href="service.html">Teknik Servis</a>
-                        <a href="#">Kahve Çekirdekleri</a>
-                        <a href="#">Kahve Spesiyalleri</a>
-                        <a href="#">Trend İçecekler</a>
+                        <a href="concept.html" class="dropdown-link">Kahve Konseptimiz</a>
+                        <a href="service.html" class="dropdown-link">Teknik Servis</a>
+                        <a href="careers.html" class="dropdown-link">Kariyer</a>
+                        <a href="beans.html">Kahve Ã‡ekirdekleri</a>
+                        <a href="specialties.html">Kahve Spesiyalleri</a>
+                        <a href="trends.html">Trend Ä°Ã§ecekler</a>
                     </div>
                 </div>
+
+                <!-- HakkÄ±mÄ±zda -->
                 <div class="nav-item">
-                    <a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                    <a href="index.html#hakkimizda" class="nav-link">HakkÄ±mÄ±zda</a>
                 </div>
+
+                <!-- Ä°letiÅŸim -->
                 <div class="nav-item">
-                    <a href="index.html#iletisim" class="nav-link">İletişim</a>
+                    <a href="index.html#iletisim" class="nav-link">Ä°letiÅŸim</a>
                 </div>
+
                 <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
             </div>
-
-            <div class="hamburger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
@@ -114,7 +122,7 @@
                 Konseptimiz</h1>
             <p
                 style="text-align: center; color: rgba(255,255,255,0.8); font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-                En iyi Kahve Makinesi, satın almak veya kiralamak için en modern Kahve Makineleri ve Profesyonel teknik
+                En iyi Kahve Makinesi, satÄ±n almak veya kiralamak iÃ§in en modern Kahve Makineleri ve Profesyonel teknik
                 servis.
             </p>
         </div>
@@ -126,35 +134,35 @@
             <!-- Top Description -->
             <div class="concept-intro" style="max-width: 900px; margin: 0 auto 60px; text-align: center;">
                 <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
-                    <span class="brand-highlight">Mac&Cino</span> olarak bu üç temel üzerine, işinizin sağlıklı bir
-                    şekilde büyümesini sağlıyoruz.
+                    <span class="brand-highlight">Mac&Cino</span> olarak bu Ã¼Ã§ temel Ã¼zerine, iÅŸinizin saÄŸlÄ±klÄ± bir
+                    ÅŸekilde bÃ¼yÃ¼mesini saÄŸlÄ±yoruz.
                 </p>
             </div>
 
             <!-- Diagram Section (CSS Based) -->
             <div class="diagram-wrapper reveal" style="margin-bottom: 80px;">
                 <h3 style="text-align: center; color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 30px;">
-                    Mac-Cino ile Bardağa Yolculuk</h3>
+                    Mac-Cino ile BardaÄŸa Yolculuk</h3>
                 <div class="diagram-container">
                     <div class="diagram-step">
                         <div class="icon-box"><i class="fas fa-seedling"></i></div>
-                        <h4>Hasat & Seçim</h4>
-                        <p>Dünyanın en iyi çekirdekleri</p>
+                        <h4>Hasat & SeÃ§im</h4>
+                        <p>DÃ¼nyanÄ±n en iyi Ã§ekirdekleri</p>
                     </div>
                     <div class="diagram-step">
                         <div class="icon-box"><i class="fas fa-fire"></i></div>
-                        <h4>Özel Kavurma</h4>
-                        <p>Mac&Cino özel harmanı</p>
+                        <h4>Ã–zel Kavurma</h4>
+                        <p>Mac&Cino Ã¶zel harmanÄ±</p>
                     </div>
                     <div class="diagram-step">
                         <div class="icon-box"><i class="fas fa-cogs"></i></div>
-                        <h4>Hassas Öğütme</h4>
+                        <h4>Hassas Ã–ÄŸÃ¼tme</h4>
                         <p>Otomatik kalibrasyon</p>
                     </div>
                     <div class="diagram-step">
                         <div class="icon-box"><i class="fas fa-mug-hot"></i></div>
-                        <h4>Mükemmel Bardak</h4>
-                        <p>Eşsiz kahve deneyimi</p>
+                        <h4>MÃ¼kemmel Bardak</h4>
+                        <p>EÅŸsiz kahve deneyimi</p>
                     </div>
                 </div>
             </div>
@@ -163,10 +171,10 @@
             <div class="concept-description" style="max-width: 800px; margin: 0 auto 80px; text-align: center;">
                 <p
                     style="font-size: 1.3rem; line-height: 1.6; color: var(--primary-dark); font-weight: 600; margin-bottom: 10px;">
-                    Mükemmel Kahve ile Müşterilerinizi mutlu edin.
+                    MÃ¼kemmel Kahve ile MÃ¼ÅŸterilerinizi mutlu edin.
                 </p>
                 <p style="font-size: 1.1rem; color: #666;">
-                    Kahve Konseptimiz kullanın ve satışlarınızı artırın.
+                    Kahve Konseptimiz kullanÄ±n ve satÄ±ÅŸlarÄ±nÄ±zÄ± artÄ±rÄ±n.
                 </p>
             </div>
 
@@ -186,7 +194,7 @@
                             style="color: var(--accent-gold); text-decoration: underline;">Makineleri</a>
                     </h3>
                     <p style="color: #666; font-size: 0.95rem;">
-                        En iyi Kahve Kalitesi ve performansı için.
+                        En iyi Kahve Kalitesi ve performansÄ± iÃ§in.
                     </p>
                 </div>
 
@@ -195,7 +203,7 @@
                     style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s;">
                     <div
                         style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <img src="assets/service_vehicle.png" alt="Teknik Servis Aracı"
+                        <img src="assets/service_vehicle.png" alt="Teknik Servis AracÄ±"
                             style="max-height: 100%; max-width: 100%; object-fit: contain;">
                     </div>
                     <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-dark);">
@@ -203,7 +211,7 @@
                             style="color: var(--accent-gold); text-decoration: underline;">Teknik</a> Olarak Sorunsuz
                     </h3>
                     <p style="color: #666; font-size: 0.95rem;">
-                        Endişesiz bir paket ve hızlı çözüm.
+                        EndiÅŸesiz bir paket ve hÄ±zlÄ± Ã§Ã¶zÃ¼m.
                     </p>
                 </div>
 
@@ -216,10 +224,10 @@
                             style="max-height: 100%; max-width: 100%; object-fit: contain;">
                     </div>
                     <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-dark);">
-                        3. Geniş Satış Desteği
+                        3. GeniÅŸ SatÄ±ÅŸ DesteÄŸi
                     </h3>
                     <p style="color: #666; font-size: 0.95rem;">
-                        Sadece bir kahve makinesinden daha fazlası.
+                        Sadece bir kahve makinesinden daha fazlasÄ±.
                     </p>
                 </div>
             </div>
@@ -233,9 +241,9 @@
                         <i class="fas fa-mug-hot"></i>
                     </div>
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        <strong style="color: var(--primary-dark); display:block; margin-bottom:10px;">Yüksek kaliteli
-                            Kahve Çekirdekleri,</strong> Kahve sistemine mükemmel uyumlu şekilde, en yeni teknolojiye
-                        sahip modern kahve makineleri ve mükemmel ayar, ister günde 10, ister 400'den fazla fincan
+                        <strong style="color: var(--primary-dark); display:block; margin-bottom:10px;">YÃ¼ksek kaliteli
+                            Kahve Ã‡ekirdekleri,</strong> Kahve sistemine mÃ¼kemmel uyumlu ÅŸekilde, en yeni teknolojiye
+                        sahip modern kahve makineleri ve mÃ¼kemmel ayar, ister gÃ¼nde 10, ister 400'den fazla fincan
                         olsun.
                     </p>
                 </div>
@@ -248,9 +256,9 @@
                     </div>
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
                         <strong style="color: var(--primary-dark); display:block; margin-bottom:10px;">Sorunsuz Teknik
-                            Paketimizle güvendesiniz:</strong> Servis ekibimiz her zaman hızlı bir şekilde yanınızda ve
-                        sorunlarınızla ilgileniyor - siz ise sizin için önemli olana odaklana bilirsiniz. Böylece hiçbir
-                        şeyle uğraşmak zorunda kalmazsınız.
+                            Paketimizle gÃ¼vendesiniz:</strong> Servis ekibimiz her zaman hÄ±zlÄ± bir ÅŸekilde yanÄ±nÄ±zda ve
+                        sorunlarÄ±nÄ±zla ilgileniyor - siz ise sizin iÃ§in Ã¶nemli olana odaklana bilirsiniz. BÃ¶ylece hiÃ§bir
+                        ÅŸeyle uÄŸraÅŸmak zorunda kalmazsÄ±nÄ±z.
                     </p>
                 </div>
 
@@ -261,10 +269,10 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        <strong style="color: var(--primary-dark); display:block; margin-bottom:10px;">Daha fazlası!
-                            Başarınızın sorumluluğunu üstleniyoruz.</strong> Pazarlama uzmanlarımız, Kahve
-                        Sistemlerimizle satışlarınızı nasıl artırabileceğiniz konusunda size danışmanlık yapar. Ayrıca,
-                        geniş bir reklam malzemesi yelpazesine de erişimi vardır.
+                        <strong style="color: var(--primary-dark); display:block; margin-bottom:10px;">Daha fazlasÄ±!
+                            BaÅŸarÄ±nÄ±zÄ±n sorumluluÄŸunu Ã¼stleniyoruz.</strong> Pazarlama uzmanlarÄ±mÄ±z, Kahve
+                        Sistemlerimizle satÄ±ÅŸlarÄ±nÄ±zÄ± nasÄ±l artÄ±rabileceÄŸiniz konusunda size danÄ±ÅŸmanlÄ±k yapar. AyrÄ±ca,
+                        geniÅŸ bir reklam malzemesi yelpazesine de eriÅŸimi vardÄ±r.
                     </p>
                 </div>
             </div>
@@ -275,12 +283,12 @@
                 <h4 style="font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 20px; font-weight: 700;">
                     Mac&Cino Kahve Konsepti:</h4>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
-                    Satın alınabilecek veya kiralanabilecek en modern Kahve Makineleri, profesyonel ve hızlı teknik
-                    servis ile Satışları artırmak için Satış desteği.
+                    SatÄ±n alÄ±nabilecek veya kiralanabilecek en modern Kahve Makineleri, profesyonel ve hÄ±zlÄ± teknik
+                    servis ile SatÄ±ÅŸlarÄ± artÄ±rmak iÃ§in SatÄ±ÅŸ desteÄŸi.
                 </p>
                 <div style="margin-top: 30px;">
                     <p style="font-size: 1.3rem; line-height: 1.8; color: var(--primary-dark); font-weight: 700;">
-                        Bu üç birleşimle size en uygun Kahve çözümü sunuyoruz.
+                        Bu Ã¼Ã§ birleÅŸimle size en uygun Kahve Ã§Ã¶zÃ¼mÃ¼ sunuyoruz.
                     </p>
                 </div>
             </div>
@@ -295,23 +303,23 @@
             <div class="grid-2 reveal" style="align-items: center; margin-bottom: 100px;">
                 <div class="feature-text">
                     <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary-dark);">Bireysel Pazarlama ve
-                        Kişisel Danışmanlık</h2>
+                        KiÅŸisel DanÄ±ÅŸmanlÄ±k</h2>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        Pazarlama alanında her gün sizin için yeni fikirler ve <strong
-                            style="color: var(--accent-gold);">Özel Çözümler</strong> geliştiriyoruz.
-                        Buna, Trend ürünler, Satış noktası için reklam ve tanıtım materyalleri, satışları Artırmaya
-                        yönelik kampanyalar dahil.
+                        Pazarlama alanÄ±nda her gÃ¼n sizin iÃ§in yeni fikirler ve <strong
+                            style="color: var(--accent-gold);">Ã–zel Ã‡Ã¶zÃ¼mler</strong> geliÅŸtiriyoruz.
+                        Buna, Trend Ã¼rÃ¼nler, SatÄ±ÅŸ noktasÄ± iÃ§in reklam ve tanÄ±tÄ±m materyalleri, satÄ±ÅŸlarÄ± ArtÄ±rmaya
+                        yÃ¶nelik kampanyalar dahil.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        Aynı zamanda size kişisel ve bireysel danışmanlık sunuyoruz. Kısacası, sizin bakış açınızla
-                        düşünüyor ve hedeflerinizi sahipleniyoruz.
+                        AynÄ± zamanda size kiÅŸisel ve bireysel danÄ±ÅŸmanlÄ±k sunuyoruz. KÄ±sacasÄ±, sizin bakÄ±ÅŸ aÃ§Ä±nÄ±zla
+                        dÃ¼ÅŸÃ¼nÃ¼yor ve hedeflerinizi sahipleniyoruz.
                         <br><br>
-                        <strong>Çünkü biz, siz başarılı olduğunuzda başarılıyız.</strong>
+                        <strong>Ã‡Ã¼nkÃ¼ biz, siz baÅŸarÄ±lÄ± olduÄŸunuzda baÅŸarÄ±lÄ±yÄ±z.</strong>
                     </p>
                 </div>
                 <div class="feature-image-wrapper"
                     style="box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; height: 400px;">
-                    <img src="assets/coffee_concept.png" alt="Mac&Cino Bardak Çeşitleri"
+                    <img src="assets/coffee_concept.png" alt="Mac&Cino Bardak Ã‡eÅŸitleri"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
@@ -320,31 +328,31 @@
             <div class="grid-2 reverse-mobile reveal" style="align-items: center;">
                 <div class="feature-image-wrapper"
                     style="box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; height: 400px;">
-                    <img src="assets/blog1.png" alt="Trend İçecekler"
+                    <img src="assets/blog1.png" alt="Trend Ä°Ã§ecekler"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="feature-text">
-                    <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary-dark);">Daha başarılı İşler
-                        için Trend İçeceklerimiz</h2>
+                    <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary-dark);">Daha baÅŸarÄ±lÄ± Ä°ÅŸler
+                        iÃ§in Trend Ä°Ã§eceklerimiz</h2>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        İçecek Satışlarınızı artırmamız için sizi <strong
+                        Ä°Ã§ecek SatÄ±ÅŸlarÄ±nÄ±zÄ± artÄ±rmamÄ±z iÃ§in sizi <strong
                             style="color: var(--accent-gold);">destekliyoruz</strong>.
-                        Bunun en önemli Adımlarından biri, müşterilerinizin beklenti ve isteklerine doğru şekilde yanıt
+                        Bunun en Ã¶nemli AdÄ±mlarÄ±ndan biri, mÃ¼ÅŸterilerinizin beklenti ve isteklerine doÄŸru ÅŸekilde yanÄ±t
                         vermektir.
                     </p>
                     <ul class="feature-list no-icon-bg" style="font-size: 1.1rem; color: #555;">
                         <li style="margin-bottom: 10px;"><i class="fas fa-check"
-                                style="color: var(--accent-gold); margin-right: 10px;"></i> Pazarı ve talebi yakından
+                                style="color: var(--accent-gold); margin-right: 10px;"></i> PazarÄ± ve talebi yakÄ±ndan
                             takip ediyoruz</li>
                         <li style="margin-bottom: 10px;"><i class="fas fa-check"
-                                style="color: var(--accent-gold); margin-right: 10px;"></i> Yeni Trend İçecekleri
-                            sürekli geliştiriyoruz</li>
+                                style="color: var(--accent-gold); margin-right: 10px;"></i> Yeni Trend Ä°Ã§ecekleri
+                            sÃ¼rekli geliÅŸtiriyoruz</li>
                         <li style="margin-bottom: 10px;"><i class="fas fa-check"
-                                style="color: var(--accent-gold); margin-right: 10px;"></i> Pazara sunum sürecinde
-                            danışmanlık yapıyoruz</li>
+                                style="color: var(--accent-gold); margin-right: 10px;"></i> Pazara sunum sÃ¼recinde
+                            danÄ±ÅŸmanlÄ±k yapÄ±yoruz</li>
                     </ul>
                     <p style="margin-top: 20px; font-weight: 600; color: var(--primary-dark);">
-                        Böylece işinizi daha başarılı, çalışanlarınızı ise daha memnun hale getiriyoruz.
+                        BÃ¶ylece iÅŸinizi daha baÅŸarÄ±lÄ±, Ã§alÄ±ÅŸanlarÄ±nÄ±zÄ± ise daha memnun hale getiriyoruz.
                     </p>
                 </div>
             </div>
@@ -359,17 +367,17 @@
                     <h2 style="font-size: 2rem; margin-bottom: 25px; color: var(--primary-dark);">Her Zaman her yerde
                         Barista Kalitesi</h2>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        Kahve Konseptimizle, Mac&Cino makineleriyle hazırlanan her bir Kahve spesiyalitesinin her zaman
-                        aynı <strong style="color: var(--accent-gold);">mükemmel Barista</strong> kahvesinde olmasını
+                        Kahve Konseptimizle, Mac&Cino makineleriyle hazÄ±rlanan her bir Kahve spesiyalitesinin her zaman
+                        aynÄ± <strong style="color: var(--accent-gold);">mÃ¼kemmel Barista</strong> kahvesinde olmasÄ±nÄ±
                         garanti ediyoruz.
                     </p>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        Makinenin nerede bulunduğu ya da kim tarafından kullanıldığı fark etmez.
+                        Makinenin nerede bulunduÄŸu ya da kim tarafÄ±ndan kullanÄ±ldÄ±ÄŸÄ± fark etmez.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
-                        Müşterileriniz, Mac&Cino kahve ürünlerinin kalitesini bilir ve buna Değer verir. Mac&Cino ile
-                        kısa sürede birçok yeni müşteri kazanır, onları memnun ve <strong
-                            style="color: var(--primary-dark);">sadık misafirlere</strong> dönüştürüyoruz.
+                        MÃ¼ÅŸterileriniz, Mac&Cino kahve Ã¼rÃ¼nlerinin kalitesini bilir ve buna DeÄŸer verir. Mac&Cino ile
+                        kÄ±sa sÃ¼rede birÃ§ok yeni mÃ¼ÅŸteri kazanÄ±r, onlarÄ± memnun ve <strong
+                            style="color: var(--primary-dark);">sadÄ±k misafirlere</strong> dÃ¶nÃ¼ÅŸtÃ¼rÃ¼yoruz.
                     </p>
                 </div>
                 <div class="feature-image-wrapper"
@@ -386,10 +394,10 @@
         <div class="container">
             <div class="contact-wrapper reveal">
                 <div class="contact-info-box">
-                    <h3>Bizimle İletişime Geçin</h3>
-                    <p>Kahve çözümünüzü birlikte planlayalım.</p>
+                    <h3>Bizimle Ä°letiÅŸime GeÃ§in</h3>
+                    <p>Kahve Ã§Ã¶zÃ¼mÃ¼nÃ¼zÃ¼ birlikte planlayalÄ±m.</p>
                     <ul class="contact-details">
-                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. BÃ¼yÃ¼kdere Cad. No:123, Ä°stanbul</li>
                         <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
                         <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
                     </ul>
@@ -398,7 +406,7 @@
                     <form id="contactForm">
                         <div class="input-group">
                             <input type="text" id="name" required>
-                            <label for="name">Adınız Soyadınız</label>
+                            <label for="name">AdÄ±nÄ±z SoyadÄ±nÄ±z</label>
                         </div>
                         <div class="input-group">
                             <input type="email" id="email" required>
@@ -406,18 +414,18 @@
                         </div>
                         <div class="input-group">
                             <select id="sector">
-                                <option value="" disabled selected>Sektörünüz</option>
+                                <option value="" disabled selected>SektÃ¶rÃ¼nÃ¼z</option>
                                 <option value="ofis">Ofis</option>
                                 <option value="gastronomi">Gastronomi</option>
                                 <option value="otel">Otel</option>
-                                <option value="diger">Diğer</option>
+                                <option value="diger">DiÄŸer</option>
                             </select>
                         </div>
                         <div class="input-group">
                             <textarea id="message" required></textarea>
-                            <label for="message">Mesajınız</label>
+                            <label for="message">MesajÄ±nÄ±z</label>
                         </div>
-                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                        <button type="submit" class="btn-hero btn-submit">GÃ¶nder</button>
                     </form>
                 </div>
             </div>
@@ -433,12 +441,12 @@
                     <img id="modalImg" src="" alt="Kahve Makinesi">
                 </div>
                 <div class="modal-details">
-                    <h2 id="modalTitle">Ürün Başlığı</h2>
-                    <p id="modalDesc" class="modal-desc">Ürün açıklaması burada yer alacak.</p>
+                    <h2 id="modalTitle">ÃœrÃ¼n BaÅŸlÄ±ÄŸÄ±</h2>
+                    <p id="modalDesc" class="modal-desc">ÃœrÃ¼n aÃ§Ä±klamasÄ± burada yer alacak.</p>
                     <ul class="modal-specs">
                         <li><i class="fas fa-check"></i> Dokunmatik Ekran</li>
                         <li><i class="fas fa-check"></i> Otomatik Temizleme</li>
-                        <li><i class="fas fa-check"></i> 15+ İçecek Seçeneği</li>
+                        <li><i class="fas fa-check"></i> 15+ Ä°Ã§ecek SeÃ§eneÄŸi</li>
                     </ul>
                     <a href="index.html#iletisim-form" class="btn-hero btn-dark modal-cta">Teklif Al</a>
                 </div>
@@ -446,31 +454,33 @@
         </div>
     </div>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h2>CUP&CINO</h2>
-                <p>Barista Company</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                <h2>MAC&Cino</h2>
+                <p>Better Coffee. Better Business.</p>
+                <div class="social-links-footer">
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-info">
-                <h3>7/24 Teknik Servis</h3>
+                <h3>Teknik Servis</h3>
                 <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
-                <p><i class="fas fa-envelope"></i> servis@baristacompany.com</p>
+                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> stanbul, Türkiye</p>
             </div>
             <div class="footer-links">
-                <a href="#">Gizlilik Politikası</a>
-                <a href="#">Kullanım Şartları</a>
-                <a href="#">Kariyer</a>
+                <h3>Kurumsal</h3>
+                <a href="concept.html">Konseptimiz</a>
+                <a href="service.html">Teknik Servis</a>
+                <a href="careers.html">Kariyer</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Barista Company. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
@@ -478,8 +488,8 @@
     <div id="successModal" class="success-modal">
         <div class="success-content">
             <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Başvurunuz Ailemize Ulaştı!</h3>
-            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <h3>BaÅŸvurunuz Ailemize UlaÅŸtÄ±!</h3>
+            <p>En kÄ±sa sÃ¼rede sizinle iletiÅŸime geÃ§eceÄŸiz.</p>
             <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
                 onclick="document.getElementById('successModal').style.display='none'">Harika</button>
         </div>
@@ -503,7 +513,7 @@
 
     <!-- Cookie Banner -->
     <div id="cookieBanner">
-        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <p>Size daha iyi bir deneyim sunmak iÃ§in Ã§erezleri kullanÄ±yoruz.</p>
         <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
     </div>
 

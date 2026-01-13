@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahve Spesiyalleri | Barista Company</title>
     <meta name="description"
-        content="Mac&Cino Kahve Spesiyaliteleri: Espresso, Latte ve daha fazlası. Zengin ürün portföyümüzle içecek cironuzu yükseltin.">
+        content="Mac&Cino Kahve Spesiyaliteleri: Espresso, Latte ve daha fazlasÄ±. Zengin Ã¼rÃ¼n portfÃ¶yÃ¼mÃ¼zle iÃ§ecek cironuzu yÃ¼kseltin.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -101,55 +101,64 @@
     <div id="searchOverlay">
         <span class="close-search">&times;</span>
         <div class="search-content">
-            <input type="text" placeholder="Ne aramıştınız? (örn: Espresso, Latte, Çekirdek)">
+            <input type="text" placeholder="Ne aramÄ±ÅŸtÄ±nÄ±z? (Ã¶rn: Espresso, Latte, Ã‡ekirdek)">
             <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
         </div>
     </div>
 
-    <!-- Sticky Navbar (Solid) -->
-    <nav class="navbar header-solid" id="navbar">
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">MAC&Cino</a>
             <div class="nav-links">
+                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products.html" class="nav-link">Kahve Makineleri</a>
                 </div>
+
+                <!-- SektÃ¶r (Dropdown) -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                    <a href="#" class="nav-link">SektÃ¶r <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#">Gastronomi</a>
-                        <a href="#">Ofis</a>
-                        <a href="#">Otel - Pansiyon</a>
-                        <a href="#">Fitness - Sağlık</a>
-                        <a href="#">Benzin İstasyonu</a>
-                        <a href="#">Mağaza Zincirleri</a>
+                        <a href="gastronomy.html">Gastronomi</a>
+                        <a href="office.html">Ofis</a>
+                        <a href="bakery.html">FÄ±rÄ±nlar / Pastane</a>
+                        <a href="hotel.html">Otel - Pansiyon</a>
+                        <a href="fitness.html">Fitness - SaÄŸlÄ±k</a>
+                        <a href="gas-station.html">Benzin Ä°stasyonu</a>
+                        <a href="chains.html">MaÄŸaza Zincirleri</a>
                     </div>
                 </div>
+
+                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link active">Konseptimiz <i class="fas fa-chevron-down"
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="concept.html">Kahve Konseptimiz</a>
-                        <a href="service.html">Teknik Servis</a>
-                        <a href="beans.html">Kahve Çekirdekleri</a>
+                        <a href="concept.html" class="dropdown-link">Kahve Konseptimiz</a>
+                        <a href="service.html" class="dropdown-link">Teknik Servis</a>
+                        <a href="careers.html" class="dropdown-link">Kariyer</a>
+                        <a href="beans.html">Kahve Ã‡ekirdekleri</a>
                         <a href="specialties.html">Kahve Spesiyalleri</a>
-                        <a href="#">Trend İçecekler</a>
+                        <a href="trends.html">Trend Ä°Ã§ecekler</a>
                     </div>
                 </div>
+
+                <!-- HakkÄ±mÄ±zda -->
                 <div class="nav-item">
-                    <a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                    <a href="index.html#hakkimizda" class="nav-link">HakkÄ±mÄ±zda</a>
                 </div>
+
+                <!-- Ä°letiÅŸim -->
                 <div class="nav-item">
-                    <a href="#iletisim-form" class="nav-link">İletişim</a>
+                    <a href="index.html#iletisim" class="nav-link">Ä°letiÅŸim</a>
                 </div>
+
                 <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
             </div>
-
-            <div class="hamburger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
@@ -159,13 +168,13 @@
         style="position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero_bg.png') center/cover fixed no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
         <div class="container reveal">
             <span
-                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">PORTFÖYÜNÜZÜ
-                GENİŞLETİN</span>
+                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">PORTFÃ–YÃœNÃœZÃœ
+                GENÄ°ÅLETÄ°N</span>
             <h1 style="color: #fff; font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; line-height: 1.2;">Kahve
-                Spesiyaliteleriyle<br>Daha Yüksek Satış Geliri</h1>
+                Spesiyaliteleriyle<br>Daha YÃ¼ksek SatÄ±ÅŸ Geliri</h1>
             <p
                 style="font-size: 1.3rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                Mac&Cino'nun zengin ürün portföyüyle içecek cironuzu yükseltin.
+                Mac&Cino'nun zengin Ã¼rÃ¼n portfÃ¶yÃ¼yle iÃ§ecek cironuzu yÃ¼kseltin.
             </p>
         </div>
     </header>
@@ -182,10 +191,10 @@
                     <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-hand-pointer"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Tek Tuşla Kalite</h3>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Tek TuÅŸla Kalite</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
-                        <strong>Bütüncül Barista Kahve Konseptimiz</strong> sayesinde, her türlü spesiyaliteyi tek
-                        tuşla, standart yüksek kalitede hazırlayın.
+                        <strong>BÃ¼tÃ¼ncÃ¼l Barista Kahve Konseptimiz</strong> sayesinde, her tÃ¼rlÃ¼ spesiyaliteyi tek
+                        tuÅŸla, standart yÃ¼ksek kalitede hazÄ±rlayÄ±n.
                     </p>
                 </div>
 
@@ -195,9 +204,9 @@
                     <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-smile-beam"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Çifte Memnuniyet</h3>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Ã‡ifte Memnuniyet</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
-                        Bu eşsiz kalite, müşterilerinizi lezzetiyle memnun ederken, kolay kullanımıyla çalışanlarınızı
+                        Bu eÅŸsiz kalite, mÃ¼ÅŸterilerinizi lezzetiyle memnun ederken, kolay kullanÄ±mÄ±yla Ã§alÄ±ÅŸanlarÄ±nÄ±zÄ±
                         motive eder.
                     </p>
                 </div>
@@ -207,10 +216,10 @@
                     <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-shop"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Size Özel Çözüm</h3>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Size Ã–zel Ã‡Ã¶zÃ¼m</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
-                        Gastronomi, Ofis veya Fırın... İşletmenize en uygun makineyi <strong>Kiralama
-                            seçeneğiyle</strong> size özel ayarlıyoruz.
+                        Gastronomi, Ofis veya FÄ±rÄ±n... Ä°ÅŸletmenize en uygun makineyi <strong>Kiralama
+                            seÃ§eneÄŸiyle</strong> size Ã¶zel ayarlÄ±yoruz.
                     </p>
                 </div>
 
@@ -241,14 +250,14 @@
 
             <div class="section-header reveal" style="margin-top: 60px; margin-bottom: 80px;">
                 <span
-                    style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.9rem; letter-spacing: 3px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px; font-weight: 600;">Portföyümüzü
-                    Keşfedin</span>
+                    style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.9rem; letter-spacing: 3px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px; font-weight: 600;">PortfÃ¶yÃ¼mÃ¼zÃ¼
+                    KeÅŸfedin</span>
                 <h2 style="line-height: 1.1; color: var(--primary-dark); font-family: 'Playfair Display', serif;">
-                    <span style="font-weight: 700; font-size: 3rem; display: block;">En Popüler</span>
+                    <span style="font-weight: 700; font-size: 3rem; display: block;">En PopÃ¼ler</span>
                     <span
                         style="font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 4.5rem; color: var(--accent-gold); display: block; margin: -15px 0;">Kahve
                         Spesiyalitelerine</span>
-                    <span style="font-weight: 700; font-size: 3rem; display: block;">Genel Bakış</span>
+                    <span style="font-weight: 700; font-size: 3rem; display: block;">Genel BakÄ±ÅŸ</span>
                 </h2>
             </div>
 
@@ -258,7 +267,7 @@
 
                     <!-- Image Left -->
                     <div class="feature-image-wrapper reveal" style="position: relative;">
-                        <input type="hidden" class="placeholder-note" value="Buraya Espresso görseli gelecek">
+                        <input type="hidden" class="placeholder-note" value="Buraya Espresso gÃ¶rseli gelecek">
                         <div style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden;">
                             <!-- Placeholder image using existing asset -->
                             <img src="assets/product1.png" alt="Espresso Mac&Cino"
@@ -275,22 +284,22 @@
                             Espresso</h2>
 
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Espresso, dünyanın en bilinen Kahve Spesiyalitelerinden biridir. Yoğun aroması, dolgun
-                            gövdesi ve koyu kahverengi kremasıyla mükemmel bir espresso tam da böyle olmalıdır.
+                            Espresso, dÃ¼nyanÄ±n en bilinen Kahve Spesiyalitelerinden biridir. YoÄŸun aromasÄ±, dolgun
+                            gÃ¶vdesi ve koyu kahverengi kremasÄ±yla mÃ¼kemmel bir espresso tam da bÃ¶yle olmalÄ±dÄ±r.
                         </p>
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            İtalyan klasiği olan Espresso, yalnızca yemeklerden sonra değil, gün içinde kısa bir enerji
-                            molası için de son derece popülerdir.
+                            Ä°talyan klasiÄŸi olan Espresso, yalnÄ±zca yemeklerden sonra deÄŸil, gÃ¼n iÃ§inde kÄ±sa bir enerji
+                            molasÄ± iÃ§in de son derece popÃ¼lerdir.
                         </p>
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Espresso, kahve çekirdeğinin ve kahve makinesinin kalitesini en net şekilde ortaya koyan
-                            içecektir.
+                            Espresso, kahve Ã§ekirdeÄŸinin ve kahve makinesinin kalitesini en net ÅŸekilde ortaya koyan
+                            iÃ§ecektir.
                         </p>
 
                         <div
                             style="margin-top: 30px; padding: 15px 20px; background: var(--primary-dark); color: #fff; border-left: 4px solid var(--accent-gold); border-radius: 4px;">
-                            <p style="font-style: italic; margin: 0;">"Espresso'muzu deneyin – ne demek istediğimizi
-                                hemen anlayacaksınız."</p>
+                            <p style="font-style: italic; margin: 0;">"Espresso'muzu deneyin â€“ ne demek istediÄŸimizi
+                                hemen anlayacaksÄ±nÄ±z."</p>
                         </div>
                     </div>
 
@@ -310,19 +319,19 @@
                             Latte Macchiato</h2>
 
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Latte Macchiato'nun kökeni İtalya'ya dayanır ve dünya genelinde en sevilen Kahve
-                            spesiyaliteleri arasında yer alır. Espresso ve sıcak sütle hazırlanır, üzerine süt köpüğü
+                            Latte Macchiato'nun kÃ¶keni Ä°talya'ya dayanÄ±r ve dÃ¼nya genelinde en sevilen Kahve
+                            spesiyaliteleri arasÄ±nda yer alÄ±r. Espresso ve sÄ±cak sÃ¼tle hazÄ±rlanÄ±r, Ã¼zerine sÃ¼t kÃ¶pÃ¼ÄŸÃ¼
                             eklenir.
                         </p>
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Bu popüler içecek, modern kahve kültürünün bir simgesi haline gelmiştir ve özellikle
-                            trendleri takip eden tüketiciler ile genç nesiller tarafından tercih edilmektedir.
+                            Bu popÃ¼ler iÃ§ecek, modern kahve kÃ¼ltÃ¼rÃ¼nÃ¼n bir simgesi haline gelmiÅŸtir ve Ã¶zellikle
+                            trendleri takip eden tÃ¼keticiler ile genÃ§ nesiller tarafÄ±ndan tercih edilmektedir.
                         </p>
                     </div>
 
                     <!-- Image Right -->
                     <div class="feature-image-wrapper reveal" style="position: relative;">
-                        <input type="hidden" class="placeholder-note" value="Buraya Latte Macchiato görseli gelecek">
+                        <input type="hidden" class="placeholder-note" value="Buraya Latte Macchiato gÃ¶rseli gelecek">
                         <div
                             style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(2deg);">
                             <img src="assets/product2.png" alt="Latte Macchiato Mac&Cino"
@@ -339,7 +348,7 @@
 
                     <!-- Image Left -->
                     <div class="feature-image-wrapper reveal" style="position: relative;">
-                        <input type="hidden" class="placeholder-note" value="Buraya Flat White görseli gelecek">
+                        <input type="hidden" class="placeholder-note" value="Buraya Flat White gÃ¶rseli gelecek">
                         <div
                             style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(-2deg);">
                             <img src="assets/product3.png" alt="Flat White Mac&Cino"
@@ -355,14 +364,14 @@
                             Flat White</h2>
 
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Flat White, 30 yılı aşkın süredir var olmasına rağmen, hala en popüler kahve
-                            spesiyalitelerinden biridir. Bu sevilen içecek, içerik ve fincan boyutu olarak Cappuccino
-                            ile benzerlik gösterir, ancak hazırlanış şekli farklıdır.
+                            Flat White, 30 yÄ±lÄ± aÅŸkÄ±n sÃ¼redir var olmasÄ±na raÄŸmen, hala en popÃ¼ler kahve
+                            spesiyalitelerinden biridir. Bu sevilen iÃ§ecek, iÃ§erik ve fincan boyutu olarak Cappuccino
+                            ile benzerlik gÃ¶sterir, ancak hazÄ±rlanÄ±ÅŸ ÅŸekli farklÄ±dÄ±r.
                         </p>
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Adından da anlaşılacağı üzere "Flat White" yani "Düz Beyaz", çift espresso ve kremamsı süt
-                            köpüğü ile hazırlanır. Süt köpüğü Cappuccino'ya göre biraz daha akıcıdır ve bu sayede içimi
-                            daha yumuşak ve yoğun bir kahve deneyimi sunar.
+                            AdÄ±ndan da anlaÅŸÄ±lacaÄŸÄ± Ã¼zere "Flat White" yani "DÃ¼z Beyaz", Ã§ift espresso ve kremamsÄ± sÃ¼t
+                            kÃ¶pÃ¼ÄŸÃ¼ ile hazÄ±rlanÄ±r. SÃ¼t kÃ¶pÃ¼ÄŸÃ¼ Cappuccino'ya gÃ¶re biraz daha akÄ±cÄ±dÄ±r ve bu sayede iÃ§imi
+                            daha yumuÅŸak ve yoÄŸun bir kahve deneyimi sunar.
                         </p>
                     </div>
 
@@ -381,20 +390,20 @@
                             Cafe Crema</h2>
 
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Espresso ve diğer Kahve spesiyalitelerin üzerinde oluşan ince, köpüksü ve altın-kahverengi
-                            tabaka, kahve kreması veya "Crema" olarak adlandırılır. <strong>Crema, kahvenin taze ve
-                                kaliteli olduğunun göstergesidir.</strong>
+                            Espresso ve diÄŸer Kahve spesiyalitelerin Ã¼zerinde oluÅŸan ince, kÃ¶pÃ¼ksÃ¼ ve altÄ±n-kahverengi
+                            tabaka, kahve kremasÄ± veya "Crema" olarak adlandÄ±rÄ±lÄ±r. <strong>Crema, kahvenin taze ve
+                                kaliteli olduÄŸunun gÃ¶stergesidir.</strong>
                         </p>
                         <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Kahve öğütme derecesi, tazeliği ve Espresso makinesinin basıncı, krema oluşumunu doğrudan
-                            etkiler. İyi bir crema, kahvenin aromalarını hapseder ve fincanda görsel olarak da çekici
-                            bir sunum sağlar.
+                            Kahve Ã¶ÄŸÃ¼tme derecesi, tazeliÄŸi ve Espresso makinesinin basÄ±ncÄ±, krema oluÅŸumunu doÄŸrudan
+                            etkiler. Ä°yi bir crema, kahvenin aromalarÄ±nÄ± hapseder ve fincanda gÃ¶rsel olarak da Ã§ekici
+                            bir sunum saÄŸlar.
                         </p>
                     </div>
 
                     <!-- Image Right -->
                     <div class="feature-image-wrapper reveal" style="position: relative;">
-                        <input type="hidden" class="placeholder-note" value="Buraya Cafe Crema görseli gelecek">
+                        <input type="hidden" class="placeholder-note" value="Buraya Cafe Crema gÃ¶rseli gelecek">
                         <div
                             style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(2deg);">
                             <img src="assets/cafe_interior.png" alt="Cafe Crema Mac&Cino"
@@ -412,10 +421,10 @@
         <div class="container">
             <div class="contact-wrapper reveal">
                 <div class="contact-info-box">
-                    <h3>Bizimle İletişime Geçin</h3>
+                    <h3>Bizimle Ä°letiÅŸime GeÃ§in</h3>
                     <p>En uygun kahve konseptini birlikte belirleyelim.</p>
                     <ul class="contact-details">
-                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. BÃ¼yÃ¼kdere Cad. No:123, Ä°stanbul
                         </li>
                         <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
                         <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
@@ -425,7 +434,7 @@
                     <form id="contactForm">
                         <div class="input-group">
                             <input type="text" id="name" required>
-                            <label for="name">Adınız Soyadınız</label>
+                            <label for="name">AdÄ±nÄ±z SoyadÄ±nÄ±z</label>
                         </div>
                         <div class="input-group">
                             <input type="email" id="email" required>
@@ -434,48 +443,50 @@
                         <div class="input-group">
                             <select id="sector">
                                 <option value="" disabled selected>Konu</option>
-                                <option value="satis">Kahve Satın Alma</option>
-                                <option value="tadim">Tadım Etkinliği</option>
+                                <option value="satis">Kahve SatÄ±n Alma</option>
+                                <option value="tadim">TadÄ±m EtkinliÄŸi</option>
                                 <option value="bayilik">Bayilik</option>
-                                <option value="diger">Diğer</option>
+                                <option value="diger">DiÄŸer</option>
                             </select>
                         </div>
                         <div class="input-group">
                             <textarea id="message" required></textarea>
-                            <label for="message">Mesajınız</label>
+                            <label for="message">MesajÄ±nÄ±z</label>
                         </div>
-                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                        <button type="submit" class="btn-hero btn-submit">GÃ¶nder</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h2>CUP&CINO</h2>
-                <p>Barista Company</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                <h2>MAC&Cino</h2>
+                <p>Better Coffee. Better Business.</p>
+                <div class="social-links-footer">
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-info">
-                <h3>7/24 Teknik Servis</h3>
+                <h3>Teknik Servis</h3>
                 <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
-                <p><i class="fas fa-envelope"></i> servis@baristacompany.com</p>
+                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> stanbul, Türkiye</p>
             </div>
             <div class="footer-links">
-                <a href="#">Gizlilik Politikası</a>
-                <a href="#">Kullanım Şartları</a>
-                <a href="#">Kariyer</a>
+                <h3>Kurumsal</h3>
+                <a href="concept.html">Konseptimiz</a>
+                <a href="service.html">Teknik Servis</a>
+                <a href="careers.html">Kariyer</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Barista Company. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
@@ -483,8 +494,8 @@
     <div id="successModal" class="success-modal">
         <div class="success-content">
             <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Başvurunuz Ailemize Ulaştı!</h3>
-            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <h3>BaÅŸvurunuz Ailemize UlaÅŸtÄ±!</h3>
+            <p>En kÄ±sa sÃ¼rede sizinle iletiÅŸime geÃ§eceÄŸiz.</p>
             <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
                 onclick="document.getElementById('successModal').style.display='none'">Harika</button>
         </div>
@@ -508,7 +519,7 @@
 
     <!-- Cookie Banner -->
     <div id="cookieBanner">
-        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <p>Size daha iyi bir deneyim sunmak iÃ§in Ã§erezleri kullanÄ±yoruz.</p>
         <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
     </div>
 

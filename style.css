@@ -731,64 +731,85 @@ ul {
 
 /* --- Footer --- */
 .footer {
-    background: #1a1510;
-    color: #aeaeae;
-    padding-top: 80px;
+    background: #0a0806;
+    color: #999;
+    padding: 80px 0 30px;
+    font-family: var(--font-body);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 60px;
+    padding-bottom: 50px;
 }
 
 .footer-brand h2 {
-    color: var(--text-light);
-    font-size: 2rem;
-    margin-bottom: 10px;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
-.social-icons a {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    margin-right: 20px;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
+.footer-brand p {
+    font-style: italic;
+    margin-bottom: 25px;
     color: var(--accent-gold);
 }
 
 .footer-info h3 {
-    color: var(--text-light);
+    color: #fff;
+    font-size: 1.2rem;
     margin-bottom: 20px;
-    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-info p {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.footer-info p i {
+    color: var(--accent-gold);
+}
+
+.footer-info p:hover {
+    color: #fff;
+}
+
+.footer-links h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-links a {
     display: block;
-    margin-bottom: 10px;
-    color: #aeaeae;
+    margin-bottom: 12px;
+    color: #999;
+    transition: 0.3s;
+    text-decoration: none;
 }
 
 .footer-links a:hover {
     color: var(--accent-gold);
-    padding-left: 5px;
+    transform: translateX(5px);
 }
 
 .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    margin-top: 20px;
     text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: #666;
 }
 
 /* --- Contact Section --- */
@@ -1715,10 +1736,15 @@ ul {
 }
 
 .floating-bean {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
     position: absolute;
     z-index: 1;
     pointer-events: none;
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+.floating-bean:hover {
     opacity: 0.8;
 }
 
@@ -1773,9 +1799,9 @@ ul {
 /* --- Bottom Slogan Section --- */
 .bottom-slogan-section {
     position: relative;
-    background: #111;
+    background: #050505;
     color: #FFF;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
     overflow: hidden;
     z-index: 10;
@@ -1783,25 +1809,49 @@ ul {
 
 .bottom-slogan-section h2 {
     font-family: var(--font-heading);
-    font-size: 5rem;
-    color: var(--accent-gold);
-    line-height: 1.1;
-    margin-bottom: 20px;
+    font-size: 6.5rem;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent-gold);
+    line-height: 0.9;
+    margin-bottom: 25px;
     opacity: 0;
-    transform: scale(0.9);
-    transition: 0.8s ease-out;
+    transform: translateY(50px);
+    transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bottom-slogan-section.active h2 {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+    color: var(--accent-gold);
+    -webkit-text-stroke: 0;
 }
 
 .bottom-slogan-section p {
-    font-size: 1.5rem;
-    letter-spacing: 3px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 8px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    display: inline-block;
+}
+
+.bottom-slogan-section p::before,
+.bottom-slogan-section p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background: var(--accent-gold);
+}
+
+.bottom-slogan-section p::before {
+    left: -70px;
+}
+
+.bottom-slogan-section p::after {
+    right: -70px;
 }
 
 /* Responsive Slogan */
@@ -2101,7 +2151,7 @@ ul {
     background: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .diagram-container {
@@ -2153,7 +2203,8 @@ ul {
 
 /* Ok işareti */
 .diagram-step:not(:last-child)::after {
-    content: '\f105'; /* Angle Right */
+    content: '\f105';
+    /* Angle Right */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
@@ -2166,13 +2217,15 @@ ul {
 
 @media (max-width: 768px) {
     .diagram-step:not(:last-child)::after {
-        content: '\f107'; /* Angle Down */
+        content: '\f107';
+        /* Angle Down */
         top: auto;
         bottom: -30px;
         left: 50%;
         right: auto;
         transform: translateX(-50%);
     }
+
     .diagram-container {
         flex-direction: column;
         gap: 50px;
