@@ -219,7 +219,7 @@
         </main>
     </div>
 
-        <!-- Footer -->
+            <!-- Footer -->
     <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
@@ -235,7 +235,7 @@
                 <h3>Teknik Servis</h3>
                 <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
                 <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> stanbul, Türkiye</p>
+                <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
             </div>
             <div class="footer-links">
                 <h3>Kurumsal</h3>
@@ -249,34 +249,40 @@
         </div>
     </footer>
 
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Başvurunuz Ailemize Ulaştı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
+                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
+        </div>
+    </div>
+
+    <!-- Bottom Slogan Section -->
+    <section class="bottom-slogan-section reveal">
+        <div class="container">
+            <h2>Better Coffee.<br>Better Business.</h2>
+            <p>Mac&Cino Barista Company</p>
+        </div>
+        <!-- Floating Decorative Beans -->
+        <img src="assets/coffee_bean_icon.png" class="floating-bean"
+            style="top: 15%; left: 8%; width: 60px; transform: rotate(-20deg);">
+        <img src="assets/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 15%; right: 8%; width: 80px; animation-delay: 2s; transform: rotate(15deg);">
+    </section>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
+
     <script src="script.js"></script>
-    <script>
-        // Inline simple filter script
-        const checkboxes = document.querySelectorAll('.filter-cb');
-        const products = document.querySelectorAll('.product-card');
-
-        function filterProducts() {
-            const checkedValues = Array.from(checkboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
-
-            products.forEach(product => {
-                const categories = product.getAttribute('data-category').split(' ');
-                // If product matches ANY checked value, show it (simple OR logic)
-                // Better logic: Match at least one category tag present in filters?
-                // Let's do: If checkedValues includes ANY of the product's categories -> Show
-                const isVisible = categories.some(cat => checkedValues.includes(cat));
-
-                if (isVisible) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        }
-
-        checkboxes.forEach(cb => cb.addEventListener('change', filterProducts));
-    </script>
 </body>
 
 </html>
