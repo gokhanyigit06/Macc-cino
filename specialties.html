@@ -170,56 +170,70 @@
         </div>
     </header>
 
-    <!-- Intro Features Section -->
-    <section class="section" style="padding: 100px 0; background-color: #fff;">
+    <!-- Intro Features Strip (Service-style) -->
+    <section class="section" style="padding: 0; background-color: var(--primary-dark);">
         <div class="container reveal">
-            <div class="grid-3">
+            <div
+                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+
                 <!-- Feature 1 -->
-                <div
-                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <div
-                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                <div class="intro-feature-item"
+                    style="padding: 40px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-hand-pointer"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Tek Tuşla Kalite
-                    </h3>
-                    <p style="color: #666; line-height: 1.6;">
-                        <strong>Bütüncül Barista Kahve Konseptimiz</strong> sayesinde, tüm makinelerimizle her türlü
-                        spesiyaliteyi tek tuşla, standart yüksek kalitede hazırlayın.
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Tek Tuşla Kalite</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
+                        <strong>Bütüncül Barista Kahve Konseptimiz</strong> sayesinde, her türlü spesiyaliteyi tek
+                        tuşla, standart yüksek kalitede hazırlayın.
                     </p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div
-                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <div
-                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                <div class="intro-feature-item"
+                    style="padding: 40px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-smile-beam"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Çifte Memnuniyet
-                    </h3>
-                    <p style="color: #666; line-height: 1.6;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Çifte Memnuniyet</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
                         Bu eşsiz kalite, müşterilerinizi lezzetiyle memnun ederken, kolay kullanımıyla çalışanlarınızı
                         motive eder.
                     </p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div
-                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <div
-                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                <div class="intro-feature-item" style="padding: 40px 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;">
                         <i class="fas fa-shop"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Size Özel Çözüm</h3>
-                    <p style="color: #666; line-height: 1.6;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #fff;">Size Özel Çözüm</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 0.95rem;">
                         Gastronomi, Ofis veya Fırın... İşletmenize en uygun makineyi <strong>Kiralama
                             seçeneğiyle</strong> size özel ayarlıyoruz.
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <style>
+        @media (max-width: 768px) {
+            .intro-feature-item {
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 
     <!-- Specialties List Section -->
     <section class="section" style="padding: 0 0 100px; background-color: #fff;">
