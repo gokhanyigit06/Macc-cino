@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend İçecekler | Barista Company</title>
+    <meta name="description"
+        content="Mac&Cino Trend İçecekler: İşletmenizin cirosunu artıracak en yeni kahve trendleri ve soğuk içecek çözümleri.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .page-hero {
+            display: none;
+        }
+
+        .navbar.header-solid {
+            position: relative;
+            background-color: var(--primary-dark);
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Magazine Style Watermark */
+        .watermark-number {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.03);
+            font-family: 'Outfit', sans-serif;
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .feature-text {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/favicon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay">
+        <span class="close-search">&times;</span>
+        <div class="search-content">
+            <input type="text" placeholder="Ne aramıştınız? (örn: Cold Brew, Frappe)">
+            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar (Solid) -->
+    <nav class="navbar header-solid" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <a href="products.html" class="nav-link">Kahve Makineleri</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Gastronomi</a>
+                        <a href="#">Ofis</a>
+                        <a href="#">Otel - Pansiyon</a>
+                        <a href="#">Fitness - Sağlık</a>
+                        <a href="#">Benzin İstasyonu</a>
+                        <a href="#">Mağaza Zincirleri</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="concept.html">Kahve Konseptimiz</a>
+                        <a href="service.html">Teknik Servis</a>
+                        <a href="beans.html">Kahve Çekirdekleri</a>
+                        <a href="specialties.html">Kahve Spesiyalleri</a>
+                        <a href="trends.html">Trend İçecekler</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#iletisim-form" class="nav-link">İletişim</a>
+                </div>
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+            </div>
+
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+        style="position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero_bg.png') center/cover fixed no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container reveal">
+            <span
+                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">GELECEĞİN
+                LEZZETLERİ</span>
+            <h1 style="color: #fff; font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; line-height: 1.2;">Daha
+                Başarılı İşler İçin<br>Trend İçecekler</h1>
+            <p
+                style="font-size: 1.3rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                İçecek satışlarınızı artırmanız için sizi destekliyoruz. En yeni trendleri sizin için takip ediyor ve
+                geliştiriyoruz.
+            </p>
+        </div>
+    </header>
+
+    <!-- Visual Intro Features Section -->
+    <section class="section" style="padding: 100px 0; background-color: #fff;">
+        <div class="container reveal">
+            <div class="grid-3">
+                <!-- Feature 1 -->
+                <div
+                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Pazar Takibi</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Pazarı ve talebi yakından takip ediyoruz. Müşterilerinizin değişen damak tadına en uygun
+                        çözümleri sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Sürekli Gelişim</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Ar-Ge ekibimizle sürekli yeni trend içecekler geliştiriyoruz (Cold Brew, Nitro Kahve, vb.)
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    style="text-align: center; padding: 30px; border-radius: 15px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <div
+                        style="width: 70px; height: 70px; background: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent-gold); font-size: 1.8rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-dark);">Danışmanlık</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Ürünlerin pazara sunum sürecinde size tam destek ve danışmanlık veriyoruz. Başarınız,
+                        başarımızdır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trend 1: Cold Brew (Dark Section) -->
+    <section class="section features-split"
+        style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
+        <i class="fas fa-snowflake"
+            style="position: absolute; left: -50px; bottom: -50px; font-size: 25rem; opacity: 0.03; color: #fff;"></i>
+        <div class="container">
+            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Image Left -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; transform: rotate(-2deg); border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="assets/blog1.png" alt="Cold Brew Trend"
+                            style="width: 100%; height: auto; display: block;">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="feature-text">
+                    <span class="watermark-number" style="color: rgba(255,255,255,0.05);">01</span>
+                    <h2
+                        style="font-size: 2.5rem; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif;">
+                        Cold Brew & Soğuk Kahveler</h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        Özellikle yaz aylarının vazgeçilmezi olan Cold Brew (Soğuk Demleme), kahvenin soğuk suda uzun
+                        süre demlenmesiyle elde edilen yumuşak içimli ve yüksek kafeinli bir trenddir.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        Genç neslin favorisi olan bu içecek kategorisi, işletmenizin yaz cirosunu artırmak için kritik
+                        öneme sahiptir.
+                    </p>
+                    <div style="margin-top: 30px;">
+                        <span
+                            style="display:inline-block; padding: 8px 15px; background: rgba(255,255,255,0.1); color: var(--accent-gold); border-radius: 20px; margin-right: 10px; font-size: 0.9rem;">#ColdBrew</span>
+                        <span
+                            style="display:inline-block; padding: 8px 15px; background: rgba(255,255,255,0.1); color: var(--accent-gold); border-radius: 20px; margin-right: 10px; font-size: 0.9rem;">#IcedLatte</span>
+                        <span
+                            style="display:inline-block; padding: 8px 15px; background: rgba(255,255,255,0.1); color: var(--accent-gold); border-radius: 20px; font-size: 0.9rem;">#NitroCoffee</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trend 2: Seasonal Specials (Light Section) -->
+    <section class="section features-split" style="padding: 100px 0; background-color: #fff;">
+        <div class="container">
+            <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Text Left -->
+                <div class="feature-text">
+                    <span class="watermark-number" style="left: auto; right: 0;">02</span>
+                    <h2
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
+                        Mevsimsel Lezzetler</h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Sadece klasiklerle yetinmeyin. Kışın "Pumpkin Spice Latte", "Gingerbread Cappuccino" gibi
+                        içinizi ısıtan lezzetler; yazın ise ferahlatıcı "Frappé"ler ile menünüzü dinamik tutun.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Mac&Cino olarak, her mevsim için özel reçeteler ve pazarlama materyalleri ile yanınızdayız.
+                    </p>
+                    <a href="#iletisim-form" class="btn-text" style="font-size: 1.1rem; margin-top: 10px;">Reçeteleri
+                        Keşfedin <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Image Right -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(2deg);">
+                        <!-- Placeholder image using existing asset -->
+                        <img src="assets/product1.png" alt="Mevsimsel Kahveler"
+                            style="width: 100%; height: auto; display: block; background: #f9f9f9; filter: sepia(0.2);">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim-form" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info-box">
+                    <h3>Bizimle İletişime Geçin</h3>
+                    <p>Trendleri yakalamak için hemen görüşelim.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="sector">
+                                <option value="" disabled selected>Konu</option>
+                                <option value="satis">Kahve Satın Alma</option>
+                                <option value="tadim">Tadım Etkinliği</option>
+                                <option value="bayilik">Bayilik</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
+                        </div>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="iletisim" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>CUP&CINO</h2>
+                <p>Barista Company</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>7/24 Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@baristacompany.com</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Barista Company. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
