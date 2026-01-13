@@ -327,38 +327,78 @@
                     Fırınınız İçin <span style="color: var(--accent-gold); font-style: italic;">Hizmetlerimiz</span>
                 </h2>
 
-                <!-- Service Description -->
-                <div
-                    style="max-width: 950px; margin: 0 auto; text-align: left; font-size: 1.15rem; line-height: 1.9; color: #555;">
-                    <p style="margin-bottom: 25px;">
-                        Fırınlar için hangi kahve makinelerini kullanmak gerektiğini merak ediyorsanız, size telefon
-                        veya e-posta yoluyla memnuniyetle yardımcı oluruz. Burada önemli olan soru, tam otomatik bir
-                        kahve makinesinin mi yoksa espresso makinelerimizden birinin mi sizin için daha uygun olduğudur.
-                    </p>
+                <!-- 3-Column Service Grid -->
+                <div class="grid-3"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; margin-bottom: 60px;">
 
-                    <p style="margin-bottom: 25px;">
-                        Tam otomatik kahve makinelerimiz, günde 10 fincandan itibaren kullanım için idealdir ve kolay
-                        kullanımı sayesinde self-servis için de mükemmeldir. Bu makineler, basit kullanım ile
-                        müşterilerinize özel bir Barista el yapımı hissi sunar ve fırın işletmeniz için mükemmel bir
-                        çözümdür.
-                    </p>
+                    <!-- Service 1: Consultation -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Danışmanlık Hizmeti</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Fırınlar için hangi kahve makinelerini kullanmak gerektiğini merak ediyorsanız, size telefon
+                            veya e-posta yoluyla memnuniyetle yardımcı oluruz. Burada önemli olan soru, tam otomatik bir
+                            kahve makinesinin mi yoksa espresso makinelerimizden birinin mi sizin için daha uygun
+                            olduğudur.
+                        </p>
+                    </div>
 
-                    <p style="margin-bottom: 40px;">
-                        Klasik kahve çeşitleri olan espresso, cappuccino ve latte macchiato'nun yanı sıra, fırınlar için
-                        kahve makinelerimizin öne çıkan özelliği <strong style="color: var(--primary-dark);">mükemmel
-                            süt köpüğü</strong>dür. Bu sayede popüler trend içecekler sunabilir ve ek gelir elde
-                        edebilirsiniz. Hızlı hazırlık süresiyle birlikte sunduğumuz yüksek Barista kalitesi,
-                        müşterilerinizin fırınınıza tercih etmesini sağlar – böylece misafirleriniz sadık müşterilere
-                        dönüşür.
-                    </p>
+                    <!-- Service 2: Automatic Machines -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-cogs" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Tam Otomatik Çözümler</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Tam otomatik kahve makinelerimiz, günde 10 fincandan itibaren kullanım için idealdir ve
+                            kolay kullanımı sayesinde self-servis için de mükemmeldir. Bu makineler, basit kullanım ile
+                            müşterilerinize özel bir Barista el yapımı hissi sunar ve fırın işletmeniz için mükemmel bir
+                            çözümdür.
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Premium Quality -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-trophy" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Premium Kalite</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Klasik kahve çeşitleri olan espresso, cappuccino ve latte macchiato'nun yanı sıra, fırınlar
+                            için kahve makinelerimizin öne çıkan özelliği <strong
+                                style="color: var(--primary-dark);">mükemmel süt köpüğü</strong>dür. Bu sayede popüler
+                            trend içecekler sunabilir ve ek gelir elde edebilirsiniz.
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Feature Image -->
+            <!-- Feature Image (Horizontal, Smaller) -->
             <div
-                style="max-width: 1000px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
-                <img src="C:/Users/PC/.gemini/antigravity/brain/ffca89f1-9f5e-442c-9edf-969f2eb73cc5/bakery_hero_coffee_1768295986558.png"
-                    alt="Fırının İçinde Kahve Konsepti Mac&Cino" style="width: 100%; height: auto; display: block;">
+                style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
+                <div style="height: 400px; overflow: hidden;">
+                    <img src="C:/Users/PC/.gemini/antigravity/brain/ffca89f1-9f5e-442c-9edf-969f2eb73cc5/bakery_hero_coffee_1768295986558.png"
+                        alt="Fırının İçinde Kahve Konsepti Mac&Cino"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div style="background: var(--primary-dark); padding: 20px; text-align: center;">
                     <p
                         style="color: var(--accent-gold); margin: 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic;">
