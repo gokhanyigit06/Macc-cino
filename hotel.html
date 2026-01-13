@@ -91,70 +91,89 @@
         </a>
     </header>
 
-    <!-- Advantages Section -->
-    <section id="intro" class="section" style="padding: 100px 0; background-color: #fff;">
-        <div class="container reveal">
+    <!-- Advantages Section: Redesigned for Visual Impact -->
+    <section id="intro" class="section" style="padding: 120px 0; background-color: #fff; overflow: hidden;">
+        <div class="container">
 
-            <!-- Section Header -->
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2
-                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif; line-height: 1.3;">
-                    Otel Kahve Makineleri ve <span style="color: var(--accent-gold); font-style: italic;">Otomat
-                        Kiralamanın Avantajları</span>
-                </h2>
-                <div style="width: 80px; height: 3px; background: var(--accent-gold); margin: 0 auto 50px;"></div>
-            </div>
-
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <div style="font-size: 1.15rem; line-height: 1.9; color: #555; text-align: left;">
-                    <p style="margin-bottom: 25px;">
+            <!-- Part 1: Intro Split -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;"
+                class="reveal">
+                <!-- Image Side -->
+                <div style="position: relative;">
+                    <div
+                        style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; border-top: 5px solid var(--accent-gold); border-left: 5px solid var(--accent-gold); z-index: 1;">
+                    </div>
+                    <img src="C:/Users/PC/.gemini/antigravity/brain/ffca89f1-9f5e-442c-9edf-969f2eb73cc5/office_coffee_scene_premium_1768299281555_1768299082145.png"
+                        alt="Hotel Luxury Coffee"
+                        style="width: 100%; border-radius: 10px; box-shadow: 30px 30px 0 rgba(212, 175, 55, 0.05);">
+                </div>
+                <!-- Text Side -->
+                <div>
+                    <h2 style="font-size: 3rem; margin-bottom: 30px; line-height: 1.2;">
+                        Mükemmellik <br><span style="color: var(--accent-gold); font-style: italic;">Standarttır</span>
+                    </h2>
+                    <p style="font-size: 1.15rem; color: #555; line-height: 1.8; margin-bottom: 25px;">
                         Otel kahve makinelerimizi ve otomatlarımızı kiralamanın oteller için birçok avantajı vardır. Bu
                         makineler sadece gastronominin yüksek standartlarına uygun olmakla kalmaz, aynı zamanda otel
                         sektörünün özel gereksinimlerini de karşılar.
                     </p>
-                    <p style="margin-bottom: 25px;">
-                        <strong style="color: var(--primary-dark);">Kahvaltıda self-servis, akşam yemeğinden sonra
-                            mükemmel espresso</strong> ve etkinliklerde hızlı üretim süreleri ile en iyi kaliteyi sunar.
-                    </p>
-                    <p
-                        style="margin-bottom: 25px; padding: 30px; background: #f9f9f9; border-radius: 10px; border-left: 5px solid var(--accent-gold);">
+                    <div
+                        style="display: flex; gap: 20px; align-items: flex-start; background: #fdfaf3; padding: 25px; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
+                        <i class="fas fa-coffee"
+                            style="font-size: 1.5rem; color: var(--accent-gold); margin-top: 5px;"></i>
+                        <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 500; margin: 0;">
+                            Kahvaltıda self-servis, akşam yemeğinden sonra mükemmel espresso ve etkinliklerde hızlı
+                            üretim süreleri ile en iyi kaliteyi sunar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: Scenarios Grid (The 5-star vs High Volume text turned into cards) -->
+            <div style="text-align: center; margin-bottom: 60px;" class="reveal">
+                <h3 style="font-size: 2.2rem; margin-bottom: 15px;">İşletmenize Özel <span
+                        style="font-style: italic; color: #888;">Çözümler</span></h3>
+                <div style="width: 40px; height: 2px; background: var(--accent-gold); margin: 0 auto;"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px;" class="reveal">
+                <!-- Option A -->
+                <div style="padding: 50px; background: #f9f9f9; border-radius: 20px; transition: 0.3s; border: 1px solid transparent;"
+                    onmouseover="this.style.borderColor='var(--accent-gold)'; this.style.background='#fff'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.05)'"
+                    onmouseout="this.style.borderColor='transparent'; this.style.background='#f9f9f9'; this.style.boxShadow='none'">
+                    <i class="fas fa-gem"
+                        style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 25px; display: block;"></i>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 20px;">Premium & Butik Deneyim</h4>
+                    <p style="line-height: 1.7; color: #666; font-size: 1.05rem;">
                         5 yıldızlı bir otelsiniz ve yüksek kalite önceliğiniz mi? O zaman Kahve Makinelerimiz, Barista
-                        kalitesinde kahve çeşitleriyle tam size göre. Ya da yüzlerce misafirin kahve makinelerinde
-                        self-servis yaptığı geniş bir kahvaltı alanınız mı var? Bunun için tam otomatik makineler
-                        idealdir.
+                        kalitesinde kahve çeşitleriyle tam size göre. Misafirlerinize her fincanda kusursuz bir
+                        gastronomi deneyimi sunun.
                     </p>
-                    <p
-                        style="margin-bottom: 40px; font-weight: 500; color: var(--primary-dark); text-align: center; font-size: 1.3rem;">
-                        "Hangi zorluğu kahve sisteminizden bekliyorsanız bekleyin, kiraladığınız sistem kesinlikle
-                        beklentilerinizi aşacaktır."
+                </div>
+                <!-- Option B -->
+                <div style="padding: 50px; background: #f9f9f9; border-radius: 20px; transition: 0.3s; border: 1px solid transparent;"
+                    onmouseover="this.style.borderColor='var(--accent-gold)'; this.style.background='#fff'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.05)'"
+                    onmouseout="this.style.borderColor='transparent'; this.style.background='#f9f9f9'; this.style.boxShadow='none'">
+                    <i class="fas fa-users"
+                        style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 25px; display: block;"></i>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 20px;">Yüksek Kapasiteli Kahvaltılar</h4>
+                    <p style="line-height: 1.7; color: #666; font-size: 1.05rem;">
+                        Yüzlerce misafirin kahve makinelerinde self-servis yaptığı geniş bir kahvaltı alanınız mı var?
+                        Bunun için tam otomatik makineler idealdir. Yoğun saatlerde bile hız ve kaliteden ödün vermeyin.
                     </p>
                 </div>
             </div>
 
-            <!-- Features Icons -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px;">
-                <div
-                    style="text-align: center; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <i class="fas fa-concierge-bell"
-                        style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
-                    <h4 style="margin-bottom: 10px;">Self-Servis Kolaylığı</h4>
-                    <p style="font-size: 0.95rem; color: #777;">Kahvaltı büfeleri için pratik ve hızlı çözümler.</p>
-                </div>
-                <div
-                    style="text-align: center; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <i class="fas fa-star"
-                        style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
-                    <h4 style="margin-bottom: 10px;">5 Yıldız Kalitesi</h4>
-                    <p style="font-size: 0.95rem; color: #777;">En seçici misafirleriniz için üst segment lezzet.</p>
-                </div>
-                <div
-                    style="text-align: center; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <i class="fas fa-bolt"
-                        style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
-                    <h4 style="margin-bottom: 10px;">Yüksek Kapasite</h4>
-                    <p style="font-size: 0.95rem; color: #777;">Etkinlik ve yoğun saatlerde kesintisiz servis.</p>
-                </div>
+            <!-- Part 3: Climax Quote -->
+            <div style="text-align: center; max-width: 900px; margin: 0 auto; padding-top: 40px;" class="reveal">
+                <p
+                    style="font-size: 1.8rem; font-family: 'Playfair Display', serif; color: var(--primary-dark); font-style: italic; line-height: 1.5;">
+                    "Hangi zorluğu kahve sisteminizden bekliyorsanız bekleyin, <span
+                        style="color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold);">kiraladığınız
+                        sistem</span> kesinlikle beklentilerinizi aşacaktır."
+                </p>
             </div>
+
         </div>
     </section>
 
