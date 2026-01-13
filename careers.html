@@ -202,26 +202,26 @@
                     style="background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); border: 1px solid #eee;">
                     <h3 style="margin-bottom: 30px; font-family: 'Playfair Display', serif;">Genel Başvuru Formu</h3>
                     <form id="careerForm">
-                        <div class="input-group" style="margin-bottom: 30px; position: relative;">
-                            <input type="text" id="career-name" required
-                                style="width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit; font-size: 1rem; background: transparent;">
+                        <div class="career-group" style="margin-bottom: 25px;">
                             <label for="career-name"
-                                style="position: absolute; left: 0; top: 15px; color: #999; pointer-events: none; transition: 0.3s;">Adınız
+                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">Adınız
                                 Soyadınız</label>
+                            <input type="text" id="career-name" required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; background: #fcfcfc;">
                         </div>
-                        <div class="input-group" style="margin-bottom: 30px; position: relative;">
-                            <input type="email" id="career-email" required
-                                style="width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit; font-size: 1rem; background: transparent;">
+                        <div class="career-group" style="margin-bottom: 25px;">
                             <label for="career-email"
-                                style="position: absolute; left: 0; top: 15px; color: #999; pointer-events: none; transition: 0.3s;">E-posta
+                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">E-posta
                                 Adresiniz</label>
+                            <input type="email" id="career-email" required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; background: #fcfcfc;">
                         </div>
-                        <div class="input-group" style="margin-bottom: 30px;">
-                            <label
-                                style="display: block; font-size: 0.85rem; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600;">İlgilendiğiniz
+                        <div class="career-group" style="margin-bottom: 25px;">
+                            <label for="department"
+                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">İlgilendiğiniz
                                 Departman</label>
                             <select id="department"
-                                style="width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit; background: transparent; color: #555; cursor: pointer;">
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; background: #fcfcfc; color: #555; cursor: pointer;">
                                 <option value="satis">Satış & Pazarlama</option>
                                 <option value="teknik">Teknik Servis</option>
                                 <option value="logistik">Lojistik & Depo</option>
@@ -229,15 +229,15 @@
                                 <option value="barista">Eğitim & Barista</option>
                             </select>
                         </div>
-                        <div class="input-group" style="margin-bottom: 30px; position: relative;">
-                            <textarea id="career-message" required
-                                style="width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit; font-size: 1rem; min-height: 80px; resize: vertical; background: transparent;"></textarea>
+                        <div class="career-group" style="margin-bottom: 30px;">
                             <label for="career-message"
-                                style="position: absolute; left: 0; top: 15px; color: #999; pointer-events: none; transition: 0.3s;">Kendinizden
+                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">Kendinizden
                                 Bahsedin</label>
+                            <textarea id="career-message" required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; min-height: 100px; resize: vertical; background: #fcfcfc;"></textarea>
                         </div>
                         <button type="submit" class="btn-primary"
-                            style="width: 100%; padding: 20px; cursor: pointer;">BAŞVURU
+                            style="width: 100%; padding: 20px; cursor: pointer; border: none; border-radius: 10px;">BAŞVURU
                             GÖNDER</button>
                     </form>
                 </div>
