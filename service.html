@@ -220,58 +220,133 @@
     </header>
 
     <!-- 3 Modern Service Cards Section -->
-    <section class="section" style="padding: 100px 0; background: #fafafa;">
+    <section class="section"
+        style="padding: 0; background: var(--primary-dark); border-bottom: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
-            <div class="service-grid reveal">
+            <div class="service-nav-grid reveal">
 
                 <!-- Card 1: Clickable -> Scrolls to Details -->
-                <a href="#hersey-dahil" class="service-card-link">
-                    <div class="service-card">
-                        <div class="card-icon-wrapper">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
+                <!-- Card 1: Clickable -> Scrolls to Details -->
+                <a href="#hersey-dahil" class="service-nav-item">
+                    <div class="nav-item-content">
+                        <i class="fas fa-clipboard-check nav-icon"></i>
                         <h3>Herşey Dahil</h3>
-                        <p>Konseptimize ve servis hizmetlerimize ait tüm bakım ve onarım maliyetleri paketinize
-                            dahildir. Ekstra sürprizlerle karşılaşmazsınız.</p>
-                        <span
-                            style="margin-top:auto; color:var(--accent-gold); font-size:0.9rem; font-weight:600;">Detaylar
-                            <i class="fas fa-arrow-down"></i></span>
+                        <p>Tüm bakım ve onarım maliyetleri pakete dahil.</p>
+                        <span class="nav-arrow"><i class="fas fa-chevron-down"></i></span>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
-                <a href="#yerinde-servis" class="service-card-link">
-                    <div class="service-card">
-                        <div class="card-icon-wrapper">
-                            <i class="fas fa-truck-fast"></i>
-                        </div>
+                <!-- Card 2 -->
+                <a href="#yerinde-servis" class="service-nav-item">
+                    <div class="nav-item-content">
+                        <i class="fas fa-truck-fast nav-icon"></i>
                         <h3>Hızlı Yerinde Servis</h3>
-                        <p>Acil durumlarda uzman teknisyenlerimizle, sorunu yerinde ve hızlı bir şekilde çözerek
-                            işinizin devamlılığını sağlıyoruz.</p>
-                        <span
-                            style="margin-top:auto; color:var(--accent-gold); font-size:0.9rem; font-weight:600;">Detaylar
-                            <i class="fas fa-arrow-down"></i></span>
+                        <p>Uzman teknisyenlerimizle yerinde çözüm.</p>
+                        <span class="nav-arrow"><i class="fas fa-chevron-down"></i></span>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
-                <a href="#acil-durum" class="service-card-link">
-                    <div class="service-card">
-                        <div class="card-icon-wrapper">
-                            <i class="fas fa-headset"></i>
-                        </div>
+                <!-- Card 3 -->
+                <a href="#acil-durum" class="service-nav-item">
+                    <div class="nav-item-content">
+                        <i class="fas fa-headset nav-icon"></i>
                         <h3>Haftanın 7 Günü</h3>
-                        <p>Acil servis hattımız, haftanın 7 günü kesintisiz olarak hizmetinizdedir. Teknik ekibimiz her
-                            zaman bir telefon uzağınızda.</p>
-                        <span
-                            style="margin-top:auto; color:var(--accent-gold); font-size:0.9rem; font-weight:600;">Detaylar
-                            <i class="fas fa-arrow-down"></i></span>
+                        <p>Kesintisiz 7/24 acil servis hattı.</p>
+                        <span class="nav-arrow"><i class="fas fa-chevron-down"></i></span>
                     </div>
                 </a>
 
             </div>
         </div>
     </section>
+
+    <style>
+        /* New Service Nav Styles */
+        .service-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .service-nav-item {
+            text-decoration: none;
+            color: #fff;
+            padding: 50px 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-nav-item:last-child {
+            border-right: none;
+        }
+
+        .service-nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-nav-item:hover .nav-icon {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .nav-item-content {
+            text-align: center;
+        }
+
+        .nav-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-nav-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ffffff;
+            /* Contrast fix */
+        }
+
+        .service-nav-item p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .nav-arrow {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-nav-item:hover .nav-arrow {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .service-nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-nav-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 30px;
+            }
+        }
+    </style>
 
 
     <!-- 'Herşey Dahil' Detailed Feature Section -->

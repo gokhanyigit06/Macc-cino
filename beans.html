@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahve Çekirdekleri | Barista Company</title>
+    <meta name="description"
+        content="Mac&Cino Premium Kahve Çekirdekleri: Dünyanın en seçkin bölgelerinden özenle seçilmiş, özel İtalyan usulü kavrulmuş kahve çekirdekleri.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Bu sayfa için özel stil düzeltmeleri service.html'den miras alındı */
+        .page-hero {
+            display: none;
+        }
+
+        /* Navbar solid background */
+        .navbar.header-solid {
+            position: relative;
+            background-color: var(--primary-dark);
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Overlay */
+        .beans-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+
+        .beans-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Feature List Styling for Beans */
+        .bean-feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .bean-feature-list li i {
+            color: var(--accent-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/favicon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay">
+        <span class="close-search">&times;</span>
+        <div class="search-content">
+            <input type="text" placeholder="Ne aramıştınız? (örn: Espresso, Latte, Çekirdek)">
+            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar (Solid) -->
+    <nav class="navbar header-solid" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <a href="products.html" class="nav-link">Kahve Makineleri</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Gastronomi</a>
+                        <a href="#">Ofis</a>
+                        <a href="#">Otel - Pansiyon</a>
+                        <a href="#">Fitness - Sağlık</a>
+                        <a href="#">Benzin İstasyonu</a>
+                        <a href="#">Mağaza Zincirleri</a>
+                    </div>
+                </div>
+                <!-- Konseptimiz -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="concept.html">Kahve Konseptimiz</a>
+                        <a href="service.html">Teknik Servis</a>
+                        <a href="beans.html">Kahve Çekirdekleri</a>
+                        <a href="#">Kahve Spesiyalleri</a>
+                        <a href="#">Trend İçecekler</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#iletisim-form" class="nav-link">İletişim</a>
+                </div>
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+            </div>
+
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sleek Beans Hero -->
+    <header
+        style="position: relative; height: 60vh; min-height: 500px; background: url('assets/hero_bg.png') center/cover fixed no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="beans-hero-overlay"></div>
+        <div class="container beans-hero-content reveal">
+            <span
+                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Hasattan
+                Fincana En İyi Kahve</span>
+            <h1 style="color: #fff; font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; line-height: 1.2;">Premium
+                Kahve İçin<br>Kahve Çekirdekleri</h1>
+            <p
+                style="font-size: 1.3rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                Sadece Mac&Cino kahvesini denediğinizde kalitenin ne olduğunu anlarsınız. En iyi Kahve Çekirdekleri ve
+                özenli nazik işleme - size verdiğimiz Söz.
+            </p>
+        </div>
+    </header>
+
+    <!-- Premium Kahve Kalitesi Section -->
+    <section class="section features-split" style="padding: 100px 0;">
+        <div class="container">
+            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Image Left (Placeholder: Cafe Atmosphere) -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="position: absolute; bottom: -20px; left: -20px; width: 100px; height: 100px; background: url('assets/pattern_dots.png') repeat; opacity: 0.5;">
+                    </div>
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(-2deg);">
+                        <img src="assets/cafe_interior.png" alt="Premium Kahve Deneyimi"
+                            style="width: 100%; height: auto; display: block;">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="feature-text">
+                    <span
+                        style="color: var(--accent-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; display:block; margin-bottom: 15px;">MÜKEMMELLİK
+                        TUTKUSU</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 30px;">Premium Kahve
+                        Kalitesi</h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        En başından beri seçiciyiz. Çünkü misafirlerin sadık müşterilere dönüşmesini istiyoruz.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Dünyanın en seçkin Kahve yetiştirme bölgelerinden elde edilen çekirdekleri kullanıyoruz. Daha
+                        olgun, dengeli ve çok katmanlı bir Aroma için geliştirilmiş <strong>Premium kahve
+                            Konseptleri</strong> sunuyoruz.
+                    </p>
+
+                    <ul class="bean-feature-list">
+                        <li>
+                            <i class="fas fa-fire-burner"></i>
+                            <span>İtalya'da markamıza özel geliştirilen "Kavurma yöntemi".</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-double"></i>
+                            <span>Fincanda tazelik ve kalite garantisi.</span>
+                        </li>
+                    </ul>
+
+                    <div
+                        style="background: var(--primary-dark); color: #fff; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; font-weight: 500;">
+                            ✨ En iyi Kahvemiz, kavurmadan sonra en geç on gün içinde Müşterilerimize ulaştırılır – bu
+                            farkı tadında hissedersiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Özel Kavurma Yöntemi Section -->
+    <section class="section features-split" style="background-color: #fafafa; padding: 100px 0;">
+        <div class="container">
+            <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Text Left -->
+                <div class="feature-text">
+                    <span
+                        style="color: var(--accent-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; display:block; margin-bottom: 15px;">USTALIK
+                        ESERİ</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 30px;">Özel Kavurma
+                        Yöntemi<br><span style="font-weight:400; font-size:2rem;">En İyi Kahve</span></h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Mac&Cino Kahve harmanlarımız, <strong>tamburlu kavurma makinelerinde</strong> uygulanan nazik ve
+                        uzun süreli kavurma yöntemi ile kavrulur.
+                    </p>
+
+                    <ul class="bean-feature-list">
+                        <li>
+                            <i class="fas fa-leaf"></i>
+                            <span>Çekirdeğin aroması mükemmel şekilde ortaya çıkar.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-droplet-slash"></i>
+                            <span>Asit oranı azalır ve daha dengeli, sağlıklı bir ürün elde edilir.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <span>Tüm süreçler titizlikle kontrol edilir (ISO ile IFS Sertifikalıdır).</span>
+                        </li>
+                    </ul>
+
+                    <p style="margin-top: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Kavurmadan kısa süre sonra Kahve çekirdekleri günlük olarak tadım testlerinden geçirilir.
+                        Yalnızca bu şekilde fincana kadar uzanan kusursuz lezzeti garanti edebiliriz.
+                    </p>
+                </div>
+
+                <!-- Image Right (Placeholder) -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: url('assets/pattern_dots.png') repeat; opacity: 0.5;">
+                    </div>
+                    <!-- Using machine_detail as placeholder for Roasting Machine -->
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 20px; overflow: hidden; transform: rotate(2deg);">
+                        <img src="assets/machine_detail.png" alt="Özel Kavurma Yöntemi"
+                            style="width: 100%; height: auto; display: block;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Taste Invitation -->
+    <section class="section"
+        style="background: url('assets/hero_bg.png') center/cover fixed no-repeat; padding: 100px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7);"></div>
+        <div class="container reveal" style="position: relative; z-index: 2; text-align: center; color: #fff;">
+            <h2 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Bu Eşsiz Tadı
+                Keşfedin</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px; color: rgba(255,255,255,0.9);">
+                Sizi en yakın şubemize veya showroom'umuza, taze kavrulmuş kahvelerimizi deneyimlemeye davet ediyoruz.
+            </p>
+            <a href="#iletisim-form" class="btn-hero">Tadım Randevusu Alın</a>
+        </div>
+    </section>
+
+    <!-- Support Banner CTA & Contact (Reusing from Service page logic) -->
+
+    <!-- Contact Section -->
+    <section id="iletisim-form" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info-box">
+                    <h3>Bizimle İletişime Geçin</h3>
+                    <p>Kahve çözümünüzü birlikte planlayalım.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="sector">
+                                <option value="" disabled selected>Konu</option>
+                                <option value="satis">Kahve Satın Alma</option>
+                                <option value="tadim">Tadım Etkinliği</option>
+                                <option value="bayilik">Bayilik</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
+                        </div>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="iletisim" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>CUP&CINO</h2>
+                <p>Barista Company</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>7/24 Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@baristacompany.com</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Barista Company. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
