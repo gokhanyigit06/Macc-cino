@@ -387,28 +387,29 @@
                     </ul>
                 </div>
                 <div class="contact-form-box">
-                    <form>
+                    <form id="contactForm">
                         <div class="input-group">
-                            <input type="text" required>
-                            <label>İsim</label>
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
                         </div>
                         <div class="input-group">
-                            <input type="text" required>
-                            <label>Soyisim</label>
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
                         </div>
                         <div class="input-group">
-                            <input type="text" required>
-                            <label>İşletme Adı</label>
+                            <select id="sector">
+                                <option value="" disabled selected>Sektörünüz</option>
+                                <option value="ofis">Ofis</option>
+                                <option value="gastronomi">Gastronomi</option>
+                                <option value="otel">Otel</option>
+                                <option value="diger">Diğer</option>
+                            </select>
                         </div>
                         <div class="input-group">
-                            <input type="email" required>
-                            <label>E-posta Adresiniz</label>
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
                         </div>
-                        <div class="input-group">
-                            <textarea rows="4" required></textarea>
-                            <label>İhtiyaçlarınızdan bahsedin...</label>
-                        </div>
-                        <button type="submit" class="btn-submit">Teklif İste</button>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
                     </form>
                 </div>
             </div>
