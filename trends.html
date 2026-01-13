@@ -151,15 +151,16 @@
             </h2>
 
             <!-- Visual Feature Grid (Replaces Text Wall) -->
+            <!-- Visual Feature Grid (Replaces Text Wall) -->
             <div class="grid-3"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 40px 0 60px; text-align: left;">
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 40px 0 60px; text-align: center;">
 
                 <!-- Card 1: Profit & Seasonality -->
                 <div style="padding: 20px; transition: transform 0.3s;"
                     onmouseover="this.style.transform='translateY(-5px)'"
                     onmouseout="this.style.transform='translateY(0)'">
                     <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                         <i class="fas fa-chart-line" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
                     </div>
                     <h3
@@ -176,7 +177,7 @@
                     onmouseover="this.style.transform='translateY(-5px)'"
                     onmouseout="this.style.transform='translateY(0)'">
                     <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                         <i class="fas fa-glass-cheers" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
                     </div>
                     <h3
@@ -193,7 +194,7 @@
                     onmouseover="this.style.transform='translateY(-5px)'"
                     onmouseout="this.style.transform='translateY(0)'">
                     <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                         <i class="fas fa-magic" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
                     </div>
                     <h3
@@ -218,30 +219,32 @@
             </div>
 
             <div style="margin-top: 60px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-                <div style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: default;"
+                <a href="#ozel-trendler"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
                     onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
                     onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-leaf" style="color: inherit;"></i> <span style="font-weight: 500;">Vegan
-                        Dostu</span>
-                </div>
-                <div style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: default;"
+                    <i class="fas fa-star" style="color: inherit;"></i> <span style="font-weight: 500;">Özel Trend
+                        İçecekler</span>
+                </a>
+                <a href="#chai-latte"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
                     onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
                     onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-snowflake" style="color: inherit;"></i> <span style="font-weight: 500;">Soğuk
-                        Seçenekler</span>
-                </div>
-                <div style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: default;"
+                    <i class="fas fa-mug-hot" style="color: inherit;"></i> <span style="font-weight: 500;">Chai
+                        Latte</span>
+                </a>
+                <a href="#matcha"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
                     onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
                     onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-mug-hot" style="color: inherit;"></i> <span style="font-weight: 500;">Sıcak
-                        Lezzetler</span>
-                </div>
+                    <i class="fas fa-leaf" style="color: inherit;"></i> <span style="font-weight: 500;">Matcha</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Special Trend Drinks Section (Dark Theme) -->
-    <section class="section features-split"
+    <section id="ozel-trendler" class="section features-split"
         style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
         <i class="fas fa-glass-martini-alt"
             style="position: absolute; right: -50px; top: 50px; font-size: 25rem; opacity: 0.03; color: #fff; transform: rotate(15deg);"></i>
@@ -307,7 +310,7 @@
     </section>
 
     <!-- Chai Latte Section (Light Theme) -->
-    <section class="section features-split" style="padding: 100px 0; background-color: #fff;">
+    <section id="chai-latte" class="section features-split" style="padding: 100px 0; background-color: #fff;">
         <div class="container">
             <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
 
@@ -346,7 +349,7 @@
     </section>
 
     <!-- Matcha Section (Dark Theme) -->
-    <section class="section features-split"
+    <section id="matcha" class="section features-split"
         style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
         <i class="fas fa-leaf"
             style="position: absolute; left: -50px; bottom: -50px; font-size: 25rem; opacity: 0.03; color: #fff;"></i>
