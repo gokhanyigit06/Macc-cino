@@ -1679,7 +1679,7 @@ ul {
 }
 
 .service-bg {
-    background: url('assets/service_vehicle.png') no-repeat center center/cover;
+    background: url('assets/misc/service_vehicle.png') no-repeat center center/cover;
 }
 
 .service-content .subtitle {
