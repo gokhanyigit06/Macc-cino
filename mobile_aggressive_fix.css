@@ -1,0 +1,234 @@
+/* ===================================
+   AGGRESSIVE MOBILE FIX FOR SUB-PAGES
+   Gastronomy, Bakery, Office, etc.
+   =================================== */
+
+@media (max-width: 768px) {
+
+    /* 1. FORCE BODY TO NOT OVERFLOW */
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* 2. HERO SECTION OVERRIDES - Force mobile-friendly heights */
+    .hero-section,
+    header.hero-section,
+    header[style*="height: 75vh"],
+    header[style*="height:75vh"] {
+        height: auto !important;
+        min-height: 450px !important;
+        padding: 120px 20px 60px 20px !important;
+    }
+
+    /* 3. HERO TEXT - Force smaller font sizes */
+    .hero-section h1,
+    header h1[style*="font-size: 4.5rem"],
+    header h1[style*="font-size:4.5rem"] {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        padding: 0 10px !important;
+    }
+
+    .hero-section span[style*="font-size: 1.1rem"],
+    .hero-section span[style*="letter-spacing: 4px"] {
+        font-size: 0.8rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .hero-section p[style*="font-size: 1.5rem"],
+    header p[style*="font-size: 1.5rem"] {
+        font-size: 1rem !important;
+        padding: 0 15px !important;
+        max-width: 100% !important;
+    }
+
+    /* 4. ALL SECTIONS - Reduce padding */
+    section[style*="padding: 100px 0"],
+    .section[style*="padding: 100px 0"] {
+        padding: 40px 0 !important;
+    }
+
+    section[style*="padding: 80px 0"] {
+        padding: 40px 0 !important;
+    }
+
+    /* 5. GRID OVERRIDES - Force single column */
+    .grid-2,
+    .grid-3,
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: repeat"],
+    div.grid-2,
+    div.grid-3,
+    [class*="grid"] {
+        grid-template-columns: 1fr !important;
+        display: grid !important;
+        gap: 20px !important;
+    }
+
+    /* 6. HEADINGS - Reduce all heading sizes */
+    h2[style*="font-size: 3rem"],
+    h2[style*="font-size:3rem"],
+    h2[style*="font-size: 3.5rem"] {
+        font-size: 1.8rem !important;
+        padding: 0 15px !important;
+    }
+
+    h3[style*="font-size: 2rem"],
+    h3[style*="font-size:2rem"],
+    h3[style*="font-size: 1.8rem"] {
+        font-size: 1.3rem !important;
+    }
+
+    /* 7. IMAGES - Force responsive */
+    .grid-2 img,
+    .grid-3 img,
+    div[style*="height: 500px"] img,
+    img[style*="width: 100%"] {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* 8. IMAGE CONTAINERS - Remove fixed heights */
+    div[style*="height: 500px"],
+    div[style*="height:500px"] {
+        height: auto !important;
+        min-height: 250px !important;
+        max-height: 350px !important;
+    }
+
+    /* 9. DISABLE TRANSFORMS ON MOBILE */
+    div[style*="transform: rotate"],
+    div[style*="transform:rotate"],
+    .grid-2>div[onmouseover],
+    .grid-3>div[onmouseover] {
+        transform: none !important;
+    }
+
+    /* 10. PADDING OVERRIDES */
+    div[style*="padding: 50px"],
+    div[style*="padding:50px"],
+    div[style*="padding: 40px 30px"] {
+        padding: 25px 15px !important;
+    }
+
+    /* 11. CONTAINER FIX */
+    .container {
+        padding: 0 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 12. SPECIFIC FIXES FOR PRICING CARDS */
+    div[style*="background: linear-gradient"][style*="url('assets/"] {
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 20px 15px !important;
+    }
+
+    /* 13. TEXT PARAGRAPHS */
+    p[style*="font-size: 1.25rem"],
+    p[style*="font-size: 1.2rem"] {
+        font-size: 1rem !important;
+        padding: 0 10px !important;
+    }
+
+    /* 14. MAX-WIDTH OVERRIDES */
+    div[style*="max-width: 1100px"],
+    div[style*="max-width: 900px"],
+    div[style*="max-width: 850px"],
+    div[style*="max-width: 800px"] {
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    /* 15. GAP REDUCTIONS */
+    div[style*="gap: 40px"],
+    div[style*="gap:40px"],
+    div[style*="gap: 60px"] {
+        gap: 20px !important;
+    }
+
+    /* 16. NAVBAR - Ensure it works properly */
+    .navbar {
+        padding: 10px 0 !important;
+    }
+
+    .mobile-toggle {
+        display: block !important;
+        z-index: 1001 !important;
+    }
+
+    /* 17. HIDE SCROLL INDICATORS ON MOBILE */
+    a[href="#intro"][style*="position: absolute"] {
+        display: none !important;
+    }
+
+    /* 18. CONSULTANCY/CTA BARS */
+    .consultancy-wrapper,
+    div[style*="display: flex"][style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    /* 19. BUTTONS */
+    a[class*="btn"],
+    .btn-primary,
+    .btn-secondary {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 10px auto !important;
+        display: block !important;
+        text-align: center !important;
+    }
+
+    /* 20. FEATURE BOXES/CARDS */
+    div[style*="box-shadow"][style*="padding: 40px"] {
+        padding: 20px 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 21. ICON CIRCLES */
+    div[style*="width: 80px"][style*="height: 80px"][style*="border-radius: 50%"] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    div[style*="width: 70px"][style*="height: 70px"][style*="border-radius: 50%"] {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    /* 22. LISTS AND UL */
+    ul[style*="padding: 0"],
+    ul[style*="list-style: none"] {
+        padding: 0 10px !important;
+    }
+
+    li[style*="padding: 10px 0"] {
+        padding: 8px 0 !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* EXTRA SMALL DEVICES (320px and below) */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.6rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .container {
+        padding: 0 10px !important;
+    }
+}
