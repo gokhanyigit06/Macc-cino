@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Settings {
+  key   String @id
+  value String // JSON string for flexibility
+}
+
+model BlogPost {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  category    String   // gastronomy, office, hotel, etc.
+  imageUrl    String?
+  features    String?  // JSON string or comma separated
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PageVisit {
+  id        Int      @id @default(autoincrement())
+  pageUrl   String
+  visitorIp String?  // Hashed for privacy
+  userAgent String?
+  createdAt DateTime @default(now())
+}

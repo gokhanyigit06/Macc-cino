@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Dynamic Settings (API) ---
+    fetch('/api/settings')
+        .then(res => res.json())
+        .then(data => {
+            if (data.primaryColor) document.documentElement.style.setProperty('--primary-dark', data.primaryColor);
+            if (data.accentColor) document.documentElement.style.setProperty('--accent-gold', data.accentColor);
+            // Logo logic here if needed
+        })
+        .catch(err => console.log('Settings API not available yet, using defaults.'));
+
     // Sticky Navbar Logic
     const navbar = document.getElementById('navbar');
 

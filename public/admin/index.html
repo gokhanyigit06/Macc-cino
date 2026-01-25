@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macc-cino Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2C241B;
+            --accent: #D4AF37;
+            --light: #f4f4f4;
+            --text: #333;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background: #f9f9f9;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-header h2 {
+            margin: 0;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .nav-links li {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-links li:hover,
+        .nav-links li.active {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: var(--accent);
+        }
+
+        .nav-links li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        /* Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button.btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button.btn:hover {
+            opacity: 0.9;
+        }
+
+        button.btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Admin Girişi</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Şifre" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Macc-cino</h2>
+        </div>
+        <ul class="nav-links">
+            <li class="active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</li>
+            <li onclick="showSection('products')"><i class="fas fa-coffee"></i> Ürünler</li>
+            <li onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog</li>
+            <li onclick="showSection('settings')"><i class="fas fa-cog"></i> Ayarlar</li>
+            <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> Çıkış</li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+        <header>
+            <h1 id="page-title">Dashboard</h1>
+            <div class="user-info">Admin</div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Toplam Ziyaret (Bugün)</h3>
+                    <div class="value" id="stat-daily">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Aktif Ürünler</h3>
+                    <div class="value" id="stat-products">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Blog Yazıları</h3>
+                    <div class="value" id="stat-blog">0</div>
+                </div>
+            </div>
+            <div class="chart-container"
+                style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3>Son 7 Günlük Trafik</h3>
+                <div style="height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    Grafik Yeri (Chart.js Eklenecek)
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div id="products" class="section">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h3>Ürün Listesi</h3>
+                <button class="btn" onclick="openProductModal()">+ Yeni Ürün</button>
+            </div>
+            <div id="product-list" class="stats-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings" class="section">
+            <div style="background: #fff; padding: 30px; border-radius: 8px;">
+                <h3>Site Ayarları</h3>
+                <form id="settingsForm">
+                    <div class="form-group">
+                        <label>Site Logosu (URL)</label>
+                        <input type="text" id="setting-logo">
+                    </div>
+                    <div class="form-group">
+                        <label>Ana Renk (Primary)</label>
+                        <input type="color" id="setting-primary" value="#2C241B">
+                    </div>
+                    <div class="form-group">
+                        <label>Vurgu Rengi (Accent)</label>
+                        <input type="color" id="setting-accent" value="#D4AF37">
+                    </div>
+                    <button type="submit" class="btn">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple Navigation
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            document.getElementById('page-title').innerText = id.charAt(0).toUpperCase() + id.slice(1);
+        }
+
+        // Mock Login
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In real app, call API
+            document.getElementById('login-overlay').style.display = 'none';
+        });
+
+        function logout() {
+            document.getElementById('login-overlay').style.display = 'flex';
+        }
+
+        // Mock Data Loading (Placeholder)
+        // fetch('/api/stats').then...
+    </script>
+</body>
+
+</html>

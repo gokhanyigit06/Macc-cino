@@ -1,20 +1,16 @@
-# Statik içerik sunumu için hafif nginx imajını kullan
-FROM nginx:alpine
+FROM node:18-alpine
 
-# Çalışma dizinini ayarla
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 
-# Varsayılan nginx statik varlıklarını temizle
-RUN rm -rf ./*
+COPY package*.json ./
 
-# Proje dosyalarını kopyala
+RUN npm install
+
 COPY . .
 
-# Nginx yapılandırmasını kopyala
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Generate Prisma Client
+RUN npx prisma generate
 
-# Port 80'i dışa aç
 EXPOSE 80
 
-# Nginx'i başlat
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
