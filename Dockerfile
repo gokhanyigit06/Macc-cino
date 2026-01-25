@@ -4,12 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm ci
 
 COPY . .
 
-# Generate Prisma Client
-RUN npx prisma generate
+# Generate Prisma Client using local binary
+RUN ./node_modules/.bin/prisma generate
 
 EXPOSE 80
 
