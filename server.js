@@ -20,7 +20,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // Static Files
-app.use(express.static(path.join(__dirname, 'public')));
+// Clean URL Middleware
+app.use((req, res, next) => {
+  // If request ends with .html, redirect to extensionless version
+  if (req.path.endsWith('.html')) {
+    const newPath = req.path.slice(0, -5);
+    return res.redirect(301, newPath);
+  }
+  next();
+});
+
+// Serve static files but allow extensionless access
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
 
 // API Routes Placeholder
 // app.use('/api/settings', require('./routes/settings'));
