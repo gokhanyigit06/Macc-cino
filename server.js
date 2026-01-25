@@ -30,8 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/api/auth', require('./routes/auth'));
 
 // Catch-all for SPA (Admin Panel) or 404
-// Catch-all for SPA (Admin Panel) or 404
-app.get(['/admin', '/admin/*'], (req, res) => {
+app.get(['/admin', '/admin/:path*'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
 
