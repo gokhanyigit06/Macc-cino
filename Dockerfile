@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -6,10 +6,13 @@ COPY package*.json ./
 
 RUN npm ci
 
+# Install Prisma CLI globally to ensure availability
+RUN npm install -g prisma@5.10.2
+
 COPY . .
 
-# Generate Prisma Client using local binary
-RUN ./node_modules/.bin/prisma generate
+# Generate Prisma Client
+RUN prisma generate
 
 EXPOSE 80
 
