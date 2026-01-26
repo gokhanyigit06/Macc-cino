@@ -16,4 +16,5 @@ RUN npx prisma generate
 
 EXPOSE 80
 
-CMD ["node", "server.js"]
+# Run migrations and start the server
+CMD ["sh", "-c", "npx prisma migrate deploy && node server.js"]
