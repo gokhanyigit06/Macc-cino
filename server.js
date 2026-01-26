@@ -31,7 +31,14 @@ app.use((req, res, next) => {
 });
 
 // Serve static files but allow extensionless access
-app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, 'public'), {
+  extensions: ['html'],
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    }
+  }
+}));
 
 // API Routes
 app.use('/api/auth', require('./routes/auth').router);
