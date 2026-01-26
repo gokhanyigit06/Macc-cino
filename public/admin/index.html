@@ -8,9 +8,8 @@
     <!-- Quill Theme -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* [Previous styles remain same...] */
-        /* ... keeping existing styles ... */
         :root {
             --primary: #2C241B;
             --accent: #D4AF37;
@@ -18,19 +17,233 @@
             --text: #333;
         }
 
-        /* ... (skipping some existing CSS to save tokens, assuming tool handles diff correctly - wait, I need to be careful with replace_file_content if I don't see the context. The user provided full content previously. I will try to target specific blocks or replace the whole file if safer. Replacing whole file is safer to ensure Quill integration.)
-           Actually, the instruction says "Replace... content". I should probably do chunks.
-           Chunk 1: Add Quill CSS in head
-           Chunk 2: Update form inputs
-           Chunk 3: Update JS
-        */
-    </style>
-    <!-- Just replacing head to include Quill -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <style>
-        /* ... existing styles ... */
-        /* adding image preview style */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background: #f9f9f9;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-header h2 {
+            margin: 0;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .nav-links li {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-links li:hover,
+        .nav-links li.active {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: var(--accent);
+        }
+
+        .nav-links li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        /* Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button.btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button.btn:hover {
+            opacity: 0.9;
+        }
+
+        button.btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        button.btn-secondary {
+            background: #95a5a6;
+            color: #fff;
+        }
+
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        /* Modal for Add/Edit */
+        #crud-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 600px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        /* Image Preview */
         .img-preview {
             max-width: 100px;
             max-height: 100px;
@@ -39,241 +252,11 @@
             display: none;
         }
 
+        /* Quill Editor */
         .ql-editor {
             min-height: 150px;
             background: #fff;
         }
-    </style>
-    :root {
-    --primary: #2C241B;
-    --accent: #D4AF37;
-    --light: #f4f4f4;
-    --text: #333;
-    }
-
-    body {
-    font-family: sans-serif;
-    margin: 0;
-    display: flex;
-    height: 100vh;
-    background: #f9f9f9;
-    }
-
-    /* Sidebar */
-    .sidebar {
-    width: 250px;
-    background: var(--primary);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    }
-
-    .sidebar-header {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .sidebar-header h2 {
-    margin: 0;
-    color: var(--accent);
-    }
-
-    .nav-links {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    }
-
-    .nav-links li {
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-left: 4px solid transparent;
-    }
-
-    .nav-links li:hover,
-    .nav-links li.active {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-color: var(--accent);
-    }
-
-    .nav-links li i {
-    margin-right: 10px;
-    width: 20px;
-    text-align: center;
-    color: var(--accent);
-    }
-
-    /* Main Content */
-    .main-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    }
-
-    header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    }
-
-    h1 {
-    color: var(--primary);
-    margin: 0;
-    }
-
-    /* Cards */
-    .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-    }
-
-    .stat-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-bottom: 3px solid var(--accent);
-    position: relative;
-    }
-
-    .stat-card h3 {
-    margin: 0 0 10px 0;
-    color: #666;
-    font-size: 0.9rem;
-    }
-
-    .stat-card .value {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary);
-    }
-
-    .action-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-    }
-
-    /* Sections */
-    .section {
-    display: none;
-    }
-
-    .section.active {
-    display: block;
-    animation: fadeIn 0.3s;
-    }
-
-    @keyframes fadeIn {
-    from {
-    opacity: 0;
-    transform: translateY(10px);
-    }
-
-    to {
-    opacity: 1;
-    transform: translateY(0);
-    }
-    }
-
-    /* Forms */
-    .form-group {
-    margin-bottom: 15px;
-    }
-
-    label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    }
-
-    input,
-    select,
-    textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    }
-
-    button.btn {
-    background: var(--accent);
-    color: var(--primary);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    }
-
-    button.btn:hover {
-    opacity: 0.9;
-    }
-
-    button.btn-danger {
-    background: #e74c3c;
-    color: #fff;
-    }
-
-    button.btn-secondary {
-    background: #95a5a6;
-    color: #fff;
-    }
-
-    /* Login Overlay */
-    #login-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .login-box {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    width: 350px;
-    text-align: center;
-    }
-
-    .login-box h2 {
-    margin-bottom: 20px;
-    color: var(--primary);
-    }
-
-    /* Modal for Add/Edit */
-    #crud-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 500;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .modal-content {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    width: 400px;
-    max-width: 90%;
-    }
     </style>
 </head>
 
@@ -299,7 +282,7 @@
     <div id="crud-modal">
         <div class="modal-content">
             <h3 id="modal-title">Ekle/Düzenle</h3>
-            <form id="crudForm">
+            <form id="crudForm" enctype="multipart/form-data">
                 <input type="hidden" id="crud-id">
                 <input type="hidden" id="crud-type"> <!-- product or blog -->
 
@@ -310,7 +293,7 @@
 
                 <div class="form-group">
                     <label>Açıklama / İçerik</label>
-                    <textarea id="crud-desc" rows="4" required></textarea>
+                    <div id="editor-container"></div>
                 </div>
 
                 <div class="form-group" id="group-category">
@@ -328,8 +311,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Görsel URL</label>
-                    <input type="text" id="crud-image" placeholder="assets/products/product1.png">
+                    <label>Görsel</label>
+                    <input type="file" id="crud-image-file" accept="image/*">
+                    <img id="crud-image-preview" class="img-preview" src="">
+                    <input type="hidden" id="crud-image-existing">
                 </div>
 
                 <div style="display:flex; justify-content: space-between;">
@@ -412,10 +397,11 @@
         <div id="settings" class="section">
             <div style="background: #fff; padding: 30px; border-radius: 8px;">
                 <h3>Site Ayarları</h3>
-                <form id="settingsForm">
+                <form id="settingsForm" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label>Site Logosu (URL)</label>
-                        <input type="text" id="setting-logo" name="site_logo">
+                        <label>Site Logosu</label>
+                        <input type="file" id="setting-logo-file" accept="image/*">
+                        <img id="setting-logo-preview" class="img-preview" src="">
                     </div>
                     <div class="form-group">
                         <label>Ana Renk (Primary)</label>
@@ -432,7 +418,13 @@
         </div>
     </main>
 
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
+        // Init Quill
+        var quill = new Quill('#editor-container', {
+            theme: 'snow'
+        });
+
         let token = localStorage.getItem('admin_token');
 
         // Initial Check
@@ -510,12 +502,12 @@
                 const products = await res.json();
                 container.innerHTML = products.map(p => `
                     <div class="stat-card">
-                        <img src="${p.imageUrl}" style="height: 50px; float:right;">
+                        <img src="/${p.imageUrl || 'assets/misc/coffee_bean_icon.png'}" style="height: 50px; float:right;">
                         <h3>${p.category}</h3>
                         <div class="value" style="font-size: 1.2rem;">${p.name}</div>
                         <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">${p.description}</p>
                         <div class="action-buttons">
-                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("product", ${JSON.stringify(p)})'>Düzenle</button>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("product", ${JSON.stringify(p).replace(/'/g, "&#39;")})'>Düzenle</button>
                             <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteItem('products', ${p.id})">Sil</button>
                         </div>
                     </div>
@@ -533,12 +525,12 @@
                 const blogs = await res.json();
                 container.innerHTML = blogs.map(b => `
                     <div class="stat-card">
-                        <img src="${b.imageUrl}" style="height: 50px; float:right;">
+                        <img src="/${b.imageUrl || 'assets/misc/coffee_bean_icon.png'}" style="height: 50px; float:right;">
                         <h3>Blog Post</h3>
                         <div class="value" style="font-size: 1.2rem;">${b.title}</div>
-                        <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">${b.content}</p>
+                        <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">(HTML İçerik)</p>
                         <div class="action-buttons">
-                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("blog", ${JSON.stringify(b)})'>Düzenle</button>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("blog", ${JSON.stringify(b).replace(/'/g, "&#39;")})'>Düzenle</button>
                             <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteItem('blog', ${b.id})">Sil</button>
                         </div>
                     </div>
@@ -552,7 +544,10 @@
             try {
                 const res = await fetch('/api/settings');
                 const s = await res.json();
-                if (s.site_logo) document.getElementById('setting-logo').value = s.site_logo;
+                if (s.site_logo) {
+                    document.getElementById('setting-logo-preview').src = '/' + s.site_logo;
+                    document.getElementById('setting-logo-preview').style.display = 'block';
+                }
                 if (s.primary_color) document.getElementById('setting-primary').value = s.primary_color;
                 if (s.accent_color) document.getElementById('setting-accent').value = s.accent_color;
             } catch (err) {
@@ -562,21 +557,24 @@
 
         document.getElementById('settingsForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const data = {
-                site_logo: document.getElementById('setting-logo').value,
-                primary_color: document.getElementById('setting-primary').value,
-                accent_color: document.getElementById('setting-accent').value
-            };
+            const formData = new FormData();
+
+            const fileInput = document.getElementById('setting-logo-file');
+            if (fileInput.files[0]) {
+                formData.append('logo_file', fileInput.files[0]);
+            }
+            formData.append('primary_color', document.getElementById('setting-primary').value);
+            formData.append('accent_color', document.getElementById('setting-accent').value);
 
             await fetch('/api/settings', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(data)
+                body: formData
             });
             document.getElementById('settings-msg').innerText = 'Ayarlar kaydedildi.';
+            loadSettings();
             setTimeout(() => document.getElementById('settings-msg').innerText = '', 3000);
         });
 
@@ -608,17 +606,30 @@
                 document.getElementById('group-features').style.display = 'none';
             }
 
+            // Reset
+            document.getElementById('crudForm').reset();
+            document.getElementById('crud-image-preview').style.display = 'none';
+            quill.setText('');
+
             if (item) {
                 document.getElementById('crud-id').value = item.id;
                 document.getElementById('crud-name').value = item.name || item.title;
-                document.getElementById('crud-desc').value = item.description || item.content;
-                document.getElementById('crud-image').value = item.imageUrl;
+
+                // Set Quill content
+                const content = item.description || item.content || '';
+                quill.clipboard.dangerouslyPasteHTML(0, content);
+
+                if (item.imageUrl) {
+                    document.getElementById('crud-image-preview').src = '/' + item.imageUrl;
+                    document.getElementById('crud-image-preview').style.display = 'block';
+                    document.getElementById('crud-image-existing').value = item.imageUrl;
+                }
+
                 if (type === 'product') {
                     document.getElementById('crud-category').value = item.category;
                     document.getElementById('crud-features').value = item.features;
                 }
             } else {
-                document.getElementById('crudForm').reset();
                 document.getElementById('crud-id').value = '';
             }
         }
@@ -637,34 +648,44 @@
             const url = isEdit ? `${endpoint}/${id}` : endpoint;
             const method = isEdit ? 'PUT' : 'POST';
 
-            const body = {
-                imageUrl: document.getElementById('crud-image').value
-            };
+            const formData = new FormData();
+
+            // Common fields
+            const titleName = document.getElementById('crud-name').value;
+            const contentDesc = quill.root.innerHTML;
+
+            const fileInput = document.getElementById('crud-image-file');
+            if (fileInput.files[0]) {
+                formData.append('image', fileInput.files[0]);
+            } else {
+                const existing = document.getElementById('crud-image-existing').value;
+                if (existing) formData.append('imageUrl', existing);
+            }
 
             if (type === 'product') {
-                body.name = document.getElementById('crud-name').value;
-                body.description = document.getElementById('crud-desc').value;
-                body.category = document.getElementById('crud-category').value;
-                body.features = document.getElementById('crud-features').value;
+                formData.append('name', titleName);
+                formData.append('description', quill.getText()); // Plain text for products
+                formData.append('category', document.getElementById('crud-category').value);
+                formData.append('features', document.getElementById('crud-features').value);
             } else {
-                body.title = document.getElementById('crud-name').value;
-                body.content = document.getElementById('crud-desc').value;
+                formData.append('title', titleName);
+                formData.append('content', contentDesc); // Rich text for blogs
             }
 
             try {
                 await fetch(url, {
                     method: method,
                     headers: {
-                        'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify(body)
+                    body: formData
                 });
                 closeModal();
                 if (type === 'product') loadProducts(); else loadBlogs();
                 loadStats();
             } catch (err) {
                 alert('İşlem başarısız.');
+                console.error(err);
             }
         });
 
