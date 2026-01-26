@@ -135,115 +135,96 @@
 
                 <!-- Left: Contact Information -->
                 <div>
-                    <!-- Contact Cards -->
-                    <div style="margin-bottom: 40px;">
-                        <div style="background: #fff; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 25px; border-left: 4px solid var(--accent-gold); transition: transform 0.3s ease;"
-                            onmouseover="this.style.transform='translateX(10px)'"
-                            onmouseout="this.style.transform='translateX(0)'">
-                            <div style="display: flex; align-items: center; gap: 20px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fas fa-phone-alt"
-                                        style="color: var(--accent-gold); font-size: 1.5rem;"></i>
-                                </div>
-                                <div>
-                                    <h3
-                                        style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px;">
-                                        Telefon</h3>
-                                    <p style="color: #666; font-size: 1.1rem; margin: 0;">0850 123 45 67</p>
-                                    <p style="color: #999; font-size: 0.9rem; margin: 5px 0 0 0;">Hafta içi 09:00 -
-                                        18:00
-                                    </p>
-                                </div>
+                    <!-- Compact Contact Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 25px;">
+                        <!-- Telefon -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                <i class="fas fa-phone-alt" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+                                <h3
+                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
+                                    Telefon</h3>
                             </div>
+                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">0850 123 45 67
+                            </p>
+                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">Hafta içi 09:00 - 18:00</p>
                         </div>
 
-                        <div style="background: #fff; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 25px; border-left: 4px solid var(--accent-gold); transition: transform 0.3s ease;"
-                            onmouseover="this.style.transform='translateX(10px)'"
-                            onmouseout="this.style.transform='translateX(0)'">
-                            <div style="display: flex; align-items: center; gap: 20px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fas fa-envelope"
-                                        style="color: var(--accent-gold); font-size: 1.5rem;"></i>
-                                </div>
-                                <div>
-                                    <h3
-                                        style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px;">
-                                        E-posta</h3>
-                                    <p style="color: #666; font-size: 1.1rem; margin: 0;">bilgi@mac-cino.com</p>
-                                    <p style="color: #999; font-size: 0.9rem; margin: 5px 0 0 0;">24 saat içinde cevap
-                                    </p>
-                                </div>
+                        <!-- E-posta -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                <i class="fas fa-envelope" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+                                <h3
+                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
+                                    E-posta</h3>
                             </div>
+                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">
+                                bilgi@mac-cino.com</p>
+                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">24 saat içinde cevap</p>
                         </div>
 
-                        <div style="background: #fff; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 25px; border-left: 4px solid var(--accent-gold); transition: transform 0.3s ease;"
-                            onmouseover="this.style.transform='translateX(10px)'"
-                            onmouseout="this.style.transform='translateX(0)'">
-                            <div style="display: flex; align-items: center; gap: 20px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fas fa-map-marker-alt"
-                                        style="color: var(--accent-gold); font-size: 1.5rem;"></i>
-                                </div>
-                                <div>
-                                    <h3
-                                        style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px;">
-                                        Adres</h3>
-                                    <p style="color: #666; font-size: 1.1rem; margin: 0; line-height: 1.6;">Maslak Mah.
-                                        Büyükdere Cad. No:123<br>34398 Sarıyer / İstanbul</p>
-                                </div>
+                        <!-- Adres -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                <i class="fas fa-map-marker-alt"
+                                    style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+                                <h3
+                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
+                                    Adres</h3>
                             </div>
+                            <p style="color: #666; font-size: 0.9rem; margin: 0; padding-left: 28px; line-height: 1.5;">
+                                Maslak Mah. Büyükdere Cad. No:123<br>34398 Sarıyer / İstanbul</p>
                         </div>
 
-                        <div style="background: #fff; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-gold); transition: transform 0.3s ease;"
-                            onmouseover="this.style.transform='translateX(10px)'"
-                            onmouseout="this.style.transform='translateX(0)'">
-                            <div style="display: flex; align-items: center; gap: 20px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fab fa-whatsapp"
-                                        style="color: var(--accent-gold); font-size: 1.5rem;"></i>
-                                </div>
-                                <div>
-                                    <h3
-                                        style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px;">
-                                        WhatsApp</h3>
-                                    <p style="color: #666; font-size: 1.1rem; margin: 0;">0555 555 55 55</p>
-                                    <p style="color: #999; font-size: 0.9rem; margin: 5px 0 0 0;">Hızlı destek için</p>
-                                </div>
+                        <!-- WhatsApp -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                <i class="fab fa-whatsapp" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
+                                <h3
+                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
+                                    WhatsApp</h3>
                             </div>
+                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">0555 555 55 55
+                            </p>
+                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">Hızlı destek için</p>
                         </div>
                     </div>
 
-                    <!-- Social Media -->
+                    <!-- Social Media - Compact -->
                     <div
-                        style="background: var(--primary-dark); padding: 35px; border-radius: 15px; text-align: center;">
+                        style="background: var(--primary-dark); padding: 25px; border-radius: 12px; text-align: center;">
                         <h3
-                            style="color: #fff; font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px;">
+                            style="color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 15px;">
                             Bizi Takip Edin</h3>
-                        <div style="display: flex; justify-content: center; gap: 20px;">
+                        <div style="display: flex; justify-content: center; gap: 12px;">
                             <a href="#"
-                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; transition: all 0.3s ease;"
+                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
                                 onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
                                 onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="#"
-                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; transition: all 0.3s ease;"
+                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
                                 onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
                                 onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
                                 <i class="fab fa-facebook"></i>
                             </a>
                             <a href="#"
-                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; transition: all 0.3s ease;"
+                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
                                 onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
                                 onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             <a href="#"
-                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; transition: all 0.3s ease;"
+                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
                                 onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
                                 onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
                                 <i class="fab fa-twitter"></i>
