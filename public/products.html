@@ -34,18 +34,17 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader-content">
-            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon" width="60" height="60">
+            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
             <div class="loader-bar"></div>
         </div>
     </div>
-
     <!-- Product Modal -->
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-grid">
                 <div class="modal-image">
-                    <img id="modalImg" src="" alt="Kahve Makinesi" width="400" height="500">
+                    <img id="modalImg" src="" alt="Kahve Makinesi">
                 </div>
                 <div class="modal-details">
                     <h2 id="modalTitle">Ürün Başlığı</h2>
@@ -60,16 +59,16 @@
             </div>
         </div>
     </div>
-
     <!-- Sticky Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index" class="logo">MAC&Cino</a>
             <div class="nav-links">
+                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products" class="nav-link">Kahve Makineleri</a>
                 </div>
-
+                <!-- Sektör (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -83,7 +82,7 @@
                         <a href="chains">Mağaza Zincirleri</a>
                     </div>
                 </div>
-
+                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -96,15 +95,14 @@
                         <a href="trends">Trend İçecekler</a>
                     </div>
                 </div>
-
+                <!-- Hakkımızda -->
                 <div class="nav-item">
                     <a href="about" class="nav-link">Hakkımızda</a>
                 </div>
-
+                <!-- İletişim -->
                 <div class="nav-item">
                     <a href="contact" class="nav-link">İletişim</a>
                 </div>
-
                 <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
             </div>
             <div class="mobile-toggle">
@@ -112,20 +110,18 @@
             </div>
         </div>
     </nav>
-
     <!-- WhatsApp Button -->
     <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
         <i class="fab fa-whatsapp"></i>
     </a>
-
     <!-- Page Title -->
     <div class="container" style="padding-top: 150px; padding-bottom: 30px; text-align: center;">
         <h1 class="section-title" style="margin-bottom: 20px;">Premium Kahve Çözümleri</h1>
         <p>İhtiyacınıza en uygun modeli seçin.</p>
     </div>
-
     <!-- Layout: Sidebar + Grid -->
     <div class="container product-layout-wrapper">
+        <!-- Sidebar -->
         <aside class="sidebar filter-sidebar">
             <h3>Filtrele</h3>
             <div class="filter-group">
@@ -141,12 +137,12 @@
                 <label><input type="checkbox" class="filter-cb" value="otel" checked> Otel</label>
             </div>
         </aside>
-
+        <!-- Grid -->
         <main class="product-grid-main">
             <div id="productGrid" class="product-grid" style="margin-top:0;">
+                <!-- Product 1 -->
                 <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product1.png" alt="Barista Pro XT" loading="lazy" width="300" height="400"
-                        decoding="async">
+                    <img src="assets/products/product1.png" alt="Barista Pro XT">
                     <div class="product-info">
                         <h3>Barista Pro XT</h3>
                         <p class="category-tag">Espresso / Kafe</p>
@@ -157,10 +153,9 @@
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
+                <!-- Product 2 -->
                 <div class="product-card" data-category="otomatik ofis">
-                    <img src="assets/products/product2.png" alt="Office Master 3000" loading="lazy" width="300"
-                        height="400" decoding="async">
+                    <img src="assets/products/product2.png" alt="Office Master 3000">
                     <div class="product-info">
                         <h3>Office Master 3000</h3>
                         <p class="category-tag">Otomatik / Ofis</p>
@@ -171,10 +166,9 @@
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
+                <!-- Product 3 (New Vending) -->
                 <div class="product-card" data-category="vending otel">
-                    <img src="assets/products/product3.png" alt="VendMax 500" loading="lazy" width="300" height="400"
-                        decoding="async">
+                    <img src="assets/products/product3.png" alt="VendMax 500">
                     <div class="product-info">
                         <h3>VendMax 500</h3>
                         <p class="category-tag">Vending / Otel</p>
@@ -185,10 +179,9 @@
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
+                <!-- Product 4 (White Espresso) -->
                 <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product4.png" alt="Bianco Elegance" loading="lazy" width="300"
-                        height="400" decoding="async">
+                    <img src="assets/products/product4.png" alt="Bianco Elegance">
                     <div class="product-info">
                         <h3>Bianco Elegance</h3>
                         <p class="category-tag">Espresso / Kafe</p>
@@ -199,10 +192,9 @@
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
+                <!-- Product 5 (Compact) -->
                 <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product1.png" alt="Barista Compact" loading="lazy" width="300"
-                        height="400" decoding="async">
+                    <img src="assets/products/product1.png" alt="Barista Compact">
                     <div class="product-info">
                         <h3>Barista Compact</h3>
                         <p class="category-tag">Espresso / Kafe</p>
@@ -215,16 +207,16 @@
             </div>
         </main>
     </div>
-
-    <footer class="footer">
+    <!-- Footer -->
+    <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 <h2>MAC&Cino</h2>
                 <p>Better Coffee. Better Business.</p>
                 <div class="social-links-footer">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-info">
@@ -244,7 +236,6 @@
             <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-
     <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
@@ -255,19 +246,33 @@
                 onclick="document.getElementById('successModal').style.display='none'">Harika</button>
         </div>
     </div>
-
+    <!-- Bottom Slogan Section -->
     <section class="bottom-slogan-section reveal">
         <div class="container">
             <h2>Better Coffee.<br>Better Business.</h2>
             <p>Mac&Cino Barista Company</p>
         </div>
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="50" height="50"
-            style="top: 10%; left: 5%; transform: rotate(-20deg);">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="70" height="70"
-            style="top: 25%; left: 85%; transform: rotate(15deg);">
+        <!-- Floating Decorative Beans -->
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
     </section>
-
+    <!-- Back to Top -->
     <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
     <script src="script.js"></script>
 </body>
 

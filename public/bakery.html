@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preload" as="image" href="assets/bakery/hero.png" fetchpriority="high">
 
     <!-- Fonts & Icons -->
     <link
@@ -28,17 +27,18 @@
 </head>
 
 <body>
-
+    <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
-
+    <!-- Sticky Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index" class="logo">MAC&Cino</a>
             <div class="nav-links">
+                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products" class="nav-link">Kahve Makineleri</a>
                 </div>
-
+                <!-- Sektör (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -52,7 +52,7 @@
                         <a href="chains">Mağaza Zincirleri</a>
                     </div>
                 </div>
-
+                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -65,27 +65,26 @@
                         <a href="trends">Trend İçecekler</a>
                     </div>
                 </div>
-
+                <!-- Hakkımızda -->
                 <div class="nav-item">
                     <a href="about" class="nav-link">Hakkımızda</a>
                 </div>
-
+                <!-- İletişim -->
                 <div class="nav-item">
                     <a href="contact" class="nav-link">İletişim</a>
                 </div>
-
-                <a href="#" id="searchBtn" class="nav-link" aria-label="Arama" style="margin-left: 20px;"><i
-                        class="fas fa-search"></i></a>
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
             </div>
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+    <!-- Hero Section -->
     <header class="hero-section"
         style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/bakery/hero.png'); background-position: center; background-size: cover; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
         <div class="container reveal">
@@ -101,16 +100,16 @@
                 Lezzetli kahve ile satışlarınızı artırın
             </p>
         </div>
-
+        <!-- Scroll Down Indicator -->
         <a href="#intro"
             style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: #fff; animation: bounce 2s infinite;">
             <i class="fas fa-chevron-down" style="font-size: 1.5rem;"></i>
         </a>
     </header>
-
+    <!-- Content Section -->
     <section id="intro" class="section" style="padding: 100px 0; background-color: #fff;">
         <div class="container reveal">
-
+            <!-- 1. Intro & Features Grid -->
             <div style="max-width: 1100px; margin: 0 auto 80px auto; text-align: center;">
                 <h2
                     style="font-size: 3.5rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif; line-height: 1.3;">
@@ -119,16 +118,20 @@
                     Avantajlarını Keşfedin
                 </h2>
                 <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto 50px;"></div>
-
+                <!-- Lead Paragraph (Shortened & Centered) -->
                 <p style="font-size: 1.25rem; color: #666; max-width: 850px; margin: 0 auto 60px; line-height: 1.9;">
-                    Gastronominin taleplerini mükemmel şekilde karşılayan kahve makinelerimizden yararlanın.
+                    Gastronominin taleplerini mükemmel şekilde karşılayan kahve makinelerimiz ve tam otomatik kahve
+                    makinelerimizin sunduğu avantajların keyfini çıkarın. Fırınlar için özel bir avantaj: <strong
+                        style="color: var(--primary-dark);">Hızlı ve kolay kullanım</strong> sayesinde müşterilerinize
+                    maksimum Barista kalitesi sunabilirsiniz  hem de karmaşık bir Barista eğitimi gerekmeden!
                 </p>
-
+                <!-- 3-Column Feature Grid -->
                 <div class="grid-3"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; margin-bottom: 60px;">
-
-                    <div
-                        style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);">
+                    <!-- Feature 1: Speed -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <div
                             style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                             <i class="fas fa-bolt" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
@@ -137,12 +140,14 @@
                             style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
                             Hızlı Servis</h3>
                         <p style="color: #666; line-height: 1.6; font-size: 1rem;">
-                            Yoğun sabah saatlerinde bile anında kahve hazırlayın.
+                            Yoğun sabah saatlerinde bile anında kahve hazırlayın. Self-servis seçeneği ile daha fazla
+                            müşteriye hizmet edin.
                         </p>
                     </div>
-
-                    <div
-                        style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);">
+                    <!-- Feature 2: Quality -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <div
                             style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                             <i class="fas fa-award" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
@@ -151,12 +156,13 @@
                             style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
                             Barista Kalitesi</h3>
                         <p style="color: #666; line-height: 1.6; font-size: 1rem;">
-                            Taze ekmeklerinize yakışan profesyonel kalitede kahve sunun.
+                            Taze ekmek ve croissant'larınızla mükemmel uyum sağlayan profesyonel kalitede kahve sunun.
                         </p>
                     </div>
-
-                    <div
-                        style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);">
+                    <!-- Feature 3: No Training -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <div
                             style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
                             <i class="fas fa-user-check" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
@@ -165,12 +171,11 @@
                             style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
                             Eğitim Gerekmez</h3>
                         <p style="color: #666; line-height: 1.6; font-size: 1rem;">
-                            Kolay kullanılır tam otomatik makineler ile her zaman aynı kalite.
+                            Kolay kullanılır tam otomatik makineler. Karmaşık Barista eğitimi olmadan profesyonel kahve.
                         </p>
                     </div>
-
                 </div>
-
+                <!-- CTA Box -->
                 <div
                     style="background: #fff; padding: 50px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.04); max-width: 850px; margin: 0 auto;">
                     <p
@@ -178,17 +183,18 @@
                         "Fırınınız için en uygun kahve çözümünü birlikte bulalım. Kiralama seçenekleri hakkında bilgi
                         almak için hemen iletişime geçin!"
                     </p>
-                    <a href="#iletisim-form" class="btn-primary"
-                        style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none; display: inline-block;">Hemen
+                    <a href="#iletisim-form" class="btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Hemen
                         Danışın</a>
                 </div>
             </div>
-
+            <!-- 2. Large Image Grid (Side by Side) -->
             <div class="grid-2" style="gap: 40px; margin-bottom: 40px;">
-                <div
-                    style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); height: 500px;">
-                    <img src="assets/bakery/machine_1.png" alt="Fırın Kahve Makinesi" loading="lazy" width="600"
-                        height="500" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- Image 1 -->
+                <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); height: 500px; transform: rotate(-1deg); transition: all 0.5s ease;"
+                    onmouseover="this.style.transform='rotate(0) scale(1.02)'"
+                    onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
+                    <img src="assets/bakery/machine_1.png" alt="Fırın Kahve Makinesi"
+                        style="width: 100%; height: 100%; object-fit: cover;">
                     <div
                         style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);">
                     </div>
@@ -199,10 +205,12 @@
                         <p style="color: rgba(255,255,255,0.8);">Fırınınıza özel çözümler</p>
                     </div>
                 </div>
-                <div
-                    style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); height: 500px;">
-                    <img src="assets/bakery/cup_pastry.png" alt="Kahve ve Kruvasan" loading="lazy" width="600"
-                        height="500" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- Image 2 -->
+                <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); height: 500px; transform: rotate(1deg); transition: all 0.5s ease;"
+                    onmouseover="this.style.transform='rotate(0) scale(1.02)'"
+                    onmouseout="this.style.transform='rotate(1deg) scale(1)'">
+                    <img src="assets/bakery/cup_pastry.png" alt="Kahve ve Kruvasan"
+                        style="width: 100%; height: 100%; object-fit: cover;">
                     <div
                         style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);">
                     </div>
@@ -214,19 +222,336 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
-    <footer class="footer">
+    <!-- Coffee Concept Section -->
+    <section class="section" style="padding: 100px 0; background-color: #f9f9f9;">
+        <div class="container reveal">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2
+                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                    Başarılı Fırıncılar İçin <span style="color: var(--accent-gold); font-style: italic;">Kahve
+                        Konsepti</span>
+                </h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">
+                    Bu sayede müşterileriniz sadık müşterilere dönüşür ve fırın ürünlerinizin satışını artırırsınız.
+                </p>
+            </div>
+            <!-- 2x2 Grid -->
+            <div class="grid-2" style="gap: 50px; margin-bottom: 40px;">
+                <!-- Card 1: Premium Coffee Beans -->
+                <div style="background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 300px; overflow: hidden;">
+                        <img src="assets/bakery/beans.png" alt="Premium Kahve Çekirdekleri"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Premium Kahve Çekirdekleri</h3>
+                        <p style="color: #666; line-height: 1.7;">
+                            Kavrulduktan en geç 10 gün içinde size ulaşan taptaze kahve  müşterilerinizi etkileyen
+                            kalite.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2: Perfect Milk Foam -->
+                <div style="background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 300px; overflow: hidden;">
+                        <img src="assets/bakery/milk_foam.png" alt="Mükemmel Süt Köpüğü"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Mükemmel Süt Köpüğü</h3>
+                        <p style="color: #666; line-height: 1.7;">
+                            Sıcak & soğuk, Latte Art kalitesinde  ek gelir sağlayan popüler trend içecekler için ideal.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3: Morning Atmosphere -->
+                <div style="background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 300px; overflow: hidden;">
+                        <img src="assets/bakery/morning_scene.png" alt="Sabah Atmosferi"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Sabah Ritüeli</h3>
+                        <p style="color: #666; line-height: 1.7;">
+                            Taze hamur işlerinizle mükemmel uyum sağlayan kahve deneyimi  müşterileriniz için unutulmaz
+                            anlar.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 4: Brand Partnership (using existing image) -->
+                <div style="background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 300px; overflow: hidden;">
+                        <img src="assets/bakery/machine_1.png" alt="Profesyonel Destek"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Profesyonel Destek</h3>
+                        <p style="color: #666; line-height: 1.7;">
+                            Kurulum sürecinden günlük operasyona kadar yanınızdayız  başarınız bizim önceliğimiz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="section" style="padding: 100px 0; background-color: #fff;">
+        <div class="container reveal">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2
+                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 50px; font-family: 'Playfair Display', serif;">
+                    Fırınınız İçin <span style="color: var(--accent-gold); font-style: italic;">Hizmetlerimiz</span>
+                </h2>
+                <!-- 3-Column Service Grid -->
+                <div class="grid-3"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; margin-bottom: 60px;">
+                    <!-- Service 1: Consultation -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Danışmanlık Hizmeti</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Fırınlar için hangi kahve makinelerini kullanmak gerektiğini merak ediyorsanız, size telefon
+                            veya e-posta yoluyla memnuniyetle yardımcı oluruz. Burada önemli olan soru, tam otomatik bir
+                            kahve makinesinin mi yoksa espresso makinelerimizden birinin mi sizin için daha uygun
+                            olduğudur.
+                        </p>
+                    </div>
+                    <!-- Service 2: Automatic Machines -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-cogs" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Tam Otomatik Çözümler</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Tam otomatik kahve makinelerimiz, günde 10 fincandan itibaren kullanım için idealdir ve
+                            kolay kullanımı sayesinde self-servis için de mükemmeldir. Bu makineler, basit kullanım ile
+                            müşterilerinize özel bir Barista el yapımı hissi sunar ve fırın işletmeniz için mükemmel bir
+                            çözümdür.
+                        </p>
+                    </div>
+                    <!-- Service 3: Premium Quality -->
+                    <div style="padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);"
+                        onmouseover="this.style.transform='translateY(-10px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-trophy" style="color: var(--accent-gold); font-size: 2.2rem;"></i>
+                        </div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                            Premium Kalite</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1rem; text-align: left;">
+                            Klasik kahve çeşitleri olan espresso, cappuccino ve latte macchiato'nun yanı sıra, fırınlar
+                            için kahve makinelerimizin öne çıkan özelliği <strong
+                                style="color: var(--primary-dark);">mükemmel süt köpüğü</strong>dür. Bu sayede popüler
+                            trend içecekler sunabilir ve ek gelir elde edebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature Image (Horizontal, Smaller) -->
+            <div
+                style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
+                <div style="height: 400px; overflow: hidden;">
+                    <img src="assets/bakery/hero.png" alt="Fırının İçinde Kahve Konsepti Mac&Cino"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="background: var(--primary-dark); padding: 20px; text-align: center;">
+                    <p
+                        style="color: var(--accent-gold); margin: 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic;">
+                        Mac&Cino Fırın Konsepti
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Technology Section -->
+    <section class="section" style="padding: 100px 0; background-color: #f9f9f9;">
+        <div class="container reveal">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2
+                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                    En son teknolojiye sahip <span style="color: var(--accent-gold); font-style: italic;">kahve
+                        sistemlerimizle</span>
+                </h2>
+                <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto;"></div>
+            </div>
+            <!-- 2x2 Grid for 4 Topics -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px;">
+                <!-- Card 1: Fırınlar için Avantajlar -->
+                <div style="background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; padding: 40px 35px;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-bread-slice" style="color: var(--accent-gold); font-size: 2rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 20px; text-align: center;">
+                        Fırınlar için kahve makinelerimizin avantajları
+                    </h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 15px; text-align: left;">
+                        Sabah işe giderken yapılan rutinler günlük yaşamın bir parçasıdır. Ancak olağanüstü lezzetli bir
+                        kahve hızla öne çıkar. Müşterilerinizi bağlayın ve yerel fırınlardan ve diğer rakiplerden gerçek
+                        Barista kalitesiyle ayrışın.
+                    </p>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 15px; text-align: left;">
+                        Ama sadece lezzet deneyimi yeterli değildir. Hızlı kullanım ve bağımsız servis, yoğun saatlerde
+                        müşteri akışını yönetmenin anahtarıdır.
+                    </p>
+                    <p style="color: #666; line-height: 1.7; text-align: left;">
+                        Ödün vermez kalite el ele gider: böylece daha fazla müşteriye premium fiyatlarla hizmet
+                        sunabilirsiniz.
+                    </p>
+                </div>
+                <!-- Card 2: Tam Servis Kapsamı -->
+                <div style="background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; padding: 40px 35px;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-headset" style="color: var(--accent-gold); font-size: 2rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 20px; text-align: center;">
+                        Maksimum performans için tam servis kapsamı
+                    </h3>
+                    <p style="color: #666; line-height: 1.7; text-align: left;">
+                        MAC&CINO kahve konsepti, kahve satışınızı artırmak için ihtiyaç duyduğunuz her şeyi kapsar.
+                        Hizmetlerimiz üç temel üzerine inşa edilmiştir: En iyi kahve, satın alma veya kiralama
+                        seçenekleriyle en modern kahve makineleri ve profesyonel, hızlı teknik servis.
+                    </p>
+                </div>
+                <!-- Card 3: Doğru Makineden Pazarlama Konseptine -->
+                <div style="background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; padding: 40px 35px;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-lightbulb" style="color: var(--accent-gold); font-size: 2rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 20px; text-align: center;">
+                        Doğru makineden pazarlama konseptine
+                    </h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 15px; text-align: left;">
+                        Kahve desteğimiz standart çözümlerin ötesine geçer. Fırınınız için seçtiğimiz kahve makinesine
+                        mükemmel uyum sağlayan kahve çekirdekleri sunuyoruz.
+                    </p>
+                    <p style="color: #666; line-height: 1.7; text-align: left;">
+                        Ayrıca mükemmel eğitilmiş personelimiz, fırınlar için kahve makinelerimizin kurulumu ve
+                        ayarlarında yardımcı olur. Minimum arıza süresi ve maksimum kalite garanti eder.
+                    </p>
+                </div>
+                <!-- Card 4: Fırınınız için Maliyetler -->
+                <div style="background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; padding: 40px 35px;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-hand-holding-usd" style="color: var(--accent-gold); font-size: 2rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 20px; text-align: center;">
+                        Fırınınız için maliyetler
+                    </h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 15px; text-align: left;">
+                        Yüksek cirolu bir marka tercih edin  aylık maliyetlerinizi düşürür ve gelirlerinizi
+                        artırırsınız. Kahve otomatlarımızla fırınınızda tam Barista keyfi yaşayabilirsiniz.
+                    </p>
+                    <p style="color: #666; line-height: 1.7; text-align: left;">
+                        Karar verdiğinizde, profesyonel ve hızlı teknik servis de dahil olur. Servis ekibimiz sizin
+                        yakınınızda bulunur. Sorularınız için bizimle iletişime geçebilirsiniz!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="iletisim-form" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info-box">
+                    <h3>Fırınınız İçin Görüşelim</h3>
+                    <p>Taze ekmek ve lezzetli kahve kombinasyonunu birlikte planlayalım.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> kurumsal@baristacompany.com</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Adınız Soyadınız</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="sector">
+                                <option value="" disabled selected>Sektörünüz</option>
+                                <option value="firin">Fırın</option>
+                                <option value="pastane">Pastane</option>
+                                <option value="cafe">Cafe</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mesajınız</label>
+                        </div>
+                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 <h2>MAC&Cino</h2>
                 <p>Better Coffee. Better Business.</p>
                 <div class="social-links-footer">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-info">
@@ -246,7 +571,7 @@
             <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-
+    <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
             <div class="success-icon"><i class="fas fa-check-circle"></i></div>
@@ -256,19 +581,33 @@
                 onclick="document.getElementById('successModal').style.display='none'">Harika</button>
         </div>
     </div>
-
+    <!-- Bottom Slogan Section -->
     <section class="bottom-slogan-section reveal">
         <div class="container">
             <h2>Better Coffee.<br>Better Business.</h2>
             <p>Mac&Cino Barista Company</p>
         </div>
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="50" height="50"
-            style="top: 10%; left: 5%; transform: rotate(-20deg);">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="70" height="70"
-            style="top: 25%; left: 85%; transform: rotate(15deg);">
+        <!-- Floating Decorative Beans -->
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
     </section>
-
+    <!-- Back to Top -->
     <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
     <script src="script.js"></script>
 </body>
 

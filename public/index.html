@@ -7,35 +7,29 @@
     <title>Profesyonel Kahve Makineleri & Barista Çözümleri | MAC&Cino</title>
     <meta name="description"
         content="İşletmeniz için premium kahve makineleri, taze kahve çekirdekleri ve 7/24 teknik servis çözümleri. MAC&Cino ile kahve kalitenizi artırın.">
-
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" as="image" href="assets/misc/hero_bg.png" fetchpriority="high">
-
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
-
     <!-- SEO & Open Graph -->
     <meta property="og:title" content="Profesyonel Kahve Makineleri & Barista Çözümleri | MAC&Cino">
     <meta property="og:description"
         content="İşletmeniz için premium kahve makineleri, taze kahve çekirdekleri ve 7/24 teknik servis çözümleri. MAC&Cino ile kahve kalitenizi artırın.">
     <meta property="og:image" content="assets/misc/hero_bg.png">
     <meta property="og:type" content="website">
-
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -43,11 +37,10 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader-content">
-            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon" width="60" height="60">
+            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
             <div class="loader-bar"></div>
         </div>
     </div>
-
     <!-- Search Overlay -->
     <div id="searchOverlay">
         <span class="close-search">&times;</span>
@@ -56,20 +49,21 @@
             <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
         </div>
     </div>
-
+    <!-- Sticky Navbar -->
     <!-- Sticky Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index" class="logo">MAC&Cino</a>
             <div class="nav-links">
+                <!-- Mobile Logo (Visible only in mobile menu) -->
                 <div class="mobile-logo">
                     <a href="index">MAC&Cino</a>
                 </div>
-
+                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products" class="nav-link">Kahve Makineleri</a>
                 </div>
-
+                <!-- Sektör (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -83,7 +77,7 @@
                         <a href="chains">Mağaza Zincirleri</a>
                     </div>
                 </div>
-
+                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -96,15 +90,14 @@
                         <a href="trends">Trend İçecekler</a>
                     </div>
                 </div>
-
+                <!-- Hakkımızda -->
                 <div class="nav-item">
                     <a href="about" class="nav-link">Hakkımızda</a>
                 </div>
-
+                <!-- İletişim -->
                 <div class="nav-item">
                     <a href="contact" class="nav-link">İletişim</a>
                 </div>
-
                 <a href="#" id="searchBtn" class="nav-link" aria-label="Arama" style="margin-left: 20px;"><i
                         class="fas fa-search"></i></a>
             </div>
@@ -113,15 +106,13 @@
             </div>
         </div>
     </nav>
-
     <!-- WhatsApp Button -->
     <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
         <i class="fab fa-whatsapp"></i>
     </a>
-
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-bg" style="background-image: url('assets/misc/hero_bg.png');"></div>
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="fade-up hero-title">Kahve Satışlarını Artırmak İçin Doğru Çözüm</h1>
@@ -129,8 +120,7 @@
             <h2 class="fade-up delay-2 hero-subtitle">MAC&CINO BARISTA COMPANY</h2>
         </div>
     </header>
-
-    <!-- Intro Text Section -->
+    <!-- Intro Text Section (New) -->
     <section class="intro-text-section fade-up">
         <div class="container intro-text-wrapper">
             <p><strong>Restoran ya da ofis fark etmez:</strong> kahve makinelerimizle sizi, çalışanlarınız ve
@@ -140,7 +130,6 @@
             <span class="intro-tagline">Afiyet olsun!</span>
         </div>
     </section>
-
     <!-- Machines Section -->
     <main>
         <section id="makineler" class="section">
@@ -148,8 +137,8 @@
                 <h2 class="section-title reveal">Kahve Makinelerimiz</h2>
                 <div class="product-grid reveal">
                     <div class="product-card">
-                        <img src="assets/products/product1.png" alt="Barista Pro XT" loading="lazy" width="300"
-                            height="400" decoding="async">
+                        <img src="assets/products/product1.png" alt="Barista Pro XT Espresso Makinesi" loading="lazy"
+                            width="400" height="400" decoding="async">
                         <div class="product-info">
                             <h3>Barista Pro XT</h3>
                             <p>Profesyonel kafeler için yüksek performans.</p>
@@ -161,8 +150,8 @@
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="assets/products/product2.png" alt="Office Master 3000" loading="lazy" width="300"
-                            height="400" decoding="async">
+                        <img src="assets/products/product2.png" alt="Office Master 3000 Kahve Makinesi" loading="lazy"
+                            width="400" height="400" decoding="async">
                         <div class="product-info">
                             <h3>Office Master 3000</h3>
                             <p>Ofisler için dokunmatik, hızlı ve şık çözüm.</p>
@@ -174,8 +163,8 @@
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="assets/products/product1.png" alt="Barista Compact" loading="lazy" width="300"
-                            height="400" decoding="async">
+                        <img src="assets/products/product1.png" alt="Barista Compact Kahve Makinesi" loading="lazy"
+                            width="400" height="400" decoding="async">
                         <div class="product-info">
                             <h3>Barista Compact</h3>
                             <p>Dar alanlar için güçlü espresso performansı.</p>
@@ -187,8 +176,8 @@
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="assets/products/product2.png" alt="Barista Touch Ultra" loading="lazy" width="300"
-                            height="400" decoding="async">
+                        <img src="assets/products/product2.png" alt="Barista Touch Ultra Kahve Makinesi" loading="lazy"
+                            width="400" height="400" decoding="async">
                         <div class="product-info">
                             <h3>Barista Touch Ultra</h3>
                             <p>Yapay zeka destekli tam otomatik deneyim.</p>
@@ -202,20 +191,20 @@
                 </div>
             </div>
         </section>
-
-        <!-- Concept Detail Section -->
+        <!-- Concept Detail Section (New) -->
         <section id="konsept-detay" class="concept-section reveal">
             <div class="container">
                 <div class="concept-grid">
+                    <!-- Left: Image -->
                     <div class="concept-img-wrapper">
-                        <img src="assets/misc/coffee_concept.png" alt="Barista Concept Success" loading="lazy"
-                            width="600" height="450" decoding="async">
+                        <img src="assets/misc/coffee_concept.png" alt="MAC&Cino Kahve Konsepti" loading="lazy"
+                            width="600" height="400" decoding="async">
                         <div class="concept-img-overlay">
                             <h4>Satış / Resmi</h4>
                             <p>Daha Fazla Satış Garantisi</p>
                         </div>
                     </div>
-
+                    <!-- Right: Content -->
                     <div class="concept-content">
                         <h2>Başarı Böyle Tat Verir: Bütünsel <span class="brand-highlight">Macc & Cino</span> Barista
                             Kahve
@@ -229,7 +218,6 @@
                                 sunuyoruz
                             </li>
                         </ul>
-
                         <a href="#iletisim-form" class="concept-cta-link">
                             <div class="concept-cta-wrapper">
                                 <h4>DAHA FAZLA BİLGİ AL !</h4>
@@ -240,7 +228,6 @@
                 </div>
             </div>
         </section>
-
         <section id="sektorler" class="section sectors">
             <div class="container">
                 <h2 class="section-title reveal">Hizmet Verdiğimiz Sektörler</h2>
@@ -266,7 +253,7 @@
                         <h3>Fitness & Fazlası</h3>
                     </a>
                 </div>
-
+                <!-- Consultancy Bar (New) -->
                 <div class="consultancy-wrapper reveal">
                     <div class="consultancy-content">
                         <h3>Size çevrimiçi, bireysel, canlı ve kişisel olarak danışmanlık yapıyoruz!</h3>
@@ -275,51 +262,52 @@
                 </div>
             </div>
         </section>
-
         <!-- Feature Split Section (Konsept) -->
         <section id="konsept" class="section features-split">
             <div class="container">
+                <!-- Full Width Header -->
                 <h2 class="concept-wide-title reveal">Mac&Cino Barista kalitesinde kahve özellikleri her makine ile her
-                    kullanıcı tarafından kullanmaya müsait</h2>
-
-                <div class="grid-2 reverse-mobile reveal">
-                    <div class="feature-image-wrapper">
-                        <img src="assets/misc/machine_shop.png" alt="Barista Machine Shop" loading="lazy" width="600"
-                            height="400" decoding="async" style="width:100%; height:100%; object-fit:cover;">
+                    kullanıcı tarafından kullanmaya müsait</h3>
+                    <div class="grid-2 reverse-mobile reveal">
+                        <!-- Left: Image -->
+                        <div class="feature-image-wrapper">
+                            <img src="assets/misc/machine_shop.png" alt="MAC&Cino Mağaza" loading="lazy" width="600"
+                                height="400" decoding="async" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <!-- Right: Text -->
+                        <div class="feature-text">
+                            <h2>Sadece bir kahve makinesi değil!</h2>
+                            <p>Kahve Çekirdekleri, Servis, uygun ekipman, fiyat etiketleri ve satış destek ürünleri
+                                dahil
+                                olmak
+                                üzere kapsamlı konseptimizle size ve müşterilerinize heyecan verecek bir kahve deneyimi
+                                sunuyoruz!</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <span class="icon"><i class="fas fa-seedling"></i></span>
+                                    <div>
+                                        <strong>Premium Çekirdekler</strong>
+                                        <p>Dünyanın en iyi çiftliklerinden özenle seçilmiş.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon"><i class="fas fa-wrench"></i></span>
+                                    <div>
+                                        <strong>Tam Kapsamlı Servis</strong>
+                                        <p>Bakım, onarım ve yedek parça garantisi.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <div class="feature-text">
-                        <h2>Sadece bir kahve makinesi değil!</h2>
-                        <p>Kahve Çekirdekleri, Servis, uygun ekipman, fiyat etiketleri ve satış destek ürünleri
-                            dahil
-                            olmak üzere kapsamlı konseptimizle size ve müşterilerinize heyecan verecek bir kahve
-                            deneyimi
-                            sunuyoruz!</p>
-                        <ul class="feature-list">
-                            <li>
-                                <span class="icon"><i class="fas fa-seedling"></i></span>
-                                <div>
-                                    <strong>Premium Çekirdekler</strong>
-                                    <p>Dünyanın en iyi çiftliklerinden özenle seçilmiş.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="icon"><i class="fas fa-wrench"></i></span>
-                                <div>
-                                    <strong>Tam Kapsamlı Servis</strong>
-                                    <p>Bakım, onarım ve yedek parça garantisi.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
-
-        <!-- Value Proposition Section -->
+        <!-- Value Proposition Section (New) -->
         <section id="deger-onerisi" class="section features-split" style="background-color: #f9f9f9;">
             <div class="container">
+                <!-- Row 1 -->
                 <div class="grid-2 reveal" style="align-items: flex-start;">
+                    <!-- Left: Text -->
                     <div class="feature-text">
                         <h2 style="font-size: 2rem; margin-bottom: 10px;">Siz ve Müşterilerinize sadece enfes Kahve
                             sunmaktan çok daha</h2>
@@ -328,7 +316,6 @@
                         <p style="margin-bottom: 20px;">Kapsamlı Barista Kahve Konseptimizle örneğin bunları elde
                             edersiniz:
                         </p>
-
                         <ul class="feature-list no-icon-bg"
                             style="font-weight: 500; font-size: 1.1rem; color: #444; list-style: none; padding-left: 0;">
                             <li style="margin-bottom: 10px;">- Tüm kahve çeşitleri</li>
@@ -338,22 +325,22 @@
                             <li style="margin-bottom: 10px;">- Tüm içecekler To Go servis olarak da sunabilirsiniz</li>
                         </ul>
                     </div>
-
+                    <!-- Right: Image -->
                     <div class="feature-image-wrapper">
-                        <img src="assets/misc/crema_cup.png" alt="Perfect Crema Coffee" loading="lazy" width="600"
-                            height="400" decoding="async" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="assets/misc/crema_cup.png" alt="Krema Kahve" loading="lazy" width="600" height="400"
+                            decoding="async" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                 </div>
-
+                <!-- Spacer -->
                 <div style="height: 100px;"></div>
-
+                <!-- Row 2 -->
                 <div class="grid-2 reverse-mobile reveal" style="align-items: center;">
+                    <!-- Left: Image -->
                     <div class="feature-image-wrapper">
-                        <img src="assets/misc/machine_detail.png" alt="Italian Machine Quality" loading="lazy"
-                            width="600" height="400" decoding="async"
-                            style="width:100%; height:100%; object-fit:cover;">
+                        <img src="assets/misc/machine_detail.png" alt="Makine Detayı" loading="lazy" width="600"
+                            height="400" decoding="async" style="width:100%; height:100%; object-fit:cover;">
                     </div>
-
+                    <!-- Right: Text -->
                     <div class="feature-text">
                         <h2 style="font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px;">İtalyan Kahve Makinesinde
                             Kalitesinde mükemmel krema</h2>
@@ -364,11 +351,12 @@
                 </div>
             </div>
         </section>
-
         <!-- Milk Foam Section & Philosophy -->
         <section id="sut-kopugu" class="section features-split">
             <div class="container">
+                <!-- Milk Foam Feature -->
                 <div class="grid-2 reveal">
+                    <!-- Left: Text -->
                     <div class="feature-text">
                         <h2 style="font-size: 2rem; margin-bottom: 25px;">Düğmeye basarak premium süt köpüğü</h2>
                         <ul class="feature-list no-icon-bg"
@@ -379,25 +367,24 @@
                             <li style="margin-bottom: 15px;">- Barista kalitesinde Süt Köpüğü</li>
                         </ul>
                     </div>
-
+                    <!-- Right: Image -->
                     <div class="feature-image-wrapper">
-                        <img src="assets/misc/milk_foam.png" alt="Premium Milk Foam" loading="lazy" width="600"
-                            height="400" decoding="async" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="assets/misc/milk_foam.png" alt="Süt Köpüğü" loading="lazy" width="600" height="400"
+                            decoding="async" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                 </div>
-
+                <!-- Consultancy Bar (Repeated) -->
                 <div class="consultancy-wrapper reveal" style="margin-top: 80px; margin-bottom: 80px;">
                     <div class="consultancy-content">
                         <h3>Size çevrimiçi, Bireysel, Canlı ve Kişisel olarak danışmanlık yapıyoruz</h3>
                     </div>
                     <a href="#iletisim-form" class="btn-consultancy">Bilgi Talep et</a>
                 </div>
-
+                <!-- Philosophy Text (Harika Kahvenin Yolu) -->
                 <div class="coffee-way reveal" style="text-align: center; max-width: 900px; margin: 0 auto;">
                     <h3
                         style="font-size: 2rem; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; color: var(--primary-dark);">
                         Harika Kahvenin Yolu</h3>
-
                     <div
                         style="font-size: 1.2rem; line-height: 1.8; color: #555; display: flex; flex-direction: column; gap: 20px;">
                         <p><span class="brand-highlight">Mac & Cino</span>, mükemmel kahve keyfine giden yolda tüm
@@ -406,12 +393,12 @@
                         <p style="font-weight: 600; color: var(--primary-dark);">Çünkü her şey tek bir elden gelmediği
                             sürece sonuç birinci sınıf olamaz.</p>
                         <p>Bu sorumluluğu sadece ürünlerimiz için değil, aynı zamanda şirketinizde veya iş yerinizdeki
-                            keyif başarısı için de üstleniyoruz.</p>
+                            keyif
+                            başarısı için de üstleniyoruz.</p>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- About Us Section -->
         <section id="hakkimizda" class="section about-section">
             <div class="container">
@@ -419,7 +406,8 @@
                     <h2 class="section-title">Hakkımızda</h2>
                     <div class="about-text-block">
                         <p class="lead">MAC&Cino, kahve tutkusunu profesyonel çözümlerle birleştiren global bir
-                            markadır.</p>
+                            markadır.
+                        </p>
                         <p>Yılların deneyimiyle, işletmelere sadece makine değil, tam kapsamlı bir "Barista" deneyimi
                             sunuyoruz. Amacımız, müşterilerinizin her yudumda gerçek kaliteyi hissetmesini sağlamak.</p>
                         <div class="about-stats"
@@ -441,11 +429,12 @@
                 </div>
             </div>
         </section>
-
+        <!-- Sector Quick Access Section -->
         <section id="sektorel-cozumler" class="section sectors-showcase" style="background: #fdfdfd;">
             <div class="container">
                 <h2 class="section-title reveal">İşletmenize Özel Çözümler</h2>
                 <div class="sector-showcase-grid reveal">
+                    <!-- Gastronomi -->
                     <div class="showcase-card">
                         <i class="fas fa-utensils"></i>
                         <h3>Gastronomi</h3>
@@ -454,7 +443,7 @@
                             aria-label="Gastronomi Çözümleri Hakkında Detaylı Bilgi">Detaylı Bilgi <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
-
+                    <!-- Ofis -->
                     <div class="showcase-card">
                         <i class="fas fa-briefcase"></i>
                         <h3>Ofis / Şirketler</h3>
@@ -462,7 +451,7 @@
                         <a href="office" class="btn-text" aria-label="Ofis Çözümleri Hakkında Detaylı Bilgi">Detaylı
                             Bilgi <i class="fas fa-arrow-right"></i></a>
                     </div>
-
+                    <!-- Otel -->
                     <div class="showcase-card">
                         <i class="fas fa-hotel"></i>
                         <h3>Otel & Pansiyon</h3>
@@ -470,7 +459,7 @@
                         <a href="hotel" class="btn-text" aria-label="Otel Çözümleri Hakkında Detaylı Bilgi">Detaylı
                             Bilgi <i class="fas fa-arrow-right"></i></a>
                     </div>
-
+                    <!-- Fırın -->
                     <div class="showcase-card">
                         <i class="fas fa-bread-slice"></i>
                         <h3>Fırın & Pastane</h3>
@@ -480,7 +469,6 @@
                                 class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <div style="text-align: center; margin-top: 50px;" class="reveal">
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">Başka bir sektörde misiniz? Diğer
                         uzmanlık alanlarımızı keşfedin.</p>
@@ -498,14 +486,15 @@
                 </div>
             </div>
         </section>
-
+        <!-- Product & Concept Highlights -->
         <section class="section coffee-hub" style="padding: 100px 0; background-color: #1a1510; color: #fff;">
             <div class="container">
                 <div class="grid-2 reveal" style="align-items: center;">
                     <div class="hub-content">
                         <h2 style="color: #fff; margin-bottom: 20px;">Eksiksiz Ürün Yelpazesi</h2>
                         <p style="color: #aeaeae; margin-bottom: 30px;">Sadece makine satmıyoruz; premium çekirdekten
-                            teknik servise, özel tariflerden trend içeceklere kadar uçtan uca bir konsept sunuyoruz.</p>
+                            teknik
+                            servise, özel tariflerden trend içeceklere kadar uçtan uca bir konsept sunuyoruz.</p>
                         <ul class="feature-list no-icon-bg" style="list-style: none; padding: 0;">
                             <li style="margin-bottom: 15px;"><a href="beans"
                                     style="color: var(--accent-gold); text-decoration: none; font-weight: 600;"><i
@@ -524,41 +513,32 @@
                         </ul>
                     </div>
                     <div class="hub-image">
-                        <img src="assets/misc/coffee_concept.png" alt="Mac&Cino Concept" loading="lazy" width="600"
+                        <img src="assets/misc/coffee_concept.png" alt="MAC&Cino Konsept" loading="lazy" width="600"
                             height="400" decoding="async"
                             style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- References Section -->
         <section class="section references-section">
             <div class="container">
                 <h2 class="section-title reveal">Referanslarımız</h2>
                 <div class="slider-container reveal">
                     <div class="logo-track">
-                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel" loading="lazy"
-                                width="150" height="80"></div>
-                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza" loading="lazy"
-                                width="150" height="80"></div>
-                        <div class="slide"><img src="assets/misc/client3.png" alt="Power Gym" loading="lazy" width="150"
-                                height="80"></div>
-                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel" loading="lazy"
-                                width="150" height="80"></div>
-                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza" loading="lazy"
-                                width="150" height="80"></div>
-                        <div class="slide"><img src="assets/misc/client3.png" alt="Power Gym" loading="lazy" width="150"
-                                height="80"></div>
-                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel" loading="lazy"
-                                width="150" height="80"></div>
-                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza" loading="lazy"
-                                width="150" height="80"></div>
+                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel" loading="lazy"></div>
+                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza" loading="lazy"></div>
+                        <div class="slide"><img src="assets/misc/client3.png" alt="Power Gym" loading="lazy"></div>
+                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel"></div>
+                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza"></div>
+                        <div class="slide"><img src="assets/misc/client3.png" alt="Power Gym" loading="lazy"></div>
+                        <div class="slide"><img src="assets/misc/client1.png" alt="Grand Hotel"></div>
+                        <div class="slide"><img src="assets/misc/client2.png" alt="Tech Plaza"></div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <!-- Contact Section -->
         <section id="iletisim-form" class="section contact-section" style="background: #f9f9f9;">
             <div class="container">
                 <div class="contact-wrapper reveal">
@@ -571,7 +551,7 @@
                             <li><i class="fas fa-envelope"></i> bilgi@mac-cino.com</li>
                         </ul>
                         <div class="social-links-footer" style="margin-top: 30px;">
-                            <a href="#" aria-label="Instagram"
+                            <a href="#" aria-label="Facebook"
                                 style="color: var(--primary-dark); font-size: 1.5rem; margin-right: 20px;"><i
                                     class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="Facebook"
@@ -584,11 +564,11 @@
                     <div class="contact-form-box">
                         <form id="contactForm">
                             <div class="input-group">
-                                <input type="text" id="name" required placeholder=" ">
+                                <input type="text" id="name" required>
                                 <label for="name">Adınız Soyadınız</label>
                             </div>
                             <div class="input-group">
-                                <input type="email" id="email" required placeholder=" ">
+                                <input type="email" id="email" required>
                                 <label for="email">E-posta Adresiniz</label>
                             </div>
                             <div class="input-group">
@@ -603,7 +583,7 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <textarea id="message" required placeholder=" "></textarea>
+                                <textarea id="message" required></textarea>
                                 <label for="message">İhtiyaçlarınızdan Bahsedin</label>
                             </div>
                             <button type="submit" class="btn-hero btn-submit">BİLGİ TALEP ET</button>
@@ -613,7 +593,7 @@
             </div>
         </section>
     </main>
-
+    <!-- Footer -->
     <footer id="iletisim" class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
@@ -644,7 +624,6 @@
             <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-
     <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
@@ -655,34 +634,33 @@
                 onclick="document.getElementById('successModal').style.display='none'">Harika</button>
         </div>
     </div>
-
     <!-- Bottom Slogan Section -->
     <section class="bottom-slogan-section reveal">
         <div class="container">
             <h2>Better Coffee.<br>Better Business.</h2>
             <p>Mac&Cino Barista Company</p>
         </div>
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="50" height="50"
-            style="top: 10%; left: 5%; transform: rotate(-20deg); animation-delay: 0s;">
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="70" height="70"
-            style="top: 25%; left: 85%; transform: rotate(15deg); animation-delay: 1s;">
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="80" height="80"
-            style="bottom: 15%; left: 10%; transform: rotate(30deg); animation-delay: 2s;">
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="60" height="60"
-            style="bottom: 10%; left: 80%; transform: rotate(-10deg); animation-delay: 1.5s;">
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="40" height="40"
-            style="top: 50%; left: 15%; transform: rotate(45deg); opacity: 0.3;">
-        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean" width="55" height="55"
-            style="top: 40%; left: 75%; transform: rotate(-35deg); opacity: 0.3;">
+        <!-- Floating Decorative Beans -->
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
+        <img src="assets/misc/coffee_bean_icon.png" alt="" loading="lazy" class="floating-bean"
+            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
     </section>
-
+    <!-- Back to Top -->
     <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
-
+    <!-- Cookie Banner -->
     <div id="cookieBanner">
         <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
         <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 
