@@ -305,30 +305,130 @@
     </main>
 
     <script>
-        // Simple Navigation
+        let token = localStorage.getItem('admin_token');
+
+        // Initial Check
+        if (token) {
+            document.getElementById('login-overlay').style.display = 'none';
+            loadStats();
+        }
+
+        // Navigation
         function showSection(id) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
 
             document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            if (event) event.currentTarget.classList.add('active');
 
             document.getElementById('page-title').innerText = id.charAt(0).toUpperCase() + id.slice(1);
+
+            if (id === 'dashboard') loadStats();
+            if (id === 'products') loadProducts();
         }
 
-        // Mock Login
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
+        // Auth
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            // In real app, call API
-            document.getElementById('login-overlay').style.display = 'none';
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const res = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await res.json();
+                if (data.token) {
+                    localStorage.setItem('admin_token', data.token);
+                    token = data.token;
+                    document.getElementById('login-overlay').style.display = 'none';
+                    loadStats();
+                } else {
+                    alert('Hatalı giriş!');
+                }
+            } catch (err) {
+                alert('Sunucu hatası!');
+            }
         });
 
         function logout() {
-            document.getElementById('login-overlay').style.display = 'flex';
+            localStorage.removeItem('admin_token');
+            location.reload();
         }
 
-        // Mock Data Loading (Placeholder)
-        // fetch('/api/stats').then...
+        // Data Loading
+        async function loadStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                document.getElementById('stat-daily').innerText = data.pageVisits || 0;
+                document.getElementById('stat-products').innerText = data.products || 0;
+                document.getElementById('stat-blog').innerText = data.blogs || 0;
+            } catch (err) {
+                console.error('Stats error:', err);
+            }
+        }
+
+        async function loadProducts() {
+            const container = document.getElementById('product-list');
+            container.innerHTML = 'Yükleniyor...';
+            try {
+                const res = await fetch('/api/products');
+                const products = await res.json();
+                container.innerHTML = products.map(p => `
+                    <div class="stat-card">
+                        <h3>${p.category}</h3>
+                        <div class="value" style="font-size: 1.2rem;">${p.name}</div>
+                        <p style="font-size: 0.8rem; color: #666;">${p.description}</p>
+                        <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteProduct(${p.id})">Sil</button>
+                    </div>
+                `).join('') || '<p>Henüz ürün eklenmemiş.</p>';
+            } catch (err) {
+                container.innerHTML = 'Ürünler yüklenemedi.';
+            }
+        }
+
+        async function deleteProduct(id) {
+            if (!confirm('Silmek istediğinize emin misiniz?')) return;
+            try {
+                await fetch(`/api/products/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                loadProducts();
+                loadStats();
+            } catch (err) {
+                alert('Silme işlemi başarısız.');
+            }
+        }
+
+        function openProductModal() {
+            const name = prompt('Ürün Adı:');
+            const desc = prompt('Açıklama:');
+            const cat = prompt('Kategori (gastronomy/office/etc):');
+            if (name && cat) {
+                addProduct({ name, description: desc, category: cat });
+            }
+        }
+
+        async function addProduct(data) {
+            try {
+                await fetch('/api/products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(data)
+                });
+                loadProducts();
+                loadStats();
+            } catch (err) {
+                alert('Ekleme işlemi başarısız.');
+            }
+        }
     </script>
 </body>
 
