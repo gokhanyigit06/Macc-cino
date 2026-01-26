@@ -16,5 +16,5 @@ RUN npx prisma generate
 
 EXPOSE 80
 
-# Run migrations and start the server
-CMD ["sh", "-c", "npx prisma migrate deploy && node server.js"]
+# Run db push (sync schema) and seed, then start server
+CMD ["sh", "-c", "npx prisma db push && node prisma/seed.js && node server.js"]
