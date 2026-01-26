@@ -10,9 +10,15 @@ router.get('/', async (req, res) => {
     res.json(blogs);
 });
 
+const upload = require('./upload_middleware');
+
 // Add blog
-router.post('/', authenticateToken, async (req, res) => {
-    const { title, content, imageUrl } = req.body;
+router.post('/', authenticateToken, upload.single('image'), async (req, res) => {
+    let { title, content, imageUrl } = req.body;
+    if (req.file) {
+        imageUrl = 'uploads/' + req.file.filename;
+    }
+
     try {
         const blog = await prisma.blogPost.create({
             data: { title, content, imageUrl }
@@ -24,9 +30,13 @@ router.post('/', authenticateToken, async (req, res) => {
 });
 
 // Update blog
-router.put('/:id', authenticateToken, async (req, res) => {
+router.put('/:id', authenticateToken, upload.single('image'), async (req, res) => {
     const { id } = req.params;
-    const { title, content, imageUrl } = req.body;
+    let { title, content, imageUrl } = req.body;
+    if (req.file) {
+        imageUrl = 'uploads/' + req.file.filename;
+    }
+
     try {
         const blog = await prisma.blogPost.update({
             where: { id: parseInt(id) },
