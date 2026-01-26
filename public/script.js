@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Dynamic Settings (API) ---
+    // --- Dynamic Settings (API) ---
     fetch('/api/settings')
         .then(res => res.json())
         .then(data => {
-            if (data.primaryColor) document.documentElement.style.setProperty('--primary-dark', data.primaryColor);
-            if (data.accentColor) document.documentElement.style.setProperty('--accent-gold', data.accentColor);
-            // Logo logic here if needed
+            if (data.primary_color) document.documentElement.style.setProperty('--primary-dark', data.primary_color);
+            if (data.accent_color) document.documentElement.style.setProperty('--accent-gold', data.accent_color);
+
+            if (data.site_logo) {
+                const logos = document.querySelectorAll('.logo');
+                logos.forEach(logo => {
+                    // Check if logo is text or img
+                    // Currently text: <a ... class="logo">MAC&Cino</a>
+                    // Replace with img if url provided
+                    logo.innerHTML = `<img src="${data.site_logo}" alt="Macc-cino" style="height: 40px;">`;
+                });
+            }
         })
         .catch(err => console.log('Settings API not available yet, using defaults.'));
 
