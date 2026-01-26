@@ -4,43 +4,43 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const authenticateToken = require('./middleware');
 
-// Get all products
+// Get all blogs
 router.get('/', async (req, res) => {
-    const products = await prisma.product.findMany({ orderBy: { createdAt: 'desc' } });
-    res.json(products);
+    const blogs = await prisma.blogPost.findMany({ orderBy: { createdAt: 'desc' } });
+    res.json(blogs);
 });
 
-// Add product
+// Add blog
 router.post('/', authenticateToken, async (req, res) => {
-    const { name, description, category, imageUrl, features } = req.body;
+    const { title, content, imageUrl } = req.body;
     try {
-        const product = await prisma.product.create({
-            data: { name, description, category, imageUrl, features }
+        const blog = await prisma.blogPost.create({
+            data: { title, content, imageUrl }
         });
-        res.json(product);
+        res.json(blog);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// Update product
+// Update blog
 router.put('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
-    const { name, description, category, imageUrl, features } = req.body;
+    const { title, content, imageUrl } = req.body;
     try {
-        const product = await prisma.product.update({
+        const blog = await prisma.blogPost.update({
             where: { id: parseInt(id) },
-            data: { name, description, category, imageUrl, features }
+            data: { title, content, imageUrl }
         });
-        res.json(product);
+        res.json(blog);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// Delete product
+// Delete blog
 router.delete('/:id', authenticateToken, async (req, res) => {
-    await prisma.product.delete({ where: { id: parseInt(req.params.id) } });
+    await prisma.blogPost.delete({ where: { id: parseInt(req.params.id) } });
     res.json({ message: 'Deleted' });
 });
 

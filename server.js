@@ -36,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] })
 // API Routes
 app.use('/api/auth', require('./routes/auth').router);
 app.use('/api/products', require('./routes/products'));
+app.use('/api/blog', require('./routes/blog'));
+app.use('/api/settings', require('./routes/settings'));
 app.use('/api/stats', require('./routes/stats'));
 
 // Catch-all for SPA (Admin Panel) or 404

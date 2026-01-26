@@ -101,6 +101,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-bottom: 3px solid var(--accent);
+            position: relative;
         }
 
         .stat-card h3 {
@@ -113,6 +114,12 @@
             font-size: 2rem;
             font-weight: bold;
             color: var(--primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         /* Sections */
@@ -177,6 +184,11 @@
             color: #fff;
         }
 
+        button.btn-secondary {
+            background: #95a5a6;
+            color: #fff;
+        }
+
         /* Login Overlay */
         #login-overlay {
             position: fixed;
@@ -203,6 +215,28 @@
             margin-bottom: 20px;
             color: var(--primary);
         }
+
+        /* Modal for Add/Edit */
+        #crud-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 90%;
+        }
     </style>
 </head>
 
@@ -224,6 +258,51 @@
         </div>
     </div>
 
+    <!-- CRUD Modal -->
+    <div id="crud-modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Ekle/Düzenle</h3>
+            <form id="crudForm">
+                <input type="hidden" id="crud-id">
+                <input type="hidden" id="crud-type"> <!-- product or blog -->
+
+                <div class="form-group">
+                    <label>Başlık / İsim</label>
+                    <input type="text" id="crud-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Açıklama / İçerik</label>
+                    <textarea id="crud-desc" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group" id="group-category">
+                    <label>Kategori</label>
+                    <select id="crud-category">
+                        <option value="espresso cafe">Espresso / Kafe</option>
+                        <option value="otomatik ofis">Otomatik / Ofis</option>
+                        <option value="vending otel">Vending / Otel</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="group-features">
+                    <label>Özellikler (Virgülle ayırın)</label>
+                    <input type="text" id="crud-features">
+                </div>
+
+                <div class="form-group">
+                    <label>Görsel URL</label>
+                    <input type="text" id="crud-image" placeholder="assets/products/product1.png">
+                </div>
+
+                <div style="display:flex; justify-content: space-between;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">İptal</button>
+                    <button type="submit" class="btn">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -232,7 +311,7 @@
         <ul class="nav-links">
             <li class="active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</li>
             <li onclick="showSection('products')"><i class="fas fa-coffee"></i> Ürünler</li>
-            <li onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog</li>
+            <li onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog / Trendler</li>
             <li onclick="showSection('settings')"><i class="fas fa-cog"></i> Ayarlar</li>
             <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> Çıkış</li>
         </ul>
@@ -274,10 +353,21 @@
         <div id="products" class="section">
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                 <h3>Ürün Listesi</h3>
-                <button class="btn" onclick="openProductModal()">+ Yeni Ürün</button>
+                <button class="btn" onclick="openModal('product')">+ Yeni Ürün</button>
             </div>
             <div id="product-list" class="stats-grid">
                 <!-- Products will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div id="blog" class="section">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h3>Trend İçecekler / Blog</h3>
+                <button class="btn" onclick="openModal('blog')">+ Yeni Yazı</button>
+            </div>
+            <div id="blog-list" class="stats-grid">
+                <!-- Blogs will be loaded here -->
             </div>
         </div>
 
@@ -288,17 +378,18 @@
                 <form id="settingsForm">
                     <div class="form-group">
                         <label>Site Logosu (URL)</label>
-                        <input type="text" id="setting-logo">
+                        <input type="text" id="setting-logo" name="site_logo">
                     </div>
                     <div class="form-group">
                         <label>Ana Renk (Primary)</label>
-                        <input type="color" id="setting-primary" value="#2C241B">
+                        <input type="color" id="setting-primary" name="primary_color" value="#2C241B">
                     </div>
                     <div class="form-group">
                         <label>Vurgu Rengi (Accent)</label>
-                        <input type="color" id="setting-accent" value="#D4AF37">
+                        <input type="color" id="setting-accent" name="accent_color" value="#D4AF37">
                     </div>
                     <button type="submit" class="btn">Kaydet</button>
+                    <p id="settings-msg" style="margin-top:10px; color: green;"></p>
                 </form>
             </div>
         </div>
@@ -325,6 +416,8 @@
 
             if (id === 'dashboard') loadStats();
             if (id === 'products') loadProducts();
+            if (id === 'blog') loadBlogs();
+            if (id === 'settings') loadSettings();
         }
 
         // Auth
@@ -358,7 +451,8 @@
             location.reload();
         }
 
-        // Data Loading
+        // --- Data Loading ---
+
         async function loadStats() {
             try {
                 const res = await fetch('/api/stats');
@@ -379,10 +473,14 @@
                 const products = await res.json();
                 container.innerHTML = products.map(p => `
                     <div class="stat-card">
+                        <img src="${p.imageUrl}" style="height: 50px; float:right;">
                         <h3>${p.category}</h3>
                         <div class="value" style="font-size: 1.2rem;">${p.name}</div>
-                        <p style="font-size: 0.8rem; color: #666;">${p.description}</p>
-                        <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteProduct(${p.id})">Sil</button>
+                        <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">${p.description}</p>
+                        <div class="action-buttons">
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("product", ${JSON.stringify(p)})'>Düzenle</button>
+                            <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteItem('products', ${p.id})">Sil</button>
+                        </div>
                     </div>
                 `).join('') || '<p>Henüz ürün eklenmemiş.</p>';
             } catch (err) {
@@ -390,45 +488,149 @@
             }
         }
 
-        async function deleteProduct(id) {
-            if (!confirm('Silmek istediğinize emin misiniz?')) return;
+        async function loadBlogs() {
+            const container = document.getElementById('blog-list');
+            container.innerHTML = 'Yükleniyor...';
             try {
-                await fetch(`/api/products/${id}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                loadProducts();
-                loadStats();
+                const res = await fetch('/api/blog');
+                const blogs = await res.json();
+                container.innerHTML = blogs.map(b => `
+                    <div class="stat-card">
+                        <img src="${b.imageUrl}" style="height: 50px; float:right;">
+                        <h3>Blog Post</h3>
+                        <div class="value" style="font-size: 1.2rem;">${b.title}</div>
+                        <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">${b.content}</p>
+                        <div class="action-buttons">
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("blog", ${JSON.stringify(b)})'>Düzenle</button>
+                            <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteItem('blog', ${b.id})">Sil</button>
+                        </div>
+                    </div>
+                `).join('') || '<p>Henüz yazı eklenmemiş.</p>';
             } catch (err) {
-                alert('Silme işlemi başarısız.');
+                container.innerHTML = 'Bloglar yüklenemedi.';
             }
         }
 
-        function openProductModal() {
-            const name = prompt('Ürün Adı:');
-            const desc = prompt('Açıklama:');
-            const cat = prompt('Kategori (gastronomy/office/etc):');
-            if (name && cat) {
-                addProduct({ name, description: desc, category: cat });
-            }
-        }
-
-        async function addProduct(data) {
+        async function loadSettings() {
             try {
-                await fetch('/api/products', {
-                    method: 'POST',
+                const res = await fetch('/api/settings');
+                const s = await res.json();
+                if (s.site_logo) document.getElementById('setting-logo').value = s.site_logo;
+                if (s.primary_color) document.getElementById('setting-primary').value = s.primary_color;
+                if (s.accent_color) document.getElementById('setting-accent').value = s.accent_color;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        document.getElementById('settingsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                site_logo: document.getElementById('setting-logo').value,
+                primary_color: document.getElementById('setting-primary').value,
+                accent_color: document.getElementById('setting-accent').value
+            };
+
+            await fetch('/api/settings', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(data)
+            });
+            document.getElementById('settings-msg').innerText = 'Ayarlar kaydedildi.';
+            setTimeout(() => document.getElementById('settings-msg').innerText = '', 3000);
+        });
+
+        // --- CRUD Operations ---
+
+        function deleteItem(type, id) {
+            if (!confirm('Silmek istediğinize emin misiniz?')) return;
+            fetch(`/api/${type}/${id}`, {
+                method: 'DELETE',
+                headers: { 'Authorization': `Bearer ${token}` }
+            }).then(() => {
+                if (type === 'products') loadProducts();
+                if (type === 'blog') loadBlogs();
+                loadStats();
+            });
+        }
+
+        function openModal(type, item = null) {
+            document.getElementById('crud-modal').style.display = 'flex';
+            document.getElementById('crud-type').value = type;
+            document.getElementById('modal-title').innerText = item ? (type === 'product' ? 'Ürün Düzenle' : 'Yazı Düzenle') : (type === 'product' ? 'Yeni Ürün' : 'Yeni Yazı');
+
+            // Show/Hide fields based on type
+            if (type === 'product') {
+                document.getElementById('group-category').style.display = 'block';
+                document.getElementById('group-features').style.display = 'block';
+            } else {
+                document.getElementById('group-category').style.display = 'none';
+                document.getElementById('group-features').style.display = 'none';
+            }
+
+            if (item) {
+                document.getElementById('crud-id').value = item.id;
+                document.getElementById('crud-name').value = item.name || item.title;
+                document.getElementById('crud-desc').value = item.description || item.content;
+                document.getElementById('crud-image').value = item.imageUrl;
+                if (type === 'product') {
+                    document.getElementById('crud-category').value = item.category;
+                    document.getElementById('crud-features').value = item.features;
+                }
+            } else {
+                document.getElementById('crudForm').reset();
+                document.getElementById('crud-id').value = '';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('crud-modal').style.display = 'none';
+        }
+
+        document.getElementById('crudForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const type = document.getElementById('crud-type').value; // 'product' or 'blog'
+            const id = document.getElementById('crud-id').value;
+            const isEdit = !!id;
+
+            const endpoint = type === 'product' ? '/api/products' : '/api/blog';
+            const url = isEdit ? `${endpoint}/${id}` : endpoint;
+            const method = isEdit ? 'PUT' : 'POST';
+
+            const body = {
+                imageUrl: document.getElementById('crud-image').value
+            };
+
+            if (type === 'product') {
+                body.name = document.getElementById('crud-name').value;
+                body.description = document.getElementById('crud-desc').value;
+                body.category = document.getElementById('crud-category').value;
+                body.features = document.getElementById('crud-features').value;
+            } else {
+                body.title = document.getElementById('crud-name').value;
+                body.content = document.getElementById('crud-desc').value;
+            }
+
+            try {
+                await fetch(url, {
+                    method: method,
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(body)
                 });
-                loadProducts();
+                closeModal();
+                if (type === 'product') loadProducts(); else loadBlogs();
                 loadStats();
             } catch (err) {
-                alert('Ekleme işlemi başarısız.');
+                alert('İşlem başarısız.');
             }
-        }
+        });
+
     </script>
 </body>
 
