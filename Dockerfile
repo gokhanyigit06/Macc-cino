@@ -2,17 +2,17 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Install OpenSSL for Prisma
+RUN apk add --no-cache openssl
+
 COPY package*.json ./
 
 RUN npm ci
 
-# Install Prisma CLI globally to ensure availability
-RUN npm install -g prisma@5.10.2
-
 COPY . .
 
-# Generate Prisma Client
-RUN prisma generate
+# Generate Prisma Client using local dependency
+RUN npx prisma generate
 
 EXPOSE 80
 
