@@ -1,296 +1,296 @@
-<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahve Makineleri Modelleri | MAC&Cino</title>
-    <meta name="description" content="MAC&Cino'nun profesyonel kahve makinesi yelpazesini keþfedin.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-content">
-            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-
-    <!-- Product Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-grid">
-                <div class="modal-image">
-                    <img id="modalImg" src="" alt="Kahve Makinesi">
-                </div>
-                <div class="modal-details">
-                    <h2 id="modalTitle">Ürün Baþlýðý</h2>
-                    <p id="modalDesc" class="modal-desc">Ürün açýklamasý burada yer alacak.</p>
-                    <ul class="modal-specs">
-                        <li><i class="fas fa-check"></i> Dokunmatik Ekran</li>
-                        <li><i class="fas fa-check"></i> Otomatik Temizleme</li>
-                        <li><i class="fas fa-check"></i> 15+ Ýçecek Seçeneði</li>
-                    </ul>
-                    <a href="index.html#iletisim" class="btn-hero btn-dark modal-cta">Teklif Al</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sticky Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index" class="logo">MAC&Cino</a>
-            <div class="nav-links">
-                <!-- Kahve Makineleri -->
-                <div class="nav-item">
-                    <a href="products" class="nav-link">Kahve Makineleri</a>
-                </div>
-
-                <!-- Sektör (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="gastronomy">Gastronomi</a>
-                        <a href="office">Ofis</a>
-                        <a href="bakery">Fýrýnlar / Pastane</a>
-                        <a href="hotel">Otel - Pansiyon</a>
-                        <a href="fitness">Fitness - Saðlýk</a>
-                        <a href="gas-station">Benzin Ýstasyonu</a>
-                        <a href="chains">Maðaza Zincirleri</a>
-                    </div>
-                </div>
-
-                <!-- Konseptimiz (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
-                        <a href="service" class="dropdown-link">Teknik Servis</a>
-                        <a href="careers" class="dropdown-link">Kariyer</a>
-                        <a href="beans">Kahve Çekirdekleri</a>
-                        <a href="specialties">Kahve Spesiyalleri</a>
-                        <a href="trends">Trend Ýçecekler</a>
-                    </div>
-                </div>
-
-                <!-- Hakkýmýzda -->
-                <div class="nav-item">
-                    <a href="about" class="nav-link">Hakkýmýzda</a>
-                </div>
-
-                <!-- Ýletiþim -->
-                <div class="nav-item">
-                    <a href="contact" class="nav-link">Ýletiþim</a>
-                </div>
-
-                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
-            </div>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattý">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Page Title -->
-    <div class="container" style="padding-top: 150px; padding-bottom: 30px; text-align: center;">
-        <h1 class="section-title" style="margin-bottom: 20px;">Premium Kahve Çözümleri</h1>
-        <p>Ýhtiyacýnýza en uygun modeli seçin.</p>
-    </div>
-
-    <!-- Layout: Sidebar + Grid -->
-    <div class="container product-layout-wrapper">
-        <!-- Sidebar -->
-        <aside class="sidebar filter-sidebar">
-            <h3>Filtrele</h3>
-
-            <div class="filter-group">
-                <h4>Kategori</h4>
-                <label><input type="checkbox" class="filter-cb" value="espresso" checked> Espresso Makineleri</label>
-                <label><input type="checkbox" class="filter-cb" value="otomatik" checked> Tam Otomatik</label>
-                <label><input type="checkbox" class="filter-cb" value="vending" checked> Vending (Otomat)</label>
-            </div>
-
-            <div class="filter-group">
-                <h4>Sektör</h4>
-                <label><input type="checkbox" class="filter-cb" value="ofis" checked> Ofis</label>
-                <label><input type="checkbox" class="filter-cb" value="cafe" checked> Kafe / Restoran</label>
-                <label><input type="checkbox" class="filter-cb" value="otel" checked> Otel</label>
-            </div>
-        </aside>
-
-        <!-- Grid -->
-        <main class="product-grid-main">
-            <div id="productGrid" class="product-grid" style="margin-top:0;">
-
-                <!-- Product 1 -->
-                <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product1.png" alt="Barista Pro XT">
-                    <div class="product-info">
-                        <h3>Barista Pro XT</h3>
-                        <p class="category-tag">Espresso / Kafe</p>
-                        <p>Profesyonel kafeler için yüksek performans.</p>
-                        <a href="#" class="btn-text open-modal" data-title="Barista Pro XT"
-                            data-img="assets/products/product1.png"
-                            data-desc="Yoðun iþletmeler için tasarlanmýþ, çift gruplu ve yüksek buhar kapasiteli profesyonel espresso makinesi.">Ýncele
-                            <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-card" data-category="otomatik ofis">
-                    <img src="assets/products/product2.png" alt="Office Master 3000">
-                    <div class="product-info">
-                        <h3>Office Master 3000</h3>
-                        <p class="category-tag">Otomatik / Ofis</p>
-                        <p>Ofisler için dokunmatik, hýzlý ve þýk çözüm.</p>
-                        <a href="#" class="btn-text open-modal" data-title="Office Master 3000"
-                            data-img="assets/products/product2.png"
-                            data-desc="Tek dokunuþla latte, cappuccino ve espresso. Þýk dokunmatik ekraný ve tam otomatik temizleme sistemi ile ofislerin vazgeçilmezi.">Ýncele
-                            <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Product 3 (New Vending) -->
-                <div class="product-card" data-category="vending otel">
-                    <img src="assets/products/product3.png" alt="VendMax 500">
-                    <div class="product-info">
-                        <h3>VendMax 500</h3>
-                        <p class="category-tag">Vending / Otel</p>
-                        <p>7/24 hizmet veren tam otomatik kahve istasyonu.</p>
-                        <a href="#" class="btn-text open-modal" data-title="VendMax 500" data-img="assets/products/product3.png"
-                            data-desc="Geniþ dokunmatik ekranlý, ödeme sistemi entegre edilebilir, yüksek kapasiteli otomat çözümü.">Ýncele
-                            <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Product 4 (White Espresso) -->
-                <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product4.png" alt="Bianco Elegance">
-                    <div class="product-info">
-                        <h3>Bianco Elegance</h3>
-                        <p class="category-tag">Espresso / Kafe</p>
-                        <p>Þýk mekanlar için beyaz, minimalist tasarým.</p>
-                        <a href="#" class="btn-text open-modal" data-title="Bianco Elegance"
-                            data-img="assets/products/product4.png"
-                            data-desc="Ahþap detaylý, beyaz gövdeli, tasarým ödüllü espresso makinesi. Butik kafeler için ideal.">Ýncele
-                            <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Product 5 (Compact) -->
-                <div class="product-card" data-category="espresso cafe">
-                    <img src="assets/products/product1.png" alt="Barista Compact">
-                    <div class="product-info">
-                        <h3>Barista Compact</h3>
-                        <p class="category-tag">Espresso / Kafe</p>
-                        <p>Dar alanlar için güçlü espresso performansý.</p>
-                        <a href="#" class="btn-text open-modal" data-title="Barista Compact"
-                            data-img="assets/products/product1.png" data-desc="Küçük mekanlar için büyük lezzet.">Ýncele <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-    </div>
-
-            <!-- Footer -->
-    <footer id="iletisim" class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h2>MAC&Cino</h2>
-                <p>Better Coffee. Better Business.</p>
-                <div class="social-links-footer">
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-info">
-                <h3>Teknik Servis</h3>
-                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
-                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Ýstanbul, Türkiye</p>
-            </div>
-            <div class="footer-links">
-                <h3>Kurumsal</h3>
-                <a href="concept">Konseptimiz</a>
-                <a href="service">Teknik Servis</a>
-                <a href="careers">Kariyer</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Mac&Cino Barista Company. Tüm haklarý saklýdýr.</p>
-        </div>
-    </footer>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="success-modal">
-        <div class="success-content">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Baþvurunuz Ailemize Ulaþtý!</h3>
-            <p>En kýsa sürede sizinle iletiþime geçeceðiz.</p>
-            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
-                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
-        </div>
-    </div>
-
-        <!-- Bottom Slogan Section -->
-    <section class="bottom-slogan-section reveal">
-        <div class="container">
-            <h2>Better Coffee.<br>Better Business.</h2>
-            <p>Mac&Cino Barista Company</p>
-        </div>
-        <!-- Floating Decorative Beans -->
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
-    </section>
-
-    <!-- Back to Top -->
-    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
-
-    <!-- Cookie Banner -->
-    <div id="cookieBanner">
-        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanýyoruz.</p>
-        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahve Makineleri Modelleri | MAC&Cino</title>
+    <meta name="description" content="MAC&Cino'nun profesyonel kahve makinesi yelpazesini keÅŸfedin.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Kahve Makinesi">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle">ÃœrÃ¼n BaÅŸlÄ±ÄŸÄ±</h2>
+                    <p id="modalDesc" class="modal-desc">ÃœrÃ¼n aÃ§Ä±klamasÄ± burada yer alacak.</p>
+                    <ul class="modal-specs">
+                        <li><i class="fas fa-check"></i> Dokunmatik Ekran</li>
+                        <li><i class="fas fa-check"></i> Otomatik Temizleme</li>
+                        <li><i class="fas fa-check"></i> 15+ Ä°Ã§ecek SeÃ§eneÄŸi</li>
+                    </ul>
+                    <a href="index.html#iletisim" class="btn-hero btn-dark modal-cta">Teklif Al</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <!-- Kahve Makineleri -->
+                <div class="nav-item">
+                    <a href="products" class="nav-link">Kahve Makineleri</a>
+                </div>
+
+                <!-- SektÃ¶r (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">SektÃ¶r <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="gastronomy">Gastronomi</a>
+                        <a href="office">Ofis</a>
+                        <a href="bakery">FÄ±rÄ±nlar / Pastane</a>
+                        <a href="hotel">Otel - Pansiyon</a>
+                        <a href="fitness">Fitness - SaÄŸlÄ±k</a>
+                        <a href="gas-station">Benzin Ä°stasyonu</a>
+                        <a href="chains">MaÄŸaza Zincirleri</a>
+                    </div>
+                </div>
+
+                <!-- Konseptimiz (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
+                        <a href="service" class="dropdown-link">Teknik Servis</a>
+                        <a href="careers" class="dropdown-link">Kariyer</a>
+                        <a href="beans">Kahve Ã‡ekirdekleri</a>
+                        <a href="specialties">Kahve Spesiyalleri</a>
+                        <a href="trends">Trend Ä°Ã§ecekler</a>
+                    </div>
+                </div>
+
+                <!-- HakkÄ±mÄ±zda -->
+                <div class="nav-item">
+                    <a href="about" class="nav-link">HakkÄ±mÄ±zda</a>
+                </div>
+
+                <!-- Ä°letiÅŸim -->
+                <div class="nav-item">
+                    <a href="contact" class="nav-link">Ä°letiÅŸim</a>
+                </div>
+
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp HattÄ±">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Page Title -->
+    <div class="container" style="padding-top: 150px; padding-bottom: 30px; text-align: center;">
+        <h1 class="section-title" style="margin-bottom: 20px;">Premium Kahve Ã‡Ã¶zÃ¼mleri</h1>
+        <p>Ä°htiyacÄ±nÄ±za en uygun modeli seÃ§in.</p>
+    </div>
+
+    <!-- Layout: Sidebar + Grid -->
+    <div class="container product-layout-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar filter-sidebar">
+            <h3>Filtrele</h3>
+
+            <div class="filter-group">
+                <h4>Kategori</h4>
+                <label><input type="checkbox" class="filter-cb" value="espresso" checked> Espresso Makineleri</label>
+                <label><input type="checkbox" class="filter-cb" value="otomatik" checked> Tam Otomatik</label>
+                <label><input type="checkbox" class="filter-cb" value="vending" checked> Vending (Otomat)</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>SektÃ¶r</h4>
+                <label><input type="checkbox" class="filter-cb" value="ofis" checked> Ofis</label>
+                <label><input type="checkbox" class="filter-cb" value="cafe" checked> Kafe / Restoran</label>
+                <label><input type="checkbox" class="filter-cb" value="otel" checked> Otel</label>
+            </div>
+        </aside>
+
+        <!-- Grid -->
+        <main class="product-grid-main">
+            <div id="productGrid" class="product-grid" style="margin-top:0;">
+
+                <!-- Product 1 -->
+                <div class="product-card" data-category="espresso cafe">
+                    <img src="assets/products/product1.png" alt="Barista Pro XT">
+                    <div class="product-info">
+                        <h3>Barista Pro XT</h3>
+                        <p class="category-tag">Espresso / Kafe</p>
+                        <p>Profesyonel kafeler iÃ§in yÃ¼ksek performans.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Barista Pro XT"
+                            data-img="assets/products/product1.png"
+                            data-desc="YoÄŸun iÅŸletmeler iÃ§in tasarlanmÄ±ÅŸ, Ã§ift gruplu ve yÃ¼ksek buhar kapasiteli profesyonel espresso makinesi.">Ä°ncele
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="otomatik ofis">
+                    <img src="assets/products/product2.png" alt="Office Master 3000">
+                    <div class="product-info">
+                        <h3>Office Master 3000</h3>
+                        <p class="category-tag">Otomatik / Ofis</p>
+                        <p>Ofisler iÃ§in dokunmatik, hÄ±zlÄ± ve ÅŸÄ±k Ã§Ã¶zÃ¼m.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Office Master 3000"
+                            data-img="assets/products/product2.png"
+                            data-desc="Tek dokunuÅŸla latte, cappuccino ve espresso. ÅžÄ±k dokunmatik ekranÄ± ve tam otomatik temizleme sistemi ile ofislerin vazgeÃ§ilmezi.">Ä°ncele
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 3 (New Vending) -->
+                <div class="product-card" data-category="vending otel">
+                    <img src="assets/products/product3.png" alt="VendMax 500">
+                    <div class="product-info">
+                        <h3>VendMax 500</h3>
+                        <p class="category-tag">Vending / Otel</p>
+                        <p>7/24 hizmet veren tam otomatik kahve istasyonu.</p>
+                        <a href="#" class="btn-text open-modal" data-title="VendMax 500" data-img="assets/products/product3.png"
+                            data-desc="GeniÅŸ dokunmatik ekranlÄ±, Ã¶deme sistemi entegre edilebilir, yÃ¼ksek kapasiteli otomat Ã§Ã¶zÃ¼mÃ¼.">Ä°ncele
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 4 (White Espresso) -->
+                <div class="product-card" data-category="espresso cafe">
+                    <img src="assets/products/product4.png" alt="Bianco Elegance">
+                    <div class="product-info">
+                        <h3>Bianco Elegance</h3>
+                        <p class="category-tag">Espresso / Kafe</p>
+                        <p>ÅžÄ±k mekanlar iÃ§in beyaz, minimalist tasarÄ±m.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Bianco Elegance"
+                            data-img="assets/products/product4.png"
+                            data-desc="AhÅŸap detaylÄ±, beyaz gÃ¶vdeli, tasarÄ±m Ã¶dÃ¼llÃ¼ espresso makinesi. Butik kafeler iÃ§in ideal.">Ä°ncele
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 5 (Compact) -->
+                <div class="product-card" data-category="espresso cafe">
+                    <img src="assets/products/product1.png" alt="Barista Compact">
+                    <div class="product-info">
+                        <h3>Barista Compact</h3>
+                        <p class="category-tag">Espresso / Kafe</p>
+                        <p>Dar alanlar iÃ§in gÃ¼Ã§lÃ¼ espresso performansÄ±.</p>
+                        <a href="#" class="btn-text open-modal" data-title="Barista Compact"
+                            data-img="assets/products/product1.png" data-desc="KÃ¼Ã§Ã¼k mekanlar iÃ§in bÃ¼yÃ¼k lezzet.">Ä°ncele <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+            <!-- Footer -->
+    <footer id="iletisim" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>MAC&Cino</h2>
+                <p>Better Coffee. Better Business.</p>
+                <div class="social-links-footer">
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ä°stanbul, TÃ¼rkiye</p>
+            </div>
+            <div class="footer-links">
+                <h3>Kurumsal</h3>
+                <a href="concept">Konseptimiz</a>
+                <a href="service">Teknik Servis</a>
+                <a href="careers">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mac&Cino Barista Company. TÃ¼m haklarÄ± saklÄ±dÄ±r.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>BaÅŸvurunuz Ailemize UlaÅŸtÄ±!</h3>
+            <p>En kÄ±sa sÃ¼rede sizinle iletiÅŸime geÃ§eceÄŸiz.</p>
+            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
+                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
+        </div>
+    </div>
+
+        <!-- Bottom Slogan Section -->
+    <section class="bottom-slogan-section reveal">
+        <div class="container">
+            <h2>Better Coffee.<br>Better Business.</h2>
+            <p>Mac&Cino Barista Company</p>
+        </div>
+        <!-- Floating Decorative Beans -->
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
+    </section>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak iÃ§in Ã§erezleri kullanÄ±yoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

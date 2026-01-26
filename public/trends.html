@@ -1,588 +1,588 @@
-<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Kahve Trendleri | MAC&Cino</title>
-    <meta name="description" content="Kahve dünyasýndaki en yeni trendler, vegan seçenekler ve mevsimsel lezzetler.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .page-hero {
-            display: none;
-        }
-
-        .navbar.header-solid {
-            position: relative;
-            background-color: var(--primary-dark);
-            padding: 1rem 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Magazine Style Watermark */
-        .watermark-number {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            font-size: 8rem;
-            font-weight: 900;
-            color: rgba(0, 0, 0, 0.03);
-            font-family: 'Outfit', sans-serif;
-            z-index: 0;
-            line-height: 1;
-            pointer-events: none;
-        }
-
-        .feature-text {
-            position: relative;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-content">
-            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
-            <div class="loader-bar"></div>
-        </div>
-    </div>
-
-    <!-- Search Overlay -->
-    <div id="searchOverlay">
-        <span class="close-search">&times;</span>
-        <div class="search-content">
-            <input type="text" placeholder="Ne aramýþtýnýz? (örn: Cold Brew, Frappe)">
-            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
-        </div>
-    </div>
-
-    <!-- Sticky Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index" class="logo">MAC&Cino</a>
-            <div class="nav-links">
-                <!-- Kahve Makineleri -->
-                <div class="nav-item">
-                    <a href="products" class="nav-link">Kahve Makineleri</a>
-                </div>
-
-                <!-- Sektör (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="gastronomy">Gastronomi</a>
-                        <a href="office">Ofis</a>
-                        <a href="bakery">Fýrýnlar / Pastane</a>
-                        <a href="hotel">Otel - Pansiyon</a>
-                        <a href="fitness">Fitness - Saðlýk</a>
-                        <a href="gas-station">Benzin Ýstasyonu</a>
-                        <a href="chains">Maðaza Zincirleri</a>
-                    </div>
-                </div>
-
-                <!-- Konseptimiz (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
-                        <a href="service" class="dropdown-link">Teknik Servis</a>
-                        <a href="careers" class="dropdown-link">Kariyer</a>
-                        <a href="beans">Kahve Çekirdekleri</a>
-                        <a href="specialties">Kahve Spesiyalleri</a>
-                        <a href="trends">Trend Ýçecekler</a>
-                    </div>
-                </div>
-
-                <!-- Hakkýmýzda -->
-                <div class="nav-item">
-                    <a href="about" class="nav-link">Hakkýmýzda</a>
-                </div>
-
-                <!-- Ýletiþim -->
-                <div class="nav-item">
-                    <a href="contact" class="nav-link">Ýletiþim</a>
-                </div>
-
-                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
-            </div>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattý">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-
-    <!-- Hero Section -->
-    <header
-        style="position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/misc/hero_bg.png') center/cover fixed no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
-        <div class="container reveal">
-            <span
-                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Mac&Cino
-                Trend Ýçecekler</span>
-            <h1 style="color: #fff; font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; line-height: 1.2;">
-                Daha Yüksek Satýþ Geliri Ýçin<br>Trend Ýçecekler</h1>
-            <p
-                style="font-size: 1.3rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                Ýþletmenizi sýradanlýktan çýkarýn, misafirlerinize unutulmaz lezzetler sunun.
-            </p>
-        </div>
-    </header>
-
-    <!-- Intro Text Section: Sýcak - Soðuk - Vegan -->
-    <section class="section" style="padding: 100px 0; background-color: #fff;">
-        <div class="container reveal" style="text-align: center; max-width: 850px;">
-            <span
-                style="display: block; color: var(--primary-dark); font-size: 0.9rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-family: 'Outfit', sans-serif; opacity: 0.7;">FIRSATLARI
-                YAKALAYIN</span>
-
-            <h2
-                style="font-size: 3.8rem; color: var(--primary-dark); margin-bottom: 50px; font-family: 'Playfair Display', serif; line-height: 1.2;">
-                Sýcak – Soðuk <span style="margin: 0 10px; color: #ccc; font-weight: 300;">|</span> <span
-                    style="color: var(--accent-gold); font-style: italic; font-weight: 400;">Vegan</span>
-            </h2>
-
-            <!-- Visual Feature Grid (Replaces Text Wall) -->
-            <!-- Visual Feature Grid (Replaces Text Wall) -->
-            <div class="grid-3"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 40px 0 60px; text-align: center;">
-
-                <!-- Card 1: Profit & Seasonality -->
-                <div style="padding: 20px; transition: transform 0.3s;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
-                        <i class="fas fa-chart-line" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
-                    </div>
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
-                        Daha Fazla Kar</h3>
-                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
-                        Yaz aylarýndaki durgunluðu fýrsata çevirin. Serinletici seçeneklerle cironuzu her mevsim
-                        yukarýda tutun.
-                    </p>
-                </div>
-
-                <!-- Card 2: Variety -->
-                <div style="padding: 20px; transition: transform 0.3s;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
-                        <i class="fas fa-glass-cheers" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
-                    </div>
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
-                        Zengin Çeþitlilik</h3>
-                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
-                        <strong>Chai Latte, Matcha</strong> ve aromalý Iced Coffee'ler. Üstelik hepsi <strong
-                            style="color: var(--primary-dark);">Vegan</strong> alternatiflerle.
-                    </p>
-                </div>
-
-                <!-- Card 3: Easy Operation -->
-                <div style="padding: 20px; transition: transform 0.3s;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div
-                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
-                        <i class="fas fa-magic" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
-                    </div>
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
-                        Kolay Hazýrlýk</h3>
-                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
-                        Kahve makinelerimizle tek tuþla, barista kalitesinde spesiyaliteler. Hýz ve kalite bir arada.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Bottom Quote -->
-            <div style="margin-bottom: 40px; position: relative; padding: 0 20px;">
-                <i class="fas fa-quote-left"
-                    style="color: rgba(212, 175, 55, 0.2); font-size: 3rem; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);"></i>
-                <p
-                    style="font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 1.6rem; font-style: italic; position: relative; z-index: 1;">
-                    "Ýþletmeniz bunun karþýlýðýný fazlasýyla alacaktýr."
-                </p>
-
-            </div>
-
-            <div style="margin-top: 60px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-                <a href="#ozel-trendler"
-                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
-                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
-                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-star" style="color: inherit;"></i> <span style="font-weight: 500;">Özel Trend
-                        Ýçecekler</span>
-                </a>
-                <a href="#chai-latte"
-                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
-                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
-                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-mug-hot" style="color: inherit;"></i> <span style="font-weight: 500;">Chai
-                        Latte</span>
-                </a>
-                <a href="#matcha"
-                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
-                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
-                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
-                    <i class="fas fa-leaf" style="color: inherit;"></i> <span style="font-weight: 500;">Matcha</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Special Trend Drinks Section (Dark Theme) -->
-    <section id="ozel-trendler" class="section features-split"
-        style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
-        <i class="fas fa-glass-martini-alt"
-            style="position: absolute; right: -50px; top: 50px; font-size: 25rem; opacity: 0.03; color: #fff; transform: rotate(15deg);"></i>
-        <div class="container">
-            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
-
-                <!-- Text Left -->
-                <div class="feature-text">
-                    <span class="watermark-number" style="color: rgba(255,255,255,0.05);">01</span>
-                    <h2
-                        style="font-size: 2.5rem; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif;">
-                        Özel Trend <span style="color: var(--accent-gold); font-style:italic;">Ýçecekler</span></h2>
-
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        Heyecan verici yeni özel içeceklerimizi keþfedin ve lezzet patlamalarýyla dolu bir dünyaya adým
-                        atýn.
-                        Üç benzersiz çeþidimiz yalnýzca lezzetli deðil, ayný zamanda çok yönlüdür; sýcak, soðuk veya
-                        vegan
-                        seçenekleriyle her sunumda öne çýkar.
-                    </p>
-                    <p style="margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        Kremamsý süt köpüðüyle tamamlanan bu içecekler, görsel olarak da etkileyici bir deneyim sunar.
-                    </p>
-                    <div
-                        style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 3px solid var(--accent-gold);">
-                        <ul style="list-style: none; padding: 0;">
-                            <li
-                                style="margin-bottom: 10px; color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
-                                <i class="fas fa-star"
-                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
-                                1. Salty Caramel Kiss
-                            </li>
-                            <li
-                                style="margin-bottom: 10px; color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
-                                <i class="fas fa-star"
-                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
-                                2. Red Berry
-                            </li>
-                            <li style="color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
-                                <i class="fas fa-star"
-                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
-                                3. Toffee Banana
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Image Right -->
-                <div class="feature-image-wrapper reveal" style="position: relative;">
-                    <div
-                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; transform: rotate(3deg); border: 1px solid rgba(255,255,255,0.1);">
-                        <img src="assets/products/product3.png" alt="Trend Ýçecekler"
-                            style="width: 100%; height: auto; display: block; filter: brightness(0.9);">
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 30px; left: -20px; background: var(--accent-gold); color: var(--primary-dark); padding: 10px 20px; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
-                        YENÝ LEZZETLER
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Chai Latte Section (Light Theme) -->
-    <section id="chai-latte" class="section features-split" style="padding: 100px 0; background-color: #fff;">
-        <div class="container">
-            <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
-
-                <!-- Image Left -->
-                <div class="feature-image-wrapper reveal" style="position: relative;">
-                    <div
-                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; transform: rotate(-2deg);">
-                        <img src="assets/products/product1.png" alt="Chai Latte"
-                            style="width: 100%; height: auto; display: block; background: #f9f9f9;">
-                    </div>
-                </div>
-
-                <!-- Text Right -->
-                <div class="feature-text">
-                    <span class="watermark-number" style="left: auto; right: 0;">02</span>
-                    <h2
-                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
-                        Chai Latte</h2>
-
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                        Chai Latte'nin baþtan çýkarýcý dünyasýný keþfedin. Chai Latte, <strong>Sýcak, Soðuk ve
-                            Vegan</strong> olmak üzere üç karþý konulmaz seçenekle sunulur.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                        Baharatlý ve aromatik Chai çayý, kremamsý süt köpüðüyle buluþur - gerçek bir lezzet deneyimi. Bu
-                        popüler trend içecekleri misafirlerinize sunarak, sýcak havalarda bile satýþlarýnýzý
-                        artýrabilirsiniz.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                        Kahve tam otomatik makinelerimiz sayesinde hazýrlýk son derece kolaydýr.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Matcha Section (Dark Theme) -->
-    <section id="matcha" class="section features-split"
-        style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
-        <i class="fas fa-leaf"
-            style="position: absolute; left: -50px; bottom: -50px; font-size: 25rem; opacity: 0.03; color: #fff;"></i>
-        <div class="container">
-            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
-
-                <!-- Text Left -->
-                <div class="feature-text">
-                    <span class="watermark-number" style="color: rgba(255,255,255,0.05);">03</span>
-                    <h2
-                        style="font-size: 2.5rem; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif;">
-                        Matcha</h2>
-
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        Matcha'nýn canlandýrýcý dünyasýný keþfedin – sýcak, soðuk ve Vegan olmak üzere üç karþý konulmaz
-                        seçenekle.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        Yoðun aromalý, ince öðütülmüþ yeþil çay, kremamsý þekilde köpürtülür ve ferahlatýcý bir lezzet
-                        sunar.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        Bu popüler trend içeceði misafirlerinize sunarak, sýcak havalarda bile satýþlarýnýzý
-                        artýrabilirsiniz.
-                    </p>
-                </div>
-
-                <!-- Image Right -->
-                <div class="feature-image-wrapper reveal" style="position: relative;">
-                    <div
-                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; transform: rotate(3deg); border: 1px solid rgba(255,255,255,0.1);">
-                        <img src="assets/misc/blog1.png" alt="Matcha Trend"
-                            style="width: 100%; height: auto; display: block; filter: brightness(0.9);">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Target Sectors Section -->
-    <section class="section" style="padding: 100px 0; background-color: #fff; text-align: center;">
-        <div class="container reveal">
-            <span
-                style="display: block; color: var(--accent-gold); font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">KULLANIM
-                ALANLARI</span>
-            <h2
-                style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 40px; font-family: 'Playfair Display', serif;">
-                Ýçecek Trendlerimiz Kimler Ýçin Uygun?</h2>
-
-            <div style="max-width: 900px; margin: 0 auto 60px; font-size: 1.15rem; line-height: 1.8; color: #555;">
-                <p style="margin-bottom: 20px;">
-                    Sýcak yaz günlerinde ofisteki toplantýlarda çalýþanlarýnýzýn memnuniyetini artýran ya da
-                    <strong>Gastronomi ve
-                        Otelcilik</strong> sektöründe misafirlerinizi mutlu edin.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    Hangi sektörde faaliyet gösterirseniz gösterin, trend içeceklerimiz tüm hedef gruplar için keyifli
-                    bir
-                    çeþitlilik sunar.
-                </p>
-                <p>
-                    Elbette <strong>akaryakýt istasyonlarý, spor salonlarý</strong> ve birçok farklý iþletme için
-                    idealdir.
-                </p>
-            </div>
-
-            <!-- Sector Grid -->
-            <div class="grid-4"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
-                <!-- Sector 1: Office -->
-                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
-                    <i class="fas fa-building"
-                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Ofis & Ýþyerleri
-                    </h4>
-                    <p style="font-size: 0.95rem; color: #666;">Çalýþan motivasyonu ve verimli toplantýlar için.</p>
-                </div>
-                <!-- Sector 2: Gastronomy -->
-                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
-                    <i class="fas fa-hotel"
-                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Otel & Gastronomi
-                    </h4>
-                    <p style="font-size: 0.95rem; color: #666;">Misafirlerinize unutulmaz bir karþýlama sunun.</p>
-                </div>
-                <!-- Sector 3: Gas Station -->
-                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
-                    <i class="fas fa-gas-pump"
-                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Akaryakýt
-                        Ýstasyonlarý</h4>
-                    <p style="font-size: 0.95rem; color: #666;">Yolculuklara lezzetli bir mola katýn.</p>
-                </div>
-                <!-- Sector 4: Gym -->
-                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
-                    <i class="fas fa-dumbbell"
-                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Spor Salonlarý</h4>
-                    <p style="font-size: 0.95rem; color: #666;">Spor sonrasý canlandýrýcý ve saðlýklý seçenekler.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="iletisim-form" class="section contact-section">
-        <div class="container">
-            <div class="contact-wrapper reveal">
-                <div class="contact-info-box">
-                    <h3>Bizimle Ýletiþime Geçin</h3>
-                    <p>Trendleri yakalamak için hemen görüþelim.</p>
-                    <ul class="contact-details">
-                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. Büyükdere Cad. No:123, Ýstanbul</li>
-                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
-                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
-                    </ul>
-                </div>
-                <div class="contact-form-box">
-                    <form id="contactForm">
-                        <div class="input-group">
-                            <input type="text" id="name" required>
-                            <label for="name">Adýnýz Soyadýnýz</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" id="email" required>
-                            <label for="email">E-posta Adresiniz</label>
-                        </div>
-                        <div class="input-group">
-                            <select id="sector">
-                                <option value="" disabled selected>Konu</option>
-                                <option value="satis">Kahve Satýn Alma</option>
-                                <option value="tadim">Tadým Etkinliði</option>
-                                <option value="bayilik">Bayilik</option>
-                                <option value="diger">Diðer</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <textarea id="message" required></textarea>
-                            <label for="message">Mesajýnýz</label>
-                        </div>
-                        <button type="submit" class="btn-hero btn-submit">Gönder</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-            <!-- Footer -->
-    <footer id="iletisim" class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h2>MAC&Cino</h2>
-                <p>Better Coffee. Better Business.</p>
-                <div class="social-links-footer">
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-info">
-                <h3>Teknik Servis</h3>
-                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
-                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Ýstanbul, Türkiye</p>
-            </div>
-            <div class="footer-links">
-                <h3>Kurumsal</h3>
-                <a href="concept">Konseptimiz</a>
-                <a href="service">Teknik Servis</a>
-                <a href="careers">Kariyer</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Mac&Cino Barista Company. Tüm haklarý saklýdýr.</p>
-        </div>
-    </footer>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="success-modal">
-        <div class="success-content">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Baþvurunuz Ailemize Ulaþtý!</h3>
-            <p>En kýsa sürede sizinle iletiþime geçeceðiz.</p>
-            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
-                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
-        </div>
-    </div>
-
-        <!-- Bottom Slogan Section -->
-    <section class="bottom-slogan-section reveal">
-        <div class="container">
-            <h2>Better Coffee.<br>Better Business.</h2>
-            <p>Mac&Cino Barista Company</p>
-        </div>
-        <!-- Floating Decorative Beans -->
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
-    </section>
-
-    <!-- Back to Top -->
-    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
-
-    <!-- Cookie Banner -->
-    <div id="cookieBanner">
-        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanýyoruz.</p>
-        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Kahve Trendleri | MAC&Cino</title>
+    <meta name="description" content="Kahve dÃ¼nyasÄ±ndaki en yeni trendler, vegan seÃ§enekler ve mevsimsel lezzetler.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .page-hero {
+            display: none;
+        }
+
+        .navbar.header-solid {
+            position: relative;
+            background-color: var(--primary-dark);
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Magazine Style Watermark */
+        .watermark-number {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.03);
+            font-family: 'Outfit', sans-serif;
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .feature-text {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="assets/misc/coffee_bean_icon.png" alt="Loading" class="loader-icon">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay">
+        <span class="close-search">&times;</span>
+        <div class="search-content">
+            <input type="text" placeholder="Ne aramÄ±ÅŸtÄ±nÄ±z? (Ã¶rn: Cold Brew, Frappe)">
+            <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <!-- Kahve Makineleri -->
+                <div class="nav-item">
+                    <a href="products" class="nav-link">Kahve Makineleri</a>
+                </div>
+
+                <!-- SektÃ¶r (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">SektÃ¶r <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="gastronomy">Gastronomi</a>
+                        <a href="office">Ofis</a>
+                        <a href="bakery">FÄ±rÄ±nlar / Pastane</a>
+                        <a href="hotel">Otel - Pansiyon</a>
+                        <a href="fitness">Fitness - SaÄŸlÄ±k</a>
+                        <a href="gas-station">Benzin Ä°stasyonu</a>
+                        <a href="chains">MaÄŸaza Zincirleri</a>
+                    </div>
+                </div>
+
+                <!-- Konseptimiz (Dropdown) -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
+                        <a href="service" class="dropdown-link">Teknik Servis</a>
+                        <a href="careers" class="dropdown-link">Kariyer</a>
+                        <a href="beans">Kahve Ã‡ekirdekleri</a>
+                        <a href="specialties">Kahve Spesiyalleri</a>
+                        <a href="trends">Trend Ä°Ã§ecekler</a>
+                    </div>
+                </div>
+
+                <!-- HakkÄ±mÄ±zda -->
+                <div class="nav-item">
+                    <a href="about" class="nav-link">HakkÄ±mÄ±zda</a>
+                </div>
+
+                <!-- Ä°letiÅŸim -->
+                <div class="nav-item">
+                    <a href="contact" class="nav-link">Ä°letiÅŸim</a>
+                </div>
+
+                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp HattÄ±">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <!-- Hero Section -->
+    <header
+        style="position: relative; height: 60vh; min-height: 500px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/misc/hero_bg.png') center/cover fixed no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container reveal">
+            <span
+                style="display: block; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Mac&Cino
+                Trend Ä°Ã§ecekler</span>
+            <h1 style="color: #fff; font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; line-height: 1.2;">
+                Daha YÃ¼ksek SatÄ±ÅŸ Geliri Ä°Ã§in<br>Trend Ä°Ã§ecekler</h1>
+            <p
+                style="font-size: 1.3rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                Ä°ÅŸletmenizi sÄ±radanlÄ±ktan Ã§Ä±karÄ±n, misafirlerinize unutulmaz lezzetler sunun.
+            </p>
+        </div>
+    </header>
+
+    <!-- Intro Text Section: SÄ±cak - SoÄŸuk - Vegan -->
+    <section class="section" style="padding: 100px 0; background-color: #fff;">
+        <div class="container reveal" style="text-align: center; max-width: 850px;">
+            <span
+                style="display: block; color: var(--primary-dark); font-size: 0.9rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-family: 'Outfit', sans-serif; opacity: 0.7;">FIRSATLARI
+                YAKALAYIN</span>
+
+            <h2
+                style="font-size: 3.8rem; color: var(--primary-dark); margin-bottom: 50px; font-family: 'Playfair Display', serif; line-height: 1.2;">
+                SÄ±cak Â– SoÄŸuk <span style="margin: 0 10px; color: #ccc; font-weight: 300;">|</span> <span
+                    style="color: var(--accent-gold); font-style: italic; font-weight: 400;">Vegan</span>
+            </h2>
+
+            <!-- Visual Feature Grid (Replaces Text Wall) -->
+            <!-- Visual Feature Grid (Replaces Text Wall) -->
+            <div class="grid-3"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 40px 0 60px; text-align: center;">
+
+                <!-- Card 1: Profit & Seasonality -->
+                <div style="padding: 20px; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-chart-line" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                        Daha Fazla Kar</h3>
+                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
+                        Yaz aylarÄ±ndaki durgunluÄŸu fÄ±rsata Ã§evirin. Serinletici seÃ§eneklerle cironuzu her mevsim
+                        yukarÄ±da tutun.
+                    </p>
+                </div>
+
+                <!-- Card 2: Variety -->
+                <div style="padding: 20px; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-glass-cheers" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                        Zengin Ã‡eÅŸitlilik</h3>
+                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
+                        <strong>Chai Latte, Matcha</strong> ve aromalÄ± Iced Coffee'ler. Ãœstelik hepsi <strong
+                            style="color: var(--primary-dark);">Vegan</strong> alternatiflerle.
+                    </p>
+                </div>
+
+                <!-- Card 3: Easy Operation -->
+                <div style="padding: 20px; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-magic" style="color: var(--accent-gold); font-size: 1.8rem;"></i>
+                    </div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 15px;">
+                        Kolay HazÄ±rlÄ±k</h3>
+                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
+                        Kahve makinelerimizle tek tuÅŸla, barista kalitesinde spesiyaliteler. HÄ±z ve kalite bir arada.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Quote -->
+            <div style="margin-bottom: 40px; position: relative; padding: 0 20px;">
+                <i class="fas fa-quote-left"
+                    style="color: rgba(212, 175, 55, 0.2); font-size: 3rem; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);"></i>
+                <p
+                    style="font-family: 'Playfair Display', serif; color: var(--primary-dark); font-size: 1.6rem; font-style: italic; position: relative; z-index: 1;">
+                    "Ä°ÅŸletmeniz bunun karÅŸÄ±lÄ±ÄŸÄ±nÄ± fazlasÄ±yla alacaktÄ±r."
+                </p>
+
+            </div>
+
+            <div style="margin-top: 60px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                <a href="#ozel-trendler"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
+                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
+                    <i class="fas fa-star" style="color: inherit;"></i> <span style="font-weight: 500;">Ã–zel Trend
+                        Ä°Ã§ecekler</span>
+                </a>
+                <a href="#chai-latte"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
+                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
+                    <i class="fas fa-mug-hot" style="color: inherit;"></i> <span style="font-weight: 500;">Chai
+                        Latte</span>
+                </a>
+                <a href="#matcha"
+                    style="padding: 12px 30px; background: transparent; border-radius: 50px; border: 1px solid var(--accent-gold); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit;"
+                    onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='inherit';">
+                    <i class="fas fa-leaf" style="color: inherit;"></i> <span style="font-weight: 500;">Matcha</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Trend Drinks Section (Dark Theme) -->
+    <section id="ozel-trendler" class="section features-split"
+        style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
+        <i class="fas fa-glass-martini-alt"
+            style="position: absolute; right: -50px; top: 50px; font-size: 25rem; opacity: 0.03; color: #fff; transform: rotate(15deg);"></i>
+        <div class="container">
+            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Text Left -->
+                <div class="feature-text">
+                    <span class="watermark-number" style="color: rgba(255,255,255,0.05);">01</span>
+                    <h2
+                        style="font-size: 2.5rem; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif;">
+                        Ã–zel Trend <span style="color: var(--accent-gold); font-style:italic;">Ä°Ã§ecekler</span></h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        Heyecan verici yeni Ã¶zel iÃ§eceklerimizi keÅŸfedin ve lezzet patlamalarÄ±yla dolu bir dÃ¼nyaya adÄ±m
+                        atÄ±n.
+                        ÃœÃ§ benzersiz Ã§eÅŸidimiz yalnÄ±zca lezzetli deÄŸil, aynÄ± zamanda Ã§ok yÃ¶nlÃ¼dÃ¼r; sÄ±cak, soÄŸuk veya
+                        vegan
+                        seÃ§enekleriyle her sunumda Ã¶ne Ã§Ä±kar.
+                    </p>
+                    <p style="margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        KremamsÄ± sÃ¼t kÃ¶pÃ¼ÄŸÃ¼yle tamamlanan bu iÃ§ecekler, gÃ¶rsel olarak da etkileyici bir deneyim sunar.
+                    </p>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 3px solid var(--accent-gold);">
+                        <ul style="list-style: none; padding: 0;">
+                            <li
+                                style="margin-bottom: 10px; color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
+                                <i class="fas fa-star"
+                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
+                                1. Salty Caramel Kiss
+                            </li>
+                            <li
+                                style="margin-bottom: 10px; color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
+                                <i class="fas fa-star"
+                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
+                                2. Red Berry
+                            </li>
+                            <li style="color: #fff; font-size: 1.1rem; display: flex; align-items: center;">
+                                <i class="fas fa-star"
+                                    style="color: var(--accent-gold); margin-right: 15px; font-size: 0.8rem;"></i>
+                                3. Toffee Banana
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; transform: rotate(3deg); border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="assets/products/product3.png" alt="Trend Ä°Ã§ecekler"
+                            style="width: 100%; height: auto; display: block; filter: brightness(0.9);">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 30px; left: -20px; background: var(--accent-gold); color: var(--primary-dark); padding: 10px 20px; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                        YENÄ° LEZZETLER
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Chai Latte Section (Light Theme) -->
+    <section id="chai-latte" class="section features-split" style="padding: 100px 0; background-color: #fff;">
+        <div class="container">
+            <div class="grid-2 reverse-mobile reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Image Left -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; transform: rotate(-2deg);">
+                        <img src="assets/products/product1.png" alt="Chai Latte"
+                            style="width: 100%; height: auto; display: block; background: #f9f9f9;">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="feature-text">
+                    <span class="watermark-number" style="left: auto; right: 0;">02</span>
+                    <h2
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
+                        Chai Latte</h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Chai Latte'nin baÅŸtan Ã§Ä±karÄ±cÄ± dÃ¼nyasÄ±nÄ± keÅŸfedin. Chai Latte, <strong>SÄ±cak, SoÄŸuk ve
+                            Vegan</strong> olmak Ã¼zere Ã¼Ã§ karÅŸÄ± konulmaz seÃ§enekle sunulur.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        BaharatlÄ± ve aromatik Chai Ã§ayÄ±, kremamsÄ± sÃ¼t kÃ¶pÃ¼ÄŸÃ¼yle buluÅŸur - gerÃ§ek bir lezzet deneyimi. Bu
+                        popÃ¼ler trend iÃ§ecekleri misafirlerinize sunarak, sÄ±cak havalarda bile satÄ±ÅŸlarÄ±nÄ±zÄ±
+                        artÄ±rabilirsiniz.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Kahve tam otomatik makinelerimiz sayesinde hazÄ±rlÄ±k son derece kolaydÄ±r.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Matcha Section (Dark Theme) -->
+    <section id="matcha" class="section features-split"
+        style="padding: 100px 0; background-color: var(--primary-dark); position: relative; overflow: hidden;">
+        <i class="fas fa-leaf"
+            style="position: absolute; left: -50px; bottom: -50px; font-size: 25rem; opacity: 0.03; color: #fff;"></i>
+        <div class="container">
+            <div class="grid-2 reveal" style="align-items: center; gap: 80px;">
+
+                <!-- Text Left -->
+                <div class="feature-text">
+                    <span class="watermark-number" style="color: rgba(255,255,255,0.05);">03</span>
+                    <h2
+                        style="font-size: 2.5rem; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif;">
+                        Matcha</h2>
+
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        Matcha'nÄ±n canlandÄ±rÄ±cÄ± dÃ¼nyasÄ±nÄ± keÅŸfedin Â– sÄ±cak, soÄŸuk ve Vegan olmak Ã¼zere Ã¼Ã§ karÅŸÄ± konulmaz
+                        seÃ§enekle.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        YoÄŸun aromalÄ±, ince Ã¶ÄŸÃ¼tÃ¼lmÃ¼ÅŸ yeÅŸil Ã§ay, kremamsÄ± ÅŸekilde kÃ¶pÃ¼rtÃ¼lÃ¼r ve ferahlatÄ±cÄ± bir lezzet
+                        sunar.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        Bu popÃ¼ler trend iÃ§eceÄŸi misafirlerinize sunarak, sÄ±cak havalarda bile satÄ±ÅŸlarÄ±nÄ±zÄ±
+                        artÄ±rabilirsiniz.
+                    </p>
+                </div>
+
+                <!-- Image Right -->
+                <div class="feature-image-wrapper reveal" style="position: relative;">
+                    <div
+                        style="box-shadow: 0 20px 50px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; transform: rotate(3deg); border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="assets/misc/blog1.png" alt="Matcha Trend"
+                            style="width: 100%; height: auto; display: block; filter: brightness(0.9);">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Sectors Section -->
+    <section class="section" style="padding: 100px 0; background-color: #fff; text-align: center;">
+        <div class="container reveal">
+            <span
+                style="display: block; color: var(--accent-gold); font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">KULLANIM
+                ALANLARI</span>
+            <h2
+                style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 40px; font-family: 'Playfair Display', serif;">
+                Ä°Ã§ecek Trendlerimiz Kimler Ä°Ã§in Uygun?</h2>
+
+            <div style="max-width: 900px; margin: 0 auto 60px; font-size: 1.15rem; line-height: 1.8; color: #555;">
+                <p style="margin-bottom: 20px;">
+                    SÄ±cak yaz gÃ¼nlerinde ofisteki toplantÄ±larda Ã§alÄ±ÅŸanlarÄ±nÄ±zÄ±n memnuniyetini artÄ±ran ya da
+                    <strong>Gastronomi ve
+                        Otelcilik</strong> sektÃ¶rÃ¼nde misafirlerinizi mutlu edin.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Hangi sektÃ¶rde faaliyet gÃ¶sterirseniz gÃ¶sterin, trend iÃ§eceklerimiz tÃ¼m hedef gruplar iÃ§in keyifli
+                    bir
+                    Ã§eÅŸitlilik sunar.
+                </p>
+                <p>
+                    Elbette <strong>akaryakÄ±t istasyonlarÄ±, spor salonlarÄ±</strong> ve birÃ§ok farklÄ± iÅŸletme iÃ§in
+                    idealdir.
+                </p>
+            </div>
+
+            <!-- Sector Grid -->
+            <div class="grid-4"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+                <!-- Sector 1: Office -->
+                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
+                    <i class="fas fa-building"
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Ofis & Ä°ÅŸyerleri
+                    </h4>
+                    <p style="font-size: 0.95rem; color: #666;">Ã‡alÄ±ÅŸan motivasyonu ve verimli toplantÄ±lar iÃ§in.</p>
+                </div>
+                <!-- Sector 2: Gastronomy -->
+                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
+                    <i class="fas fa-hotel"
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Otel & Gastronomi
+                    </h4>
+                    <p style="font-size: 0.95rem; color: #666;">Misafirlerinize unutulmaz bir karÅŸÄ±lama sunun.</p>
+                </div>
+                <!-- Sector 3: Gas Station -->
+                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
+                    <i class="fas fa-gas-pump"
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">AkaryakÄ±t
+                        Ä°stasyonlarÄ±</h4>
+                    <p style="font-size: 0.95rem; color: #666;">Yolculuklara lezzetli bir mola katÄ±n.</p>
+                </div>
+                <!-- Sector 4: Gym -->
+                <div style="padding: 30px; background: #f9f9f9; border-radius: 15px; transition: transform 0.3s ease;">
+                    <i class="fas fa-dumbbell"
+                        style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-dark);">Spor SalonlarÄ±</h4>
+                    <p style="font-size: 0.95rem; color: #666;">Spor sonrasÄ± canlandÄ±rÄ±cÄ± ve saÄŸlÄ±klÄ± seÃ§enekler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim-form" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info-box">
+                    <h3>Bizimle Ä°letiÅŸime GeÃ§in</h3>
+                    <p>Trendleri yakalamak iÃ§in hemen gÃ¶rÃ¼ÅŸelim.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Maslak Mah. BÃ¼yÃ¼kdere Cad. No:123, Ä°stanbul</li>
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">AdÄ±nÄ±z SoyadÄ±nÄ±z</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-posta Adresiniz</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="sector">
+                                <option value="" disabled selected>Konu</option>
+                                <option value="satis">Kahve SatÄ±n Alma</option>
+                                <option value="tadim">TadÄ±m EtkinliÄŸi</option>
+                                <option value="bayilik">Bayilik</option>
+                                <option value="diger">DiÄŸer</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">MesajÄ±nÄ±z</label>
+                        </div>
+                        <button type="submit" class="btn-hero btn-submit">GÃ¶nder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Footer -->
+    <footer id="iletisim" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>MAC&Cino</h2>
+                <p>Better Coffee. Better Business.</p>
+                <div class="social-links-footer">
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ä°stanbul, TÃ¼rkiye</p>
+            </div>
+            <div class="footer-links">
+                <h3>Kurumsal</h3>
+                <a href="concept">Konseptimiz</a>
+                <a href="service">Teknik Servis</a>
+                <a href="careers">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mac&Cino Barista Company. TÃ¼m haklarÄ± saklÄ±dÄ±r.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>BaÅŸvurunuz Ailemize UlaÅŸtÄ±!</h3>
+            <p>En kÄ±sa sÃ¼rede sizinle iletiÅŸime geÃ§eceÄŸiz.</p>
+            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
+                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
+        </div>
+    </div>
+
+        <!-- Bottom Slogan Section -->
+    <section class="bottom-slogan-section reveal">
+        <div class="container">
+            <h2>Better Coffee.<br>Better Business.</h2>
+            <p>Mac&Cino Barista Company</p>
+        </div>
+        <!-- Floating Decorative Beans -->
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
+            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
+    </section>
+
+    <!-- Back to Top -->
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner">
+        <p>Size daha iyi bir deneyim sunmak iÃ§in Ã§erezleri kullanÄ±yoruz.</p>
+        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
