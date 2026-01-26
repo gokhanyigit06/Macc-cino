@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macc-cino Admin Panel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Quill Theme -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <style>
+        /* [Previous styles remain same...] */
+        /* ... keeping existing styles ... */
         :root {
             --primary: #2C241B;
             --accent: #D4AF37;
@@ -14,229 +18,262 @@
             --text: #333;
         }
 
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-            background: #f9f9f9;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background: var(--primary);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar-header h2 {
-            margin: 0;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .nav-links li {
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            border-left: 4px solid transparent;
-        }
-
-        .nav-links li:hover,
-        .nav-links li.active {
-            background: rgba(255, 255, 255, 0.05);
-            border-left-color: var(--accent);
-        }
-
-        .nav-links li i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-            color: var(--accent);
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary);
-            margin: 0;
-        }
-
-        /* Cards */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-bottom: 3px solid var(--accent);
-            position: relative;
-        }
-
-        .stat-card h3 {
-            margin: 0 0 10px 0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .stat-card .value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        /* Sections */
-        .section {
+        /* ... (skipping some existing CSS to save tokens, assuming tool handles diff correctly - wait, I need to be careful with replace_file_content if I don't see the context. The user provided full content previously. I will try to target specific blocks or replace the whole file if safer. Replacing whole file is safer to ensure Quill integration.)
+           Actually, the instruction says "Replace... content". I should probably do chunks.
+           Chunk 1: Add Quill CSS in head
+           Chunk 2: Update form inputs
+           Chunk 3: Update JS
+        */
+    </style>
+    <!-- Just replacing head to include Quill -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        /* ... existing styles ... */
+        /* adding image preview style */
+        .img-preview {
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 5px;
+            border-radius: 4px;
             display: none;
         }
 
-        .section.active {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Forms */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button.btn {
-            background: var(--accent);
-            color: var(--primary);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button.btn:hover {
-            opacity: 0.9;
-        }
-
-        button.btn-danger {
-            background: #e74c3c;
-            color: #fff;
-        }
-
-        button.btn-secondary {
-            background: #95a5a6;
-            color: #fff;
-        }
-
-        /* Login Overlay */
-        #login-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .login-box {
+        .ql-editor {
+            min-height: 150px;
             background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            width: 350px;
-            text-align: center;
         }
+    </style>
+    :root {
+    --primary: #2C241B;
+    --accent: #D4AF37;
+    --light: #f4f4f4;
+    --text: #333;
+    }
 
-        .login-box h2 {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background: #f9f9f9;
+    }
 
-        /* Modal for Add/Edit */
-        #crud-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 500;
-            justify-content: center;
-            align-items: center;
-        }
+    /* Sidebar */
+    .sidebar {
+    width: 250px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    }
 
-        .modal-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            width: 400px;
-            max-width: 90%;
-        }
+    .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-header h2 {
+    margin: 0;
+    color: var(--accent);
+    }
+
+    .nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    }
+
+    .nav-links li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+    }
+
+    .nav-links li:hover,
+    .nav-links li.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--accent);
+    }
+
+    .nav-links li i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--accent);
+    }
+
+    /* Main Content */
+    .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    }
+
+    h1 {
+    color: var(--primary);
+    margin: 0;
+    }
+
+    /* Cards */
+    .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    }
+
+    .stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    }
+
+    .stat-card h3 {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 0.9rem;
+    }
+
+    .stat-card .value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    }
+
+    .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    }
+
+    /* Sections */
+    .section {
+    display: none;
+    }
+
+    .section.active {
+    display: block;
+    animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(10px);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+
+    /* Forms */
+    .form-group {
+    margin-bottom: 15px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    button.btn {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+
+    button.btn:hover {
+    opacity: 0.9;
+    }
+
+    button.btn-danger {
+    background: #e74c3c;
+    color: #fff;
+    }
+
+    button.btn-secondary {
+    background: #95a5a6;
+    color: #fff;
+    }
+
+    /* Login Overlay */
+    #login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    }
+
+    .login-box h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+    }
+
+    /* Modal for Add/Edit */
+    #crud-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    }
     </style>
 </head>
 

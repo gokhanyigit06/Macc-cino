@@ -10,9 +10,17 @@ router.get('/', async (req, res) => {
     res.json(products);
 });
 
-// Add product
-router.post('/', authenticateToken, async (req, res) => {
-    const { name, description, category, imageUrl, features } = req.body;
+const upload = require('./upload_middleware');
+
+// Add product (with image upload)
+router.post('/', authenticateToken, upload.single('image'), async (req, res) => {
+    // If file uploaded, use its path. If not, check body for manual URL (optional fallback)
+    let { name, description, category, features, imageUrl } = req.body;
+
+    if (req.file) {
+        imageUrl = 'uploads/' + req.file.filename;
+    }
+
     try {
         const product = await prisma.product.create({
             data: { name, description, category, imageUrl, features }
@@ -24,9 +32,14 @@ router.post('/', authenticateToken, async (req, res) => {
 });
 
 // Update product
-router.put('/:id', authenticateToken, async (req, res) => {
+router.put('/:id', authenticateToken, upload.single('image'), async (req, res) => {
     const { id } = req.params;
-    const { name, description, category, imageUrl, features } = req.body;
+    let { name, description, category, features, imageUrl } = req.body;
+
+    if (req.file) {
+        imageUrl = 'uploads/' + req.file.filename;
+    }
+
     try {
         const product = await prisma.product.update({
             where: { id: parseInt(id) },
