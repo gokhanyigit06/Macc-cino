@@ -245,40 +245,26 @@
 
                         <form id="contactForm">
                             <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="text" id="name" required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;"
-                                    onfocus="this.style.borderColor='var(--accent-gold)'"
-                                    onblur="this.style.borderColor='#eee'">
-                                <label for="name"
-                                    style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: #999; transition: all 0.3s ease; pointer-events: none; background: #fff; padding: 0 5px;">Adınız
-                                    Soyadınız *</label>
+                                <input type="text" id="name" placeholder=" " required
+                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
+                                <label for="name">Adınız Soyadınız *</label>
                             </div>
 
                             <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="email" id="email" required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;"
-                                    onfocus="this.style.borderColor='var(--accent-gold)'"
-                                    onblur="this.style.borderColor='#eee'">
-                                <label for="email"
-                                    style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: #999; transition: all 0.3s ease; pointer-events: none; background: #fff; padding: 0 5px;">E-posta
-                                    Adresiniz *</label>
+                                <input type="email" id="email" placeholder=" " required
+                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
+                                <label for="email">E-posta Adresiniz *</label>
                             </div>
 
                             <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="tel" id="phone" required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;"
-                                    onfocus="this.style.borderColor='var(--accent-gold)'"
-                                    onblur="this.style.borderColor='#eee'">
-                                <label for="phone"
-                                    style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: #999; transition: all 0.3s ease; pointer-events: none; background: #fff; padding: 0 5px;">Telefon
-                                    Numaranız *</label>
+                                <input type="tel" id="phone" placeholder=" " required
+                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
+                                <label for="phone">Telefon Numaranız *</label>
                             </div>
 
                             <div style="margin-bottom: 25px;">
                                 <select id="sector"
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; color: #666; transition: all 0.3s ease;"
-                                    onfocus="this.style.borderColor='var(--accent-gold)'"
-                                    onblur="this.style.borderColor='#eee'">
+                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; color: #666; transition: all 0.3s ease;">
                                     <option value="" disabled selected>Hangi Sektördesiniz? *</option>
                                     <option value="gastronomi">Gastronomi</option>
                                     <option value="ofis">Ofis / Şirket</option>
@@ -292,13 +278,9 @@
                             </div>
 
                             <div class="input-group" style="margin-bottom: 30px;">
-                                <textarea id="message" required rows="6"
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; resize: vertical; transition: all 0.3s ease;"
-                                    onfocus="this.style.borderColor='var(--accent-gold)'"
-                                    onblur="this.style.borderColor='#eee'"></textarea>
-                                <label for="message"
-                                    style="position: absolute; top: 15px; left: 20px; color: #999; transition: all 0.3s ease; pointer-events: none; background: #fff; padding: 0 5px;">Mesajınız
-                                    *</label>
+                                <textarea id="message" placeholder=" " required rows="6"
+                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; resize: vertical; transition: all 0.3s ease;"></textarea>
+                                <label for="message">Mesajınız *</label>
                             </div>
 
                             <button type="submit"

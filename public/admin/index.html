@@ -334,6 +334,7 @@
             <li class="active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</li>
             <li onclick="showSection('products')"><i class="fas fa-coffee"></i> Ürünler</li>
             <li onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog / Trendler</li>
+            <li onclick="showSection('messages')"><i class="fas fa-envelope"></i> Mesajlar</li>
             <li onclick="showSection('settings')"><i class="fas fa-cog"></i> Ayarlar</li>
             <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> Çıkış</li>
         </ul>
@@ -416,6 +417,17 @@
                 </form>
             </div>
         </div>
+
+        <!-- Messages Section -->
+        <div id="messages" class="section">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h3>Gelen Mesajlar</h3>
+                <button class="btn btn-secondary" onclick="loadMessages()">Yenile</button>
+            </div>
+            <div id="message-list" style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- Messages will be loaded here -->
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
@@ -439,13 +451,15 @@
             document.getElementById(id).classList.add('active');
 
             document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('active'));
-            if (event) event.currentTarget.classList.add('active');
+            const activeLi = Array.from(document.querySelectorAll('.nav-links li')).find(li => li.getAttribute('onclick')?.includes(`'${id}'`));
+            if (activeLi) activeLi.classList.add('active');
 
-            document.getElementById('page-title').innerText = id.charAt(0).toUpperCase() + id.slice(1);
+            document.getElementById('page-title').innerText = id === 'messages' ? 'Mesajlar' : id.charAt(0).toUpperCase() + id.slice(1);
 
             if (id === 'dashboard') loadStats();
             if (id === 'products') loadProducts();
             if (id === 'blog') loadBlogs();
+            if (id === 'messages') loadMessages();
             if (id === 'settings') loadSettings();
         }
 
@@ -537,6 +551,73 @@
                 `).join('') || '<p>Henüz yazı eklenmemiş.</p>';
             } catch (err) {
                 container.innerHTML = 'Bloglar yüklenemedi.';
+            }
+        }
+
+        async function loadMessages() {
+            const container = document.getElementById('message-list');
+            container.innerHTML = 'Yükleniyor...';
+            try {
+                const res = await fetch('/api/contact', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const messages = await res.json();
+                container.innerHTML = messages.map(m => `
+                    <div class="stat-card" style="border-left: 5px solid ${m.isRead ? '#eee' : 'var(--accent)'}">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div>
+                                <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);">${m.name}</h3>
+                                <p style="margin:5px 0; font-size: 0.85rem; color: #666;">
+                                    <i class="fas fa-envelope"></i> ${m.email} | 
+                                    <i class="fas fa-phone"></i> ${m.phone} |
+                                    <i class="fas fa-industry"></i> ${m.sector || 'Belirtilmedi'}
+                                </p>
+                            </div>
+                            <span style="font-size: 0.8rem; color: #999;">${new Date(m.createdAt).toLocaleString('tr-TR')}</span>
+                        </div>
+                        <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 15px; font-style: italic;">
+                            ${m.message}
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; background: ${m.isRead ? '#95a5a6' : 'var(--accent)'}" 
+                                onclick="toggleRead(${m.id}, ${!m.isRead})">
+                                ${m.isRead ? 'Okunmadı Olarak İşaretle' : 'Okundu Olarak İşaretle'}
+                            </button>
+                            <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteMessage(${m.id})">Sil</button>
+                        </div>
+                    </div>
+                `).join('') || '<p>Henüz mesaj yok.</p>';
+            } catch (err) {
+                container.innerHTML = 'Mesajlar yüklenemedi.';
+            }
+        }
+
+        async function toggleRead(id, isRead) {
+            try {
+                await fetch(`/api/contact/${id}/read`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ isRead })
+                });
+                loadMessages();
+            } catch (err) {
+                alert('Durum güncellenemedi.');
+            }
+        }
+
+        async function deleteMessage(id) {
+            if (!confirm('Bu mesajı silmek istediğinize emin misiniz?')) return;
+            try {
+                await fetch(`/api/contact/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                loadMessages();
+            } catch (err) {
+                alert('Mesaj silinemedi.');
             }
         }
 

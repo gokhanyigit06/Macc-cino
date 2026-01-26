@@ -909,28 +909,33 @@ ul {
 
 .input-group label {
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 50% !important;
+    left: 20px !important;
+    transform: translateY(-50%) !important;
     color: #999;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     pointer-events: none;
     font-size: 1rem;
-}
-
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group input:valid,
-.input-group textarea:valid {
-    border-bottom-color: var(--primary-dark);
+    background: #fff;
+    padding: 0 5px;
+    z-index: 1;
 }
 
 .input-group input:focus~label,
+.input-group input:not(:placeholder-shown)~label,
 .input-group textarea:focus~label,
-.input-group input:valid~label,
-.input-group textarea:valid~label {
-    top: -20px;
-    font-size: 0.85rem;
-    color: var(--primary-dark);
+.input-group textarea:not(:placeholder-shown)~label {
+    top: 0 !important;
+    transform: translateY(-50%) scale(0.85) !important;
+    font-size: 0.9rem;
+    color: var(--accent-gold) !important;
+    font-weight: 700;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--accent-gold) !important;
+    outline: none;
 }
 
 .btn-submit {
@@ -2594,6 +2599,7 @@ ul {
    =================================== */
 
 @media (max-width: 768px) {
+
     /* Body overflow fix */
     body {
         overflow-x: hidden !important;
@@ -2667,6 +2673,165 @@ ul {
         display: block !important;
         z-index: 1001 !important;
     }
+
+    /* ========================================
+       INLINE STYLE OVERRIDES FOR MOBILE
+       ======================================== */
+
+    /* 2-column grid layouts - collapse to single column */
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: repeat(2"],
+    div[style*="grid-template-columns: 1.1fr"],
+    div[style*="grid-template-columns: 1.2fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* 3-column grid layouts - collapse to single column */
+    div[style*="grid-template-columns: repeat(3"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* 4-column grid layouts - collapse to single column */
+    div[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Large gap reductions */
+    div[style*="gap: 60px"],
+    div[style*="gap: 80px"],
+    div[style*="gap: 100px"] {
+        gap: 25px !important;
+    }
+
+    div[style*="gap: 40px"],
+    div[style*="gap: 50px"] {
+        gap: 20px !important;
+    }
+
+    /* Padding overrides for large inline padding */
+    div[style*="padding: 40px"],
+    div[style*="padding: 50px"],
+    div[style*="padding: 60px"] {
+        padding: 20px !important;
+    }
+
+    div[style*="padding: 40px 30px"] {
+        padding: 25px 15px !important;
+    }
+
+    /* Image containers with shadow offsets */
+    img[style*="box-shadow: 30px 30px"] {
+        box-shadow: 10px 10px 0 rgba(212, 175, 55, 0.05) !important;
+    }
+
+    /* Margin reductions */
+    div[style*="margin-bottom: 100px"],
+    div[style*="margin-bottom: 80px"] {
+        margin-bottom: 40px !important;
+    }
+
+    div[style*="margin-bottom: 60px"] {
+        margin-bottom: 30px !important;
+    }
+
+    div[style*="margin-top: 120px"],
+    div[style*="margin-top: 100px"] {
+        margin-top: 40px !important;
+    }
+
+    div[style*="margin-top: 80px"] {
+        margin-top: 30px !important;
+    }
+
+    /* Max-width adjustments */
+    div[style*="max-width: 1100px"],
+    div[style*="max-width: 1000px"],
+    div[style*="max-width: 900px"] {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Modal responsive fixes */
+    .modal-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .modal-content {
+        width: 95% !important;
+        max-width: 95% !important;
+    }
+
+    .modal-details {
+        padding: 30px 20px !important;
+    }
+
+    .modal-image {
+        max-height: 250px !important;
+    }
+
+    /* Contact form grid fixes */
+    div[style*="grid-template-columns: repeat(2, 1fr)"][style*="gap: 15px"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Service hero specific */
+    .service-hero {
+        min-height: 350px !important;
+        padding: 100px 20px 40px 20px !important;
+    }
+
+    /* Bottom slogan section */
+    .bottom-slogan-section {
+        padding: 80px 0 !important;
+    }
+
+    .bottom-slogan-section h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .bottom-slogan-section p {
+        font-size: 1rem !important;
+        letter-spacing: 4px !important;
+    }
+
+    .bottom-slogan-section p::before,
+    .bottom-slogan-section p::after {
+        width: 30px !important;
+    }
+
+    .bottom-slogan-section p::before {
+        left: -40px !important;
+    }
+
+    .bottom-slogan-section p::after {
+        right: -40px !important;
+    }
+}
+
+/* Tablet breakpoint - 900px */
+@media (max-width: 900px) {
+
+    /* 3-column to 2-column on tablets */
+    div[style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    /* 2-column stays on tablets, adjust gaps */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        gap: 30px !important;
+    }
+
+    /* Reduce large gaps on tablets */
+    div[style*="gap: 80px"],
+    div[style*="gap: 100px"] {
+        gap: 40px !important;
+    }
 }
 
 /* Extra small devices */
@@ -2681,5 +2846,16 @@ ul {
 
     .container {
         padding: 0 10px !important;
+    }
+
+    /* Even smaller gaps on very small screens */
+    div[style*="gap: 25px"],
+    div[style*="gap: 30px"] {
+        gap: 15px !important;
+    }
+
+    /* Reduce padding further */
+    div[style*="padding: 20px"] {
+        padding: 15px !important;
     }
 }

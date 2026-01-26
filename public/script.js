@@ -73,27 +73,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const successModal = document.getElementById('successModal');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
-            const originalText = btn.textContent;
+            const originalText = btn.innerHTML;
 
-            btn.textContent = 'Gönderiliyor...';
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                sector: document.getElementById('sector').value,
+                message: document.getElementById('message').value
+            };
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i>Gönderiliyor...';
             btn.style.opacity = '0.7';
 
-            setTimeout(() => {
-                // Reset Form
-                contactForm.reset();
-                btn.textContent = originalText;
-                btn.style.opacity = '1';
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
 
-                // Show Success Modal
-                if (successModal) {
-                    successModal.style.display = 'flex';
+                if (response.ok) {
+                    // Reset Form
+                    contactForm.reset();
+
+                    // Show Success Modal
+                    if (successModal) {
+                        successModal.style.display = 'flex';
+                    } else {
+                        alert('Başvurunuz ailemize ulaştı!');
+                    }
                 } else {
-                    alert('Başvurunuz ailemize ulaştı!');
+                    const error = await response.json();
+                    alert(error.error || 'Bir hata oluştu, lütfen tekrar deneyin.');
                 }
-            }, 1000);
+            } catch (err) {
+                console.error('Submit error:', err);
+                alert('Bağlantı hatası oluştu.');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+            }
         });
     }
 

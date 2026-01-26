@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model AdminUser {
@@ -44,5 +44,16 @@ model PageVisit {
   pageUrl   String
   visitorIp String?  // Hashed for privacy
   userAgent String?
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String
+  sector    String?
+  message   String
+  isRead    Boolean  @default(false)
   createdAt DateTime @default(now())
 }
