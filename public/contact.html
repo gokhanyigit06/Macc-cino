@@ -7,16 +7,24 @@
     <title>İletişim | MAC&Cino</title>
     <meta name="description" content="MAC&Cino ile iletişime geçin. Profesyonel kahve çözümleri için bize ulaşın.">
 
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="assets/misc/cafe_interior.png" fetchpriority="high">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/misc/coffee_bean_icon.png">
 
     <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
@@ -24,20 +32,16 @@
 
 <body>
 
-    <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
 
-    <!-- Sticky Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index" class="logo">MAC&Cino</a>
             <div class="nav-links">
-                <!-- Kahve Makineleri -->
                 <div class="nav-item">
                     <a href="products" class="nav-link">Kahve Makineleri</a>
                 </div>
 
-                <!-- Sektör (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -52,7 +56,6 @@
                     </div>
                 </div>
 
-                <!-- Konseptimiz (Dropdown) -->
                 <div class="nav-item">
                     <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
                             style="font-size:0.7rem; margin-left:5px;"></i></a>
@@ -66,30 +69,26 @@
                     </div>
                 </div>
 
-                <!-- Hakkımızda -->
                 <div class="nav-item">
                     <a href="about" class="nav-link">Hakkımızda</a>
                 </div>
 
-                <!-- İletişim -->
                 <div class="nav-item">
                     <a href="contact" class="nav-link">İletişim</a>
                 </div>
 
-                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
+                <a href="#" id="searchBtn" class="nav-link" aria-label="Arama" style="margin-left: 20px;"><i
+                        class="fas fa-search"></i></a>
             </div>
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
-
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Hero Section -->
     <header class="hero-section"
         style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/misc/cafe_interior.png'); background-position: center; background-size: cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
         <div class="container reveal">
@@ -105,220 +104,28 @@
                 İşletmeniz için en uygun kahve çözümünü birlikte bulalım.
             </p>
         </div>
-
-        <!-- Scroll Down Indicator -->
-        <a href="#contact-content"
-            style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: #fff; animation: bounce 2s infinite;">
-            <i class="fas fa-chevron-down" style="font-size: 1.5rem;"></i>
-        </a>
     </header>
 
-    <!-- Main Contact Section -->
     <section id="contact-content" class="section" style="padding: 100px 0; background: #f9f9f9;">
         <div class="container">
-
-            <!-- Section Header -->
-            <div class="reveal" style="text-align: center; margin-bottom: 70px;">
-                <h2
-                    style="font-size: 3rem; color: var(--primary-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
-                    <span style="color: var(--accent-gold); font-style: italic;">Kahve Yolculuğunuza</span> Birlikte
-                    Başlayalım
-                </h2>
-                <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto 30px;"></div>
-                <p style="font-size: 1.2rem; color: #666; max-width: 750px; margin: 0 auto;">
-                    Sorularınız mı var? Teklif mi almak istiyorsunuz? Ekibimiz size yardımcı olmak için burada.
-                </p>
-            </div>
-
-            <!-- Contact Grid -->
             <div class="grid-2 reveal" style="gap: 60px; align-items: flex-start;">
-
-                <!-- Left: Contact Information -->
                 <div>
-                    <!-- Compact Contact Grid -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 25px;">
-                        <!-- Telefon -->
-                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
-                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
-                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                                <i class="fas fa-phone-alt" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
-                                <h3
-                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
-                                    Telefon</h3>
-                            </div>
-                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">0850 123 45 67
-                            </p>
-                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">Hafta içi 09:00 - 18:00</p>
-                        </div>
-
-                        <!-- E-posta -->
-                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
-                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
-                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                                <i class="fas fa-envelope" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
-                                <h3
-                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
-                                    E-posta</h3>
-                            </div>
-                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">
-                                bilgi@mac-cino.com</p>
-                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">24 saat içinde cevap</p>
-                        </div>
-
-                        <!-- Adres -->
-                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
-                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
-                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                                <i class="fas fa-map-marker-alt"
-                                    style="color: var(--accent-gold); font-size: 1.1rem;"></i>
-                                <h3
-                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
-                                    Adres</h3>
-                            </div>
-                            <p style="color: #666; font-size: 0.9rem; margin: 0; padding-left: 28px; line-height: 1.5;">
-                                Maslak Mah. Büyükdere Cad. No:123<br>34398 Sarıyer / İstanbul</p>
-                        </div>
-
-                        <!-- WhatsApp -->
-                        <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border-left: 3px solid var(--accent-gold); transition: all 0.3s ease;"
-                            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.06)'">
-                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                                <i class="fab fa-whatsapp" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
-                                <h3
-                                    style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary-dark); margin: 0;">
-                                    WhatsApp</h3>
-                            </div>
-                            <p style="color: #666; font-size: 0.95rem; margin: 0; padding-left: 28px;">0555 555 55 55
-                            </p>
-                            <p style="color: #999; font-size: 0.8rem; margin: 3px 0 0 28px;">Hızlı destek için</p>
-                        </div>
-                    </div>
-
-                    <!-- Social Media - Compact -->
-                    <div
-                        style="background: var(--primary-dark); padding: 25px; border-radius: 12px; text-align: center;">
-                        <h3
-                            style="color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 15px;">
-                            Bizi Takip Edin</h3>
-                        <div style="display: flex; justify-content: center; gap: 12px;">
-                            <a href="#"
-                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
-                                onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
-                                onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#"
-                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
-                                onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
-                                onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#"
-                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
-                                onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
-                                onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#"
-                                style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.2rem; transition: all 0.3s ease;"
-                                onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'"
-                                onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--accent-gold)'">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <h2 style="font-size: 2rem; margin-bottom: 30px;">Hızlı İletişim</h2>
+                    <p style="margin-bottom: 20px;">Sorularınız için bizimle iletişime geçebilirsiniz.</p>
                 </div>
-
-                <!-- Right: Contact Form -->
-                <div>
-                    <div
-                        style="background: #fff; padding: 50px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary-dark); margin-bottom: 15px;">
-                            Mesaj Gönderin</h3>
-                        <p style="color: #666; margin-bottom: 35px; font-size: 1rem;">Size en kısa sürede dönüş
-                            yapalım. Lütfen formu eksiksiz doldurun.</p>
-
-                        <form id="contactForm">
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="text" id="name" placeholder=" " required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
-                                <label for="name">Adınız Soyadınız *</label>
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="email" id="email" placeholder=" " required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
-                                <label for="email">E-posta Adresiniz *</label>
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <input type="tel" id="phone" placeholder=" " required
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;">
-                                <label for="phone">Telefon Numaranız *</label>
-                            </div>
-
-                            <div style="margin-bottom: 25px;">
-                                <select id="sector"
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; color: #666; transition: all 0.3s ease;">
-                                    <option value="" disabled selected>Hangi Sektördesiniz? *</option>
-                                    <option value="gastronomi">Gastronomi</option>
-                                    <option value="ofis">Ofis / Şirket</option>
-                                    <option value="otel">Otel / Pansiyon</option>
-                                    <option value="bakery">Fırın / Pastane</option>
-                                    <option value="fitness">Fitness / Sağlık</option>
-                                    <option value="istasyon">Benzin İstasyonu</option>
-                                    <option value="chains">Mağaza Zincirleri</option>
-                                    <option value="diger">Diğer</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 30px;">
-                                <textarea id="message" placeholder=" " required rows="6"
-                                    style="width: 100%; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; resize: vertical; transition: all 0.3s ease;"></textarea>
-                                <label for="message">Mesajınız *</label>
-                            </div>
-
-                            <button type="submit"
-                                style="width: 100%; padding: 18px; background: var(--accent-gold); color: var(--primary-dark); border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;"
-                                onmouseover="this.style.background='var(--primary-dark)'; this.style.color='#fff'"
-                                onmouseout="this.style.background='var(--accent-gold)'; this.style.color='var(--primary-dark)'">
-                                <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Mesajı Gönder
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="section" style="padding: 0;">
-        <div style="width: 100%; height: 450px; background: #e9e9e9; position: relative; overflow: hidden;">
-            <!-- Google Maps Placeholder - Kullanıcı kendi API key'ini ekleyecek -->
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.847663445086!2d29.015991315434425!3d41.08579367929249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sMaslak%2C%20B%C3%BCy%C3%BCkdere%20Cd.%2C%2034398%20Sar%C4%B1yer%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1642000000000!5m2!1str!2str"
-                width="100%" height="450" style="border:0; filter: grayscale(0.3);" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="iletisim" class="footer">
+    <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 <h2>MAC&Cino</h2>
                 <p>Better Coffee. Better Business.</p>
                 <div class="social-links-footer">
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-info">
@@ -339,7 +146,6 @@
         </div>
     </footer>
 
-    <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
             <div class="success-icon"><i class="fas fa-check-circle"></i></div>
@@ -350,9 +156,7 @@
         </div>
     </div>
 
-    <!-- Back to Top -->
     <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
-
     <script src="script.js"></script>
 </body>
 

@@ -1,336 +1,158 @@
-<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kariyer | MAC&Cino</title>
-    <meta name="description" content="MAC&Cino ekibine katılın ve profesyonel kahve dünyasında kariyer yapın.">
-
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Scroll Progress -->
-    <div class="scroll-progress"></div>
-
-    <!-- Sticky Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index" class="logo">MAC&Cino</a>
-            <div class="nav-links">
-                <!-- Kahve Makineleri -->
-                <div class="nav-item">
-                    <a href="products" class="nav-link">Kahve Makineleri</a>
-                </div>
-
-                <!-- Sektör (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="gastronomy">Gastronomi</a>
-                        <a href="office">Ofis</a>
-                        <a href="bakery">Fırınlar / Pastane</a>
-                        <a href="hotel">Otel - Pansiyon</a>
-                        <a href="fitness">Fitness - Sağlık</a>
-                        <a href="gas-station">Benzin İstasyonu</a>
-                        <a href="chains">Mağaza Zincirleri</a>
-                    </div>
-                </div>
-
-                <!-- Konseptimiz (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
-                        <a href="service" class="dropdown-link">Teknik Servis</a>
-                        <a href="careers" class="dropdown-link">Kariyer</a>
-                        <a href="beans">Kahve Çekirdekleri</a>
-                        <a href="specialties">Kahve Spesiyalleri</a>
-                        <a href="trends">Trend İçecekler</a>
-                    </div>
-                </div>
-
-                <!-- Hakkımızda -->
-                <div class="nav-item">
-                    <a href="about" class="nav-link">Hakkımızda</a>
-                </div>
-
-                <!-- İletişim -->
-                <div class="nav-item">
-                    <a href="contact" class="nav-link">İletişim</a>
-                </div>
-
-                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
-            </div>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Hero Section -->
-    <header class="hero-section"
-        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/office/hero.png'); background-position: center; background-size: cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
-        <div class="container reveal">
-            <span
-                style="display: block; color: var(--accent-gold); font-size: 1.1rem; letter-spacing: 4px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase;">MAC&CINO
-                İŞVERENİ OLARAK</span>
-            <h1
-                style="font-size: 4rem; color: #fff; margin-bottom: 25px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Playfair Display', serif;">
-                Barista Company'de çalışmak <br><span
-                    style="font-style: italic; font-weight: 400; color: var(--accent-gold);">sadece bir iş değil, bir
-                    aile.</span>
-            </h1>
-            <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto;"></div>
-        </div>
-    </header>
-
-    <!-- Intro Section -->
-    <section class="section" style="padding: 120px 0; background-color: #fff;">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;" class="reveal">
-                <h2
-                    style="font-size: 2.8rem; margin-bottom: 40px; font-family: 'Playfair Display', serif; text-align: center;">
-                    MAC&CINO Ailesine <span style="color: var(--accent-gold); font-style: italic;">Hoş Geldiniz!</span>
-                </h2>
-
-                <div
-                    style="font-size: 1.25rem; color: #444; line-height: 1.8; margin-bottom: 40px; text-align: center; font-weight: 400;">
-                    <p style="margin-bottom: 30px;">Barista Company'de çalışmanın neden özel olduğunu keşfedin. Büyüme
-                        yolunda olan orta ölçekli bir şirket olarak şu anda bazı yeni zorluklarla karşı karşıyayız ve
-                        bunları sizinle birlikte aşmak istiyoruz.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px;">
-                    <div>
-                        <p style="color: #666; line-height: 1.8; font-size: 1.1rem; margin-bottom: 25px;">
-                            Uluslararası fırsatlarımızı geliştiriyoruz. Bu yeni projeler için yaratıcı çalışanlar, kahve
-                            tutkunları ve fikirleriyle MAC&CINO'nun geleceğine katkıda bulunmak isteyen kişiler
-                            arıyoruz.
-                        </p>
-                    </div>
-                    <div>
-                        <p style="color: #666; line-height: 1.8; font-size: 1.1rem; margin-bottom: 25px;">
-                            Sahipli bir aile şirketi olarak, olumlu bir iş ortamı ön planda  ancak hedeflerimizi de
-                            gerçekleştirmek istiyoruz. Bizimle birlikte çalışmak ister misiniz? Başvurunuzu bekliyoruz.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Section (Modern Visual Layout) -->
-    <section class="section" style="padding: 100px 0; background-color: #f9f9f9;">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 90px;" class="reveal">
-                <i class="fas fa-quote-left"
-                    style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 25px; opacity: 0.3;"></i>
-                <h2 style="font-size: 3rem; font-family: 'Playfair Display', serif;">"Kahve, kahveden <span
-                        style="color: var(--accent-gold); font-style: italic;">ibaret değildir.</span>"</h2>
-                <div style="width: 50px; height: 3px; background: var(--accent-gold); margin: 30px auto 0;"></div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
-                <div class="reveal">
-                    <img src="assets/office/hero.png"
-                        alt="Team Working"
-                        style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
-                </div>
-                <div class="reveal">
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.9; margin-bottom: 35px; font-weight: 500;">
-                        Tutkumuz en iyi kahvedir. En taze kahve çekirdekleri, en iyi kahve sistemleri ve profesyonel
-                        teknik servisimiz sayesinde dünya genelinde en iyi fincan içi kaliteyi garanti edebiliyoruz.
-                    </p>
-
-                    <div
-                        style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border-left: 6px solid var(--accent-gold);">
-                        <p style="font-size: 1.05rem; color: #666; line-height: 1.8; margin-bottom: 25px;">
-                            Bunu yalnızca en modern teknoloji, deneyimli bir geliştirme ekibi ve yüksek standartlara
-                            sahip çalışanlar sayesinde başarabiliyoruz. Barista Company'de çalışırken, herkesin
-                            <strong>detaylara dikkat etmesi</strong> gerekiyor, çünkü bir fincan ve müşterilerimiz de
-                            öyle.
-                        </p>
-                        <p style="font-size: 1.05rem; color: #666; line-height: 1.8; margin: 0;">
-                            Biz her zaman biraz fazlasını sunarız  standarttan biraz daha fazla hizmet, diğerlerinden
-                            daha iyi kalite ve özellikle müşteriye çok daha yakın bir yaklaşım. İşte bu şekilde, her
-                            zaman diğerlerinden daha iyi olabiliriz.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Application Form -->
-    <section id="basvuru-form" class="section" style="padding: 120px 0; background-color: #fff;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: flex-start;">
-                <div class="reveal">
-                    <span
-                        style="color: var(--accent-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">BİZE
-                        KATILIN</span>
-                    <h2 style="font-size: 3rem; margin: 20px 0 35px; font-family: 'Playfair Display', serif;">Detaylara
-                        Önem <br><span style="color: var(--accent-gold); font-style: italic;">Veriyoruz.</span></h2>
-                    <p style="font-size: 1.15rem; color: #666; line-height: 1.8; margin-bottom: 40px;">
-                        MAC&CINO'yu özel kılan şey, küçük detaylara gösterilen özendir. Eğer siz de detaylara takılan,
-                        kaliteden ödün vermeyen ve kahve dünyasına ilgi duyan biriyseniz, sizi tanımak isteriz.
-                    </p>
-                    <div style="display: grid; gap: 20px;">
-                        <div
-                            style="display: flex; gap: 20px; align-items: center; background: #fdfaf3; padding: 25px; border-radius: 15px;">
-                            <i class="fas fa-users" style="font-size: 1.5rem; color: var(--accent-gold);"></i>
-                            <span style="font-weight: 500;">Sahipli bir aile şirketi kültürü</span>
-                        </div>
-                        <div
-                            style="display: flex; gap: 20px; align-items: center; background: #fdfaf3; padding: 25px; border-radius: 15px;">
-                            <i class="fas fa-globe-europe" style="font-size: 1.5rem; color: var(--accent-gold);"></i>
-                            <span style="font-weight: 500;">Uluslararası proje fırsatları</span>
-                        </div>
-                        <div
-                            style="display: flex; gap: 20px; align-items: center; background: #fdfaf3; padding: 25px; border-radius: 15px;">
-                            <i class="fas fa-mug-hot" style="font-size: 1.5rem; color: var(--accent-gold);"></i>
-                            <span style="font-weight: 500;">Tutku dolu bir çalışma ortamı</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-box reveal"
-                    style="background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); border: 1px solid #eee;">
-                    <h3 style="margin-bottom: 30px; font-family: 'Playfair Display', serif;">Genel Başvuru Formu</h3>
-                    <form id="careerForm">
-                        <div class="career-group" style="margin-bottom: 25px;">
-                            <label for="career-name"
-                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">Adınız
-                                Soyadınız</label>
-                            <input type="text" id="career-name" required
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; background: #fcfcfc;">
-                        </div>
-                        <div class="career-group" style="margin-bottom: 25px;">
-                            <label for="career-email"
-                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">E-posta
-                                Adresiniz</label>
-                            <input type="email" id="career-email" required
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; background: #fcfcfc;">
-                        </div>
-                        <div class="career-group" style="margin-bottom: 25px;">
-                            <label for="department"
-                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">İlgilendiğiniz
-                                Departman</label>
-                            <select id="department"
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; background: #fcfcfc; color: #555; cursor: pointer;">
-                                <option value="satis">Satış & Pazarlama</option>
-                                <option value="teknik">Teknik Servis</option>
-                                <option value="logistik">Lojistik & Depo</option>
-                                <option value="yonetim">Yönetim & İdari</option>
-                                <option value="barista">Eğitim & Barista</option>
-                            </select>
-                        </div>
-                        <div class="career-group" style="margin-bottom: 30px;">
-                            <label for="career-message"
-                                style="display: block; font-size: 0.9rem; color: #777; margin-bottom: 8px; font-weight: 500;">Kendinizden
-                                Bahsedin</label>
-                            <textarea id="career-message" required
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; font-size: 1rem; min-height: 100px; resize: vertical; background: #fcfcfc;"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary"
-                            style="width: 100%; padding: 20px; cursor: pointer; border: none; border-radius: 10px;">BAŞVURU
-                            GÖNDER</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-            <!-- Footer -->
-    <footer id="iletisim" class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h2>MAC&Cino</h2>
-                <p>Better Coffee. Better Business.</p>
-                <div class="social-links-footer">
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-info">
-                <h3>Teknik Servis</h3>
-                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
-                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-            </div>
-            <div class="footer-links">
-                <h3>Kurumsal</h3>
-                <a href="concept">Konseptimiz</a>
-                <a href="service">Teknik Servis</a>
-                <a href="careers">Kariyer</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="success-modal">
-        <div class="success-content">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Başvurunuz Ailemize Ulaştı!</h3>
-            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
-            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
-                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
-        </div>
-    </div>
-
-        <!-- Bottom Slogan Section -->
-    <section class="bottom-slogan-section reveal">
-        <div class="container">
-            <h2>Better Coffee.<br>Better Business.</h2>
-            <p>Mac&Cino Barista Company</p>
-        </div>
-        <!-- Floating Decorative Beans -->
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 10%; left: 5%; width: 50px; transform: rotate(-20deg); animation-delay: 0s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 25%; left: 85%; width: 70px; transform: rotate(15deg); animation-delay: 1s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 15%; left: 10%; width: 80px; transform: rotate(30deg); animation-delay: 2s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="bottom: 10%; left: 80%; width: 60px; transform: rotate(-10deg); animation-delay: 1.5s;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 50%; left: 15%; width: 40px; transform: rotate(45deg); opacity: 0.3;">
-        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean"
-            style="top: 40%; left: 75%; width: 55px; transform: rotate(-35deg); opacity: 0.3;">
-    </section>
-
-    <!-- Back to Top -->
-    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
-
-    <!-- Cookie Banner -->
-    <div id="cookieBanner">
-        <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
-        <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kariyer | MAC&Cino</title>
+    <meta name="description" content="MAC&Cino ekibine katılın ve profesyonel kahve dünyasında kariyer yapın.">
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="scroll-progress"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index" class="logo">MAC&Cino</a>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <a href="products" class="nav-link">Kahve Makineleri</a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="gastronomy">Gastronomi</a>
+                        <a href="office">Ofis</a>
+                        <a href="bakery">Fırınlar / Pastane</a>
+                        <a href="hotel">Otel - Pansiyon</a>
+                        <a href="fitness">Fitness - Sağlık</a>
+                        <a href="gas-station">Benzin İstasyonu</a>
+                        <a href="chains">Mağaza Zincirleri</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem; margin-left:5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
+                        <a href="service" class="dropdown-link">Teknik Servis</a>
+                        <a href="careers" class="dropdown-link">Kariyer</a>
+                        <a href="beans">Kahve Çekirdekleri</a>
+                        <a href="specialties">Kahve Spesiyalleri</a>
+                        <a href="trends">Trend İçecekler</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="about" class="nav-link">Hakkımızda</a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="contact" class="nav-link">İletişim</a>
+                </div>
+
+                <a href="#" id="searchBtn" class="nav-link" aria-label="Arama" style="margin-left: 20px;"><i
+                        class="fas fa-search"></i></a>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <a href="https://wa.me/905555555555" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="hero-section"
+        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/office/hero.png'); background-position: center; background-size: cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
+        <div class="container reveal">
+            <span
+                style="display: block; color: var(--accent-gold); font-size: 1.1rem; letter-spacing: 4px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase;">MAC&CINO
+                İŞVERENİ OLARAK</span>
+            <h1
+                style="font-size: 4rem; color: #fff; margin-bottom: 25px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Playfair Display', serif;">
+                Barista Company'de çalışmak <br><span
+                    style="font-style: italic; font-weight: 400; color: var(--accent-gold);">sadece bir iş değil, bir
+                    aile.</span>
+            </h1>
+            <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 0 auto;"></div>
+        </div>
+    </header>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>MAC&Cino</h2>
+                <p>Better Coffee. Better Business.</p>
+                <div class="social-links-footer">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h3>Teknik Servis</h3>
+                <p><i class="fas fa-phone-alt"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+            </div>
+            <div class="footer-links">
+                <h3>Kurumsal</h3>
+                <a href="concept">Konseptimiz</a>
+                <a href="service">Teknik Servis</a>
+                <a href="careers">Kariyer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mac&Cino Barista Company. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Başvurunuz Ailemize Ulaştı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <button class="btn-hero btn-dark" style="margin-top:20px; width:100%;"
+                onclick="document.getElementById('successModal').style.display='none'">Harika</button>
+        </div>
+    </div>
+
+    <section class="bottom-slogan-section reveal">
+        <div class="container">
+            <h2>Better Coffee.<br>Better Business.</h2>
+            <p>Mac&Cino Barista Company</p>
+        </div>
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="50" height="50"
+            style="top: 10%; left: 5%; transform: rotate(-20deg);">
+        <img src="assets/misc/coffee_bean_icon.png" class="floating-bean" alt="" loading="lazy" width="70" height="70"
+            style="top: 25%; left: 85%; transform: rotate(15deg);">
+    </section>
+
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
