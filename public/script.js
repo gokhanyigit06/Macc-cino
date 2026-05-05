@@ -1,4 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+
+    // --- Load Components ---
+    try {
+        const headerEl = document.getElementById('app-header');
+        if (headerEl) {
+            const headerRes = await fetch('components/header.html');
+            if (headerRes.ok) headerEl.innerHTML = await headerRes.text();
+        }
+
+        const footerEl = document.getElementById('app-footer');
+        if (footerEl) {
+            const footerRes = await fetch('components/footer.html');
+            if (footerRes.ok) footerEl.innerHTML = await footerRes.text();
+        }
+    } catch (e) {
+        console.error('Failed to load components', e);
+    }
 
     // --- Dynamic Settings (API) ---
     // --- Dynamic Settings (API) ---
@@ -250,14 +267,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Preloader ---
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', () => {
+        const hidePreloader = () => {
             setTimeout(() => {
                 preloader.classList.add('fade-out');
                 setTimeout(() => {
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000); // Minimum load time 1s
-        });
+        };
+
+        if (document.readyState === 'complete') {
+            hidePreloader();
+        } else {
+            window.addEventListener('load', hidePreloader);
+        }
     }
 
     // --- Search Overlay ---

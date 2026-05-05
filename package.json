@@ -2,9 +2,11 @@
   "name": "macc-cino",
   "version": "1.0.0",
   "description": "Bu proje, premium bir kahve makinesi ve barista hizmetleri markası için oluşturulmuş modern, responsive bir web sitesi iskeletidir.",
-  "main": "aggressive_reorganize.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",

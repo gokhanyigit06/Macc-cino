@@ -76,57 +76,7 @@
             <button class="btn-hero"><i class="fas fa-search"></i> Ara</button>
         </div>
     </div>
-    <!-- Sticky Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index" class="logo">MAC&Cino</a>
-            <div class="nav-links">
-                <!-- Kahve Makineleri -->
-                <div class="nav-item">
-                    <a href="products" class="nav-link">Kahve Makineleri</a>
-                </div>
-                <!-- Sektör (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Sektör <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="gastronomy">Gastronomi</a>
-                        <a href="office">Ofis</a>
-                        <a href="bakery">Fırınlar / Pastane</a>
-                        <a href="hotel">Otel - Pansiyon</a>
-                        <a href="fitness">Fitness - Sağlık</a>
-                        <a href="gas-station">Benzin İstasyonu</a>
-                        <a href="chains">Mağaza Zincirleri</a>
-                    </div>
-                </div>
-                <!-- Konseptimiz (Dropdown) -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Konseptimiz <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem; margin-left:5px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="concept" class="dropdown-link">Kahve Konseptimiz</a>
-                        <a href="service" class="dropdown-link">Teknik Servis</a>
-                        <a href="careers" class="dropdown-link">Kariyer</a>
-                        <a href="beans">Kahve Çekirdekleri</a>
-                        <a href="specialties">Kahve Spesiyalleri</a>
-                        <a href="trends">Trend İçecekler</a>
-                    </div>
-                </div>
-                <!-- Hakkımızda -->
-                <div class="nav-item">
-                    <a href="about" class="nav-link">Hakkımızda</a>
-                </div>
-                <!-- İletişim -->
-                <div class="nav-item">
-                    <a href="contact" class="nav-link">İletişim</a>
-                </div>
-                <a href="#" id="searchBtn" class="nav-link" style="margin-left: 20px;"><i class="fas fa-search"></i></a>
-            </div>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+    <div id="app-header"></div>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/905343751989" target="_blank" class="whatsapp-btn" title="WhatsApp Hattı">
         <i class="fab fa-whatsapp"></i>
@@ -146,7 +96,7 @@
             </p>
         </div>
     </header>
-    <!-- Intro Text Section: Sıcak - Soğuk - Vegan -->
+    <!-- Intro Text Section: Sıcak &amp; Soğuk - Vegan -->
     <section class="section" style="padding: 100px 0; background-color: #fff;">
         <div class="container reveal" style="text-align: center; max-width: 850px;">
             <span
@@ -154,7 +104,7 @@
                 YAKALAYIN</span>
             <h2
                 style="font-size: 3.8rem; color: var(--primary-dark); margin-bottom: 50px; font-family: 'Playfair Display', serif; line-height: 1.2;">
-                Sıcak  Soğuk <span style="margin: 0 10px; color: #ccc; font-weight: 300;">|</span> <span
+                Sıcak &amp; Soğuk <span style="margin: 0 10px; color: #ccc; font-weight: 300;">|</span> <span
                     style="color: var(--accent-gold); font-style: italic; font-weight: 400;">Vegan</span>
             </h2>
             <!-- Visual Feature Grid (Replaces Text Wall) -->
@@ -322,7 +272,7 @@
                         style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 25px; font-family: 'Playfair Display', serif;">
                         Chai Latte</h2>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
-                        Chai Latte'nin baştan çıkarıcı dünyasını keşfedin. Chai Latte, <strong>Sıcak, Soğuk ve
+                        Chai Latte'nin baştan çıkarıcı dünyasını keşfedin. Chai Latte, <strong>Sıcak &amp; Soğuk ve
                             Vegan</strong> olmak üzere üç karşı konulmaz seçenekle sunulur.
                     </p>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555;">
@@ -446,7 +396,7 @@
                     <ul class="contact-details">
                         <li><i class="fas fa-map-marker-alt"></i> Kavaklidere Mah. Büklüm Sk. 12/B Ankara/Cankaya</li>
                         <li><i class="fas fa-phone"></i> +905343751989</li>
-                        <li><i class="fas fa-envelope"></i> bilgi@baristacompany.com</li>
+                        <li><i class="fas fa-envelope"></i> info@macc-cino.com</li>
                     </ul>
                 </div>
                 <div class="contact-form-box">
@@ -478,35 +428,7 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer id="iletisim" class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h2>MAC&Cino</h2>
-                <p>Better Coffee. Better Business.</p>
-                <div class="social-links-footer">
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-info">
-                <h3>Teknik Servis</h3>
-                <p><i class="fas fa-phone-alt"></i> +905343751989</p>
-                <p><i class="fas fa-envelope"></i> servis@mac-cino.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Ankara/Cankaya</p>
-            </div>
-            <div class="footer-links">
-                <h3>Kurumsal</h3>
-                <a href="concept">Konseptimiz</a>
-                <a href="service">Teknik Servis</a>
-                <a href="careers">Kariyer</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 MoccaTec Kahve Sistemleri Barista Company. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
+    <div id="app-footer"></div>
     <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
