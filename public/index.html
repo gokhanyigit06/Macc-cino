@@ -56,9 +56,11 @@
     </a>
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-bg"></div>
+        <!-- Dynamic slider populates here; falls back to static bg if no slides -->
+        <div class="hero-bg" id="hero-default-bg"></div>
+        <div id="hero-slider"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="container hero-content" id="hero-content-default">
             <h1 class="fade-up hero-title">Kahve Satışlarını Artırmak İçin Doğru Çözüm</h1>
             <div class="hero-separator fade-up delay-1"></div>
             <h2 class="fade-up delay-2 hero-subtitle">MACC&CINO BARISTA COMPANY</h2>
@@ -80,59 +82,8 @@
         <section id="makineler" class="section">
             <div class="container">
                 <h2 class="section-title reveal">Kahve Makinelerimiz</h2>
-                <div class="product-grid reveal">
-                    <div class="product-card">
-                        <img src="assets/products/product1.png" alt="Barista Pro XT Espresso Makinesi" loading="lazy"
-                            width="400" height="400" decoding="async">
-                        <div class="product-info">
-                            <h3>Barista Pro XT</h3>
-                            <p>Profesyonel kafeler için yüksek performans.</p>
-                            <a href="#" class="btn-text open-modal" data-title="Barista Pro XT"
-                                data-img="assets/products/product1.png"
-                                data-desc="Yoğun işletmeler için tasarlanmış, çift gruplu ve yüksek buhar kapasiteli profesyonel espresso makinesi.PID sıcaklık kontrolü ve enerji tasarrufu modu ile.">
-                                İncele <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="assets/products/product2.png" alt="Office Master 3000 Kahve Makinesi" loading="lazy"
-                            width="400" height="400" decoding="async">
-                        <div class="product-info">
-                            <h3>Office Master 3000</h3>
-                            <p>Ofisler için dokunmatik, hızlı ve şık çözüm.</p>
-                            <a href="#" class="btn-text open-modal" data-title="Office Master 3000"
-                                data-img="assets/products/product2.png"
-                                data-desc="Tek dokunuşla latte, cappuccino ve espresso. Şık dokunmatik ekranı ve tam otomatik temizleme sistemi ile ofislerin vazgeçilmezi.">
-                                İncele <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="assets/products/product1.png" alt="Barista Compact Kahve Makinesi" loading="lazy"
-                            width="400" height="400" decoding="async">
-                        <div class="product-info">
-                            <h3>Barista Compact</h3>
-                            <p>Dar alanlar için güçlü espresso performansı.</p>
-                            <a href="#" class="btn-text open-modal" data-title="Barista Compact"
-                                data-img="assets/products/product1.png"
-                                data-desc="Küçük mekanlar için büyük lezzet. Tek gruplu, kompakt tasarım ancak ödün verilmeyen basınç gücü.">
-                                İncele <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="assets/products/product2.png" alt="Barista Touch Ultra Kahve Makinesi" loading="lazy"
-                            width="400" height="400" decoding="async">
-                        <div class="product-info">
-                            <h3>Barista Touch Ultra</h3>
-                            <p>Yapay zeka destekli tam otomatik deneyim.</p>
-                            <a href="#" class="btn-text open-modal" data-title="Barista Touch Ultra"
-                                data-img="assets/products/product2.png"
-                                data-desc="Akıllı sensörleri ile süt sıcaklığını ve köpük oranını otomatik ayarlar. Her fincanda mükemmel standart.">
-                                İncele <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="product-grid reveal" id="home-product-grid">
+                    <!-- Dynamic products loaded from /api/products by home-products-dynamic.js -->
                 </div>
             </div>
         </section>
@@ -584,6 +535,8 @@
         <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
     </div>
     <script src="script.js"></script>
+    <script src="js/hero-dynamic.js"></script>
+    <script src="js/home-products-dynamic.js"></script>
 </body>
 
 </html>

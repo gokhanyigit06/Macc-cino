@@ -14,6 +14,18 @@ async function loadProducts() {
     const grid = document.getElementById('productGrid');
     grid.innerHTML = '<div class="loader-content" style="width:100%; text-align:center;"><img src="assets/misc/coffee_bean_icon.png" class="loader-icon"> Yükleniyor...</div>';
 
+    // Respect the global "hide products section" admin flag
+    try {
+        const sRes = await fetch('/api/settings');
+        if (sRes.ok) {
+            const settings = await sRes.json();
+            if (settings.products_section_visible === 'false') {
+                grid.innerHTML = '<p style="text-align:center; width:100%; padding:60px 20px; font-size:1.1rem;">Kahve makinelerimiz şu anda yenileniyor. En kısa zamanda sizlerle olacağız.</p>';
+                return;
+            }
+        }
+    } catch (_) { /* non-fatal */ }
+
     try {
         const res = await fetch('/api/products');
         allProducts = await res.json();

@@ -47,6 +47,7 @@ app.use('/api/blog', require('./routes/blog'));
 app.use('/api/settings', require('./routes/settings'));
 app.use('/api/stats', require('./routes/stats'));
 app.use('/api/contact', require('./routes/contact'));
+app.use('/api/hero', require('./routes/hero'));
 
 // Catch-all for SPA (Admin Panel) or 404
 app.get(/^\/admin.*/, (req, res) => {

@@ -39,6 +39,11 @@ router.post('/', authenticateToken, upload.single('logo_file'), async (req, res)
     if (req.body.primary_color) addUpdate('primary_color', req.body.primary_color);
     if (req.body.accent_color) addUpdate('accent_color', req.body.accent_color);
 
+    // Section-level visibility flags (stored as string "true"/"false")
+    if (req.body.products_section_visible !== undefined) {
+        addUpdate('products_section_visible', String(req.body.products_section_visible));
+    }
+
     try {
         await Promise.all(updates);
         res.json({ message: 'Settings updated' });

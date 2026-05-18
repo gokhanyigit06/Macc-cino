@@ -35,8 +35,21 @@ model Product {
   category    String   // gastronomy, office, hotel, etc.
   imageUrl    String?
   features    String?  // JSON string or comma separated
+  sectors     String?  // CSV of sector slugs: "office,hotel,fitness,bakery,gastronomy,gas-station,chains"
+  isVisible   Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model HeroSlide {
+  id        Int      @id @default(autoincrement())
+  type      String   // "image" | "video"
+  mediaUrl  String
+  title     String?
+  subtitle  String?
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
 }
 
 model PageVisit {

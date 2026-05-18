@@ -93,46 +93,21 @@
                     atmosfer sunar. Kullanıcıdan bağımsız olarak gerçek portafiltre kalitesi sağlar.
                 </p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" class="reveal">
-                <!-- Machine Choice 1 -->
-                <div
-                    style="background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-                    <div
-                        style="height: 450px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 50px;">
-                        <img src="assets/office/machine_1.png"
-                            alt="Fitnesse Uygun Makine" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div data-products-section data-sector="fitness" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" class="reveal">
+                <template data-card-template>
+                    <div style="background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                        <div style="height: 450px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 50px;">
+                            <img data-field="img" src="" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div style="padding: 50px; text-align: center; background: #fff; flex-grow: 1;">
+                            <span style="background: var(--primary-dark); color: #fff; padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">Premium
+                                Kalite</span>
+                            <h4 data-field="name" style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;"></h4>
+                            <p data-field="desc" style="color: #777; line-height: 1.7; margin-bottom: 30px;"></p>
+                            <a href="#iletisim-form" class="btn-primary" style="padding: 15px 40px;">TEKLİF AL</a>
+                        </div>
                     </div>
-                    <div style="padding: 50px; text-align: center; background: #fff; flex-grow: 1;">
-                        <span
-                            style="background: #fdfaf3; color: var(--accent-gold); padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">Hızlı
-                            & Pratik</span>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
-                            Fitnesse Uygun Otomat</h4>
-                        <p style="color: #777; line-height: 1.7; margin-bottom: 30px;">Self-servis alanları için tek
-                            tuşla profesyonel çözüm.</p>
-                        <a href="#iletisim-form" class="btn-primary" style="padding: 15px 40px;">TEKLİF AL</a>
-                    </div>
-                </div>
-                <!-- Machine Choice 2 -->
-                <div
-                    style="background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-                    <div
-                        style="height: 450px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 50px;">
-                        <img src="assets/office/machine_1.png"
-                            alt="Profesyonel Kahve Makinesi"
-                            style="max-width: 100%; max-height: 100%; object-fit: contain; transform: scaleX(-1);">
-                    </div>
-                    <div style="padding: 50px; text-align: center; background: #fff; flex-grow: 1;">
-                        <span
-                            style="background: var(--primary-dark); color: #fff; padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">Premium
-                            Kalite</span>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
-                            Barista Serisi</h4>
-                        <p style="color: #777; line-height: 1.7; margin-bottom: 30px;">Gurme üyeleriniz için gerçek
-                            portafiltre kalitesi.</p>
-                        <a href="#iletisim-form" class="btn-primary" style="padding: 15px 40px;">TEKLİF AL</a>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>
@@ -282,5 +257,6 @@
         <button class="btn-cookie" id="acceptCookies">Kabul Et</button>
     </div>
     <script src="script.js"></script>
+    <script src="js/sector-products.js"></script>
 </body>
 </html>

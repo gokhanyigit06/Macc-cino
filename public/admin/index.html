@@ -310,6 +310,19 @@
                     <input type="text" id="crud-features">
                 </div>
 
+                <div class="form-group" id="group-sectors">
+                    <label>Sektörler (Bu ürün hangi sektör sayfalarında görünsün?)</label>
+                    <div id="crud-sectors" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:8px; padding:10px; background:#f9f9f9; border:1px solid #ddd; border-radius:4px;">
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="office" style="width:auto;"> Ofis</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="hotel" style="width:auto;"> Otel</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="gastronomy" style="width:auto;"> Gastronomi</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="fitness" style="width:auto;"> Fitness</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="bakery" style="width:auto;"> Fırın</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="gas-station" style="width:auto;"> Benzin İst.</label>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:normal;"><input type="checkbox" class="sector-cb" value="chains" style="width:auto;"> Zincirler</label>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label>Görsel</label>
                     <input type="file" id="crud-image-file" accept="image/*">
@@ -325,6 +338,45 @@
         </div>
     </div>
 
+    <!-- Slide Modal -->
+    <div id="slide-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:500; justify-content:center; align-items:center;">
+        <div class="modal-content">
+            <h3 id="slide-modal-title">Yeni Slayt</h3>
+            <form id="slideForm" enctype="multipart/form-data">
+                <input type="hidden" id="slide-id">
+                <div class="form-group">
+                    <label>Tip</label>
+                    <select id="slide-type">
+                        <option value="image">Resim</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Medya Dosyası (Resim veya Video — max 50MB)</label>
+                    <input type="file" id="slide-media-file" accept="image/*,video/*">
+                    <div id="slide-media-preview" style="margin-top:10px;"></div>
+                    <input type="hidden" id="slide-media-existing">
+                </div>
+                <div class="form-group">
+                    <label>Başlık (Opsiyonel — boş bırakılırsa anasayfa varsayılanı kullanılır)</label>
+                    <input type="text" id="slide-title">
+                </div>
+                <div class="form-group">
+                    <label>Altyazı (Opsiyonel)</label>
+                    <input type="text" id="slide-subtitle">
+                </div>
+                <div class="form-group">
+                    <label>Sıra (küçük olan önce gösterilir)</label>
+                    <input type="number" id="slide-order" value="0">
+                </div>
+                <div style="display:flex; justify-content: space-between;">
+                    <button type="button" class="btn btn-secondary" onclick="closeSlideModal()">İptal</button>
+                    <button type="submit" class="btn">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -333,6 +385,7 @@
         <ul class="nav-links">
             <li class="active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</li>
             <li onclick="showSection('products')"><i class="fas fa-coffee"></i> Ürünler</li>
+            <li onclick="showSection('hero')"><i class="fas fa-film"></i> Slider / Hero</li>
             <li onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog / Trendler</li>
             <li onclick="showSection('messages')"><i class="fas fa-envelope"></i> Mesajlar</li>
             <li onclick="showSection('settings')"><i class="fas fa-cog"></i> Ayarlar</li>
@@ -383,6 +436,18 @@
             </div>
         </div>
 
+        <!-- Hero / Slider Section -->
+        <div id="hero" class="section">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h3>Hero Slider Slaytları</h3>
+                <button class="btn" onclick="openSlideModal()">+ Yeni Slayt</button>
+            </div>
+            <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">Hiç aktif slayt yoksa anasayfa varsayılan animasyonlu arkaplana döner. Video slaytları sessiz olarak otomatik oynatılır.</p>
+            <div id="slide-list" class="stats-grid">
+                <!-- Slides will be loaded here -->
+            </div>
+        </div>
+
         <!-- Blog Section -->
         <div id="blog" class="section">
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
@@ -411,6 +476,13 @@
                     <div class="form-group">
                         <label>Vurgu Rengi (Accent)</label>
                         <input type="color" id="setting-accent" name="accent_color" value="#D4AF37">
+                    </div>
+                    <div class="form-group" style="background:#fff8e1; padding:12px; border-radius:6px; border-left:4px solid var(--accent);">
+                        <label style="display:flex; align-items:center; gap:10px; font-weight:bold;">
+                            <input type="checkbox" id="setting-products-visible" style="width:auto; transform:scale(1.3);">
+                            Kahve Makineleri Bölümünü Sitede Göster
+                        </label>
+                        <small style="color:#666; display:block; margin-top:5px;">Kapatıldığında anasayfadaki "Kahve Makinelerimiz" bölümü ve /products sayfası gizlenir.</small>
                     </div>
                     <button type="submit" class="btn">Kaydet</button>
                     <p id="settings-msg" style="margin-top:10px; color: green;"></p>
@@ -458,6 +530,7 @@
 
             if (id === 'dashboard') loadStats();
             if (id === 'products') loadProducts();
+            if (id === 'hero') loadSlides();
             if (id === 'blog') loadBlogs();
             if (id === 'messages') loadMessages();
             if (id === 'settings') loadSettings();
@@ -512,24 +585,169 @@
             const container = document.getElementById('product-list');
             container.innerHTML = 'Yükleniyor...';
             try {
-                const res = await fetch('/api/products');
+                const res = await fetch('/api/products?includeHidden=1', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
                 const products = await res.json();
-                container.innerHTML = products.map(p => `
-                    <div class="stat-card">
+                container.innerHTML = products.map(p => {
+                    const hidden = p.isVisible === false;
+                    return `
+                    <div class="stat-card" style="${hidden ? 'opacity:0.55; border-bottom-color:#999;' : ''}">
                         <img src="/${p.imageUrl || 'assets/misc/coffee_bean_icon.png'}" style="height: 50px; float:right;">
-                        <h3>${p.category}</h3>
+                        <h3>${p.category}${hidden ? ' <span style="color:#c0392b; font-size:0.75rem;">(Gizli)</span>' : ''}</h3>
                         <div class="value" style="font-size: 1.2rem;">${p.name}</div>
                         <p style="font-size: 0.8rem; color: #666; height: 40px; overflow:hidden;">${p.description}</p>
                         <div class="action-buttons">
                             <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openModal("product", ${JSON.stringify(p).replace(/'/g, "&#39;")})'>Düzenle</button>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; background:${hidden ? '#27ae60' : '#95a5a6'}; color:#fff;" onclick="toggleProductVisibility(${p.id})">${hidden ? 'Göster' : 'Gizle'}</button>
                             <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteItem('products', ${p.id})">Sil</button>
                         </div>
                     </div>
-                `).join('') || '<p>Henüz ürün eklenmemiş.</p>';
+                `;}).join('') || '<p>Henüz ürün eklenmemiş.</p>';
             } catch (err) {
                 container.innerHTML = 'Ürünler yüklenemedi.';
             }
         }
+
+        async function toggleProductVisibility(id) {
+            try {
+                const res = await fetch(`/api/products/${id}/visibility`, {
+                    method: 'PATCH',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!res.ok) throw new Error('Failed');
+                loadProducts();
+            } catch (err) {
+                alert('Görünürlük güncellenemedi.');
+            }
+        }
+
+        async function loadSlides() {
+            const container = document.getElementById('slide-list');
+            container.innerHTML = 'Yükleniyor...';
+            try {
+                const res = await fetch('/api/hero/slides/all', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const slides = await res.json();
+                container.innerHTML = slides.map(s => {
+                    const inactive = s.isActive === false;
+                    const previewHtml = s.type === 'video'
+                        ? `<video src="/${s.mediaUrl}" muted style="width:100%; height:120px; object-fit:cover; border-radius:4px;"></video>`
+                        : `<img src="/${s.mediaUrl}" style="width:100%; height:120px; object-fit:cover; border-radius:4px;">`;
+                    return `
+                    <div class="stat-card" style="${inactive ? 'opacity:0.55;' : ''}">
+                        ${previewHtml}
+                        <h3 style="margin-top:10px;">${s.type === 'video' ? '🎬 Video' : '🖼️ Resim'} — Sıra ${s.order}${inactive ? ' <span style="color:#c0392b;">(Pasif)</span>' : ''}</h3>
+                        <div class="value" style="font-size: 1rem;">${s.title || '<em style=\"color:#999;\">Başlıksız</em>'}</div>
+                        <p style="font-size: 0.8rem; color: #666; min-height: 20px;">${s.subtitle || ''}</p>
+                        <div class="action-buttons">
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;" onclick='openSlideModal(${JSON.stringify(s).replace(/'/g, "&#39;")})'>Düzenle</button>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; background:${inactive ? '#27ae60' : '#95a5a6'}; color:#fff;" onclick="toggleSlideActive(${s.id})">${inactive ? 'Aktif Et' : 'Pasif Et'}</button>
+                            <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="deleteSlide(${s.id})">Sil</button>
+                        </div>
+                    </div>
+                `;}).join('') || '<p>Henüz slayt eklenmemiş. Anasayfa varsayılan animasyonu kullanır.</p>';
+            } catch (err) {
+                container.innerHTML = 'Slaytlar yüklenemedi.';
+            }
+        }
+
+        function openSlideModal(slide = null) {
+            document.getElementById('slide-modal').style.display = 'flex';
+            document.getElementById('slide-modal-title').innerText = slide ? 'Slayt Düzenle' : 'Yeni Slayt';
+            document.getElementById('slideForm').reset();
+            document.getElementById('slide-media-preview').innerHTML = '';
+            document.getElementById('slide-media-existing').value = '';
+            if (slide) {
+                document.getElementById('slide-id').value = slide.id;
+                document.getElementById('slide-type').value = slide.type;
+                document.getElementById('slide-title').value = slide.title || '';
+                document.getElementById('slide-subtitle').value = slide.subtitle || '';
+                document.getElementById('slide-order').value = slide.order || 0;
+                document.getElementById('slide-media-existing').value = slide.mediaUrl || '';
+                if (slide.mediaUrl) {
+                    const previewEl = slide.type === 'video'
+                        ? `<video src="/${slide.mediaUrl}" controls style="max-width:200px; max-height:120px;"></video>`
+                        : `<img src="/${slide.mediaUrl}" style="max-width:200px; max-height:120px;">`;
+                    document.getElementById('slide-media-preview').innerHTML = previewEl;
+                }
+            } else {
+                document.getElementById('slide-id').value = '';
+            }
+        }
+
+        function closeSlideModal() {
+            document.getElementById('slide-modal').style.display = 'none';
+        }
+
+        async function toggleSlideActive(id) {
+            try {
+                const res = await fetch(`/api/hero/slides/${id}/toggle`, {
+                    method: 'PATCH',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!res.ok) throw new Error('Failed');
+                loadSlides();
+            } catch (err) {
+                alert('Slayt durumu güncellenemedi.');
+            }
+        }
+
+        async function deleteSlide(id) {
+            if (!confirm('Bu slaytı silmek istediğinize emin misiniz?')) return;
+            try {
+                const res = await fetch(`/api/hero/slides/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!res.ok) throw new Error('Failed');
+                loadSlides();
+            } catch (err) {
+                alert('Slayt silinemedi.');
+            }
+        }
+
+        document.getElementById('slideForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('slide-id').value;
+            const isEdit = !!id;
+            const url = isEdit ? `/api/hero/slides/${id}` : '/api/hero/slides';
+            const method = isEdit ? 'PUT' : 'POST';
+
+            const formData = new FormData();
+            const fileInput = document.getElementById('slide-media-file');
+            if (fileInput.files[0]) {
+                formData.append('media', fileInput.files[0]);
+            } else {
+                const existing = document.getElementById('slide-media-existing').value;
+                if (existing) formData.append('mediaUrl', existing);
+                else if (!isEdit) {
+                    alert('Lütfen bir medya dosyası seçin.');
+                    return;
+                }
+            }
+            formData.append('type', document.getElementById('slide-type').value);
+            formData.append('title', document.getElementById('slide-title').value);
+            formData.append('subtitle', document.getElementById('slide-subtitle').value);
+            formData.append('order', document.getElementById('slide-order').value || '0');
+
+            try {
+                const res = await fetch(url, {
+                    method,
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body: formData
+                });
+                if (!res.ok) {
+                    const txt = await res.text();
+                    throw new Error(txt);
+                }
+                closeSlideModal();
+                loadSlides();
+            } catch (err) {
+                alert('Slayt kaydedilemedi: ' + err.message);
+            }
+        });
 
         async function loadBlogs() {
             const container = document.getElementById('blog-list');
@@ -631,6 +849,11 @@
                 }
                 if (s.primary_color) document.getElementById('setting-primary').value = s.primary_color;
                 if (s.accent_color) document.getElementById('setting-accent').value = s.accent_color;
+                // Default: visible (checked) when setting unset
+                const productsVisible = s.products_section_visible === undefined
+                    ? true
+                    : s.products_section_visible !== 'false';
+                document.getElementById('setting-products-visible').checked = productsVisible;
             } catch (err) {
                 console.error(err);
             }
@@ -646,14 +869,21 @@
             }
             formData.append('primary_color', document.getElementById('setting-primary').value);
             formData.append('accent_color', document.getElementById('setting-accent').value);
+            formData.append('products_section_visible', document.getElementById('setting-products-visible').checked ? 'true' : 'false');
 
-            await fetch('/api/settings', {
+            const res = await fetch('/api/settings', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`
                 },
                 body: formData
             });
+            if (!res.ok) {
+                document.getElementById('settings-msg').style.color = '#c0392b';
+                document.getElementById('settings-msg').innerText = 'Ayarlar kaydedilemedi.';
+                return;
+            }
+            document.getElementById('settings-msg').style.color = 'green';
             document.getElementById('settings-msg').innerText = 'Ayarlar kaydedildi.';
             loadSettings();
             setTimeout(() => document.getElementById('settings-msg').innerText = '', 3000);
@@ -661,16 +891,20 @@
 
         // --- CRUD Operations ---
 
-        function deleteItem(type, id) {
+        async function deleteItem(type, id) {
             if (!confirm('Silmek istediğinize emin misiniz?')) return;
-            fetch(`/api/${type}/${id}`, {
-                method: 'DELETE',
-                headers: { 'Authorization': `Bearer ${token}` }
-            }).then(() => {
+            try {
+                const res = await fetch(`/api/${type}/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 if (type === 'products') loadProducts();
                 if (type === 'blog') loadBlogs();
                 loadStats();
-            });
+            } catch (err) {
+                alert('Silme başarısız: ' + err.message);
+            }
         }
 
         function openModal(type, item = null) {
@@ -682,10 +916,14 @@
             if (type === 'product') {
                 document.getElementById('group-category').style.display = 'block';
                 document.getElementById('group-features').style.display = 'block';
+                document.getElementById('group-sectors').style.display = 'block';
             } else {
                 document.getElementById('group-category').style.display = 'none';
                 document.getElementById('group-features').style.display = 'none';
+                document.getElementById('group-sectors').style.display = 'none';
             }
+            // Reset sector checkboxes
+            document.querySelectorAll('.sector-cb').forEach(cb => cb.checked = false);
 
             // Reset
             document.getElementById('crudForm').reset();
@@ -709,6 +947,11 @@
                 if (type === 'product') {
                     document.getElementById('crud-category').value = item.category;
                     document.getElementById('crud-features').value = item.features;
+                    // Pre-check sector checkboxes from CSV
+                    const selectedSectors = (item.sectors || '').split(',').map(s => s.trim()).filter(Boolean);
+                    document.querySelectorAll('.sector-cb').forEach(cb => {
+                        cb.checked = selectedSectors.includes(cb.value);
+                    });
                 }
             } else {
                 document.getElementById('crud-id').value = '';
@@ -748,24 +991,30 @@
                 formData.append('description', quill.getText()); // Plain text for products
                 formData.append('category', document.getElementById('crud-category').value);
                 formData.append('features', document.getElementById('crud-features').value);
+                const selectedSectors = Array.from(document.querySelectorAll('.sector-cb:checked')).map(cb => cb.value);
+                formData.append('sectors', selectedSectors.join(','));
             } else {
                 formData.append('title', titleName);
                 formData.append('content', contentDesc); // Rich text for blogs
             }
 
             try {
-                await fetch(url, {
+                const res = await fetch(url, {
                     method: method,
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },
                     body: formData
                 });
+                if (!res.ok) {
+                    const txt = await res.text();
+                    throw new Error(`HTTP ${res.status}: ${txt}`);
+                }
                 closeModal();
                 if (type === 'product') loadProducts(); else loadBlogs();
                 loadStats();
             } catch (err) {
-                alert('İşlem başarısız.');
+                alert('İşlem başarısız: ' + err.message);
                 console.error(err);
             }
         });
