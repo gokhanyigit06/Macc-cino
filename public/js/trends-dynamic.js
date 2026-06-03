@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/blog')
+    const API = (p) => (window.I18N ? window.I18N.apiUrl(p) : p);
+    fetch(API('/api/blog'))
         .then(res => res.json())
         .then(posts => {
             const listContainer = document.querySelector('#ozel-trendler ul');

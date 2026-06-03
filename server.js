@@ -30,6 +30,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// i18n: translate /de/* and /en/* requests from the Turkish source pages.
+// Runs after the clean-URL redirect and before static so DE/EN pages are
+// rendered server-side (good for SEO). TR root falls through untouched.
+app.use(require('./i18n/render').middleware);
+
 // Serve static files but allow extensionless access
 app.use(express.static(path.join(__dirname, 'public'), {
   extensions: ['html'],

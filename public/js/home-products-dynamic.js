@@ -9,10 +9,14 @@
         return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
+    const T = (s) => (window.I18N ? window.I18N.t(s) : s);
+    const API = (p) => (window.I18N ? window.I18N.apiUrl(p) : p);
+
     async function init() {
         const section = document.getElementById('makineler');
         const grid = document.getElementById('home-product-grid');
         if (!section || !grid) return;
+        if (window.I18N && window.I18N.ready) { try { await window.I18N.ready; } catch (_) {} }
 
         // Check section visibility flag first
         try {
@@ -28,10 +32,10 @@
 
         // Load visible products
         try {
-            const res = await fetch('/api/products');
+            const res = await fetch(API('/api/products'));
             const products = await res.json();
             if (!Array.isArray(products) || products.length === 0) {
-                grid.innerHTML = '<p style="text-align:center; width:100%;">Yakında yeni ürünlerimiz eklenecek.</p>';
+                grid.innerHTML = '<p style="text-align:center; width:100%;">' + T('Yakında yeni ürünlerimiz eklenecek.') + '</p>';
                 return;
             }
             grid.innerHTML = products.map(p => {
@@ -46,7 +50,7 @@
                                 data-title="${escapeAttr(p.name)}"
                                 data-img="${escapeAttr(img)}"
                                 data-desc="${escapeAttr(p.description)}">
-                                İncele <i class="fas fa-arrow-right"></i>
+                                ${escapeHtml(T('İncele'))} <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>`;
@@ -55,7 +59,7 @@
             attachModalDelegation();
         } catch (err) {
             console.error('Home products load failed:', err);
-            grid.innerHTML = '<p style="text-align:center; width:100%;">Ürünler yüklenirken hata oluştu.</p>';
+            grid.innerHTML = '<p style="text-align:center; width:100%;">' + T('Ürünler yüklenirken hata oluştu.') + '</p>';
         }
     }
 

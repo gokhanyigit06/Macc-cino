@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (headerEl) {
             const headerRes = await fetch('components/header.html');
             if (headerRes.ok) headerEl.innerHTML = await headerRes.text();
+            // Header is injected after DOMContentLoaded — (re)build the language
+            // switcher now that its container exists in the DOM.
+            if (window.I18N) window.I18N.mountSwitcher();
         }
 
         const footerEl = document.getElementById('app-footer');
@@ -104,8 +107,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 message: document.getElementById('message').value
             };
 
+            const T = (s) => (window.I18N ? window.I18N.t(s) : s);
             btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i>Gönderiliyor...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i>' + T('Gönderiliyor...');
             btn.style.opacity = '0.7';
 
             try {
@@ -125,15 +129,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                     if (successModal) {
                         successModal.style.display = 'flex';
                     } else {
-                        alert('Başvurunuz ailemize ulaştı!');
+                        alert(T('Başvurunuz ailemize ulaştı!'));
                     }
                 } else {
                     const error = await response.json();
-                    alert(error.error || 'Bir hata oluştu, lütfen tekrar deneyin.');
+                    alert(error.error || T('Bir hata oluştu, lütfen tekrar deneyin.'));
                 }
             } catch (err) {
                 console.error('Submit error:', err);
-                alert('Bağlantı hatası oluştu.');
+                alert(T('Bağlantı hatası oluştu.'));
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = originalText;

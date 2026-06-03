@@ -24,6 +24,11 @@ model BlogPost {
   title     String
   content   String
   imageUrl  String?
+  // Optional translations (fall back to the base TR fields when empty)
+  title_de   String?
+  title_en   String?
+  content_de String?
+  content_en String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -37,6 +42,13 @@ model Product {
   features    String?  // JSON string or comma separated
   sectors     String?  // CSV of sector slugs: "office,hotel,fitness,bakery,gastronomy,gas-station,chains"
   isVisible   Boolean  @default(true)
+  // Optional translations (fall back to the base TR fields when empty)
+  name_de        String?
+  name_en        String?
+  description_de String?
+  description_en String?
+  features_de    String?
+  features_en    String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -47,6 +59,11 @@ model HeroSlide {
   mediaUrl  String
   title     String?
   subtitle  String?
+  // Optional translations (fall back to the base TR fields when empty)
+  title_de    String?
+  title_en    String?
+  subtitle_de String?
+  subtitle_en String?
   order     Int      @default(0)
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())

@@ -4,16 +4,18 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const authenticateToken = require('./middleware');
 const upload = require('./upload_middleware');
+const { normLang, localizeMany, translationData } = require('./localize');
 
 const parseBool = (v) => v === true || v === 'true' || v === '1' || v === 1;
+const TRANSLATABLE = ['title', 'subtitle'];
 
-// Public: list active slides ordered by `order` then createdAt
+// Public: list active slides ordered by `order` then createdAt (localized)
 router.get('/slides', async (req, res) => {
     const slides = await prisma.heroSlide.findMany({
         where: { isActive: true },
         orderBy: [{ order: 'asc' }, { createdAt: 'asc' }]
     });
-    res.json(slides);
+    res.json(localizeMany(slides, normLang(req.query.lang), TRANSLATABLE));
 });
 
 // Admin: list all slides (active + inactive)
@@ -40,7 +42,8 @@ router.post('/slides', authenticateToken, upload.single('media'), async (req, re
                 title: title || null,
                 subtitle: subtitle || null,
                 order: order ? parseInt(order) : 0,
-                isActive: isActive === undefined ? true : parseBool(isActive)
+                isActive: isActive === undefined ? true : parseBool(isActive),
+                ...translationData(req.body, TRANSLATABLE)
             }
         });
         res.json(slide);
@@ -62,6 +65,7 @@ router.put('/slides/:id', authenticateToken, upload.single('media'), async (req,
     if (subtitle !== undefined) data.subtitle = subtitle || null;
     if (order !== undefined) data.order = parseInt(order);
     if (isActive !== undefined) data.isActive = parseBool(isActive);
+    Object.assign(data, translationData(req.body, TRANSLATABLE));
     try {
         const slide = await prisma.heroSlide.update({ where: { id }, data });
         res.json(slide);

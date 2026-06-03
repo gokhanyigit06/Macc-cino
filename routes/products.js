@@ -6,8 +6,10 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('./auth');
 const authenticateToken = require('./middleware');
 const upload = require('./upload_middleware');
+const { normLang, localizeMany, translationData } = require('./localize');
 
 const parseBool = (v) => v === true || v === 'true' || v === '1' || v === 1;
+const TRANSLATABLE = ['name', 'description', 'features'];
 
 // Get all products. Authenticated admin requests may include hidden products
 // via ?includeHidden=1 — anonymous callers always get visible-only.
@@ -35,7 +37,9 @@ router.get('/', async (req, res) => {
         });
     }
 
-    res.json(products);
+    // Localize for public requests; admin (includeHidden) keeps raw fields.
+    const lang = normLang(req.query.lang);
+    res.json(includeHidden ? products : localizeMany(products, lang, TRANSLATABLE));
 });
 
 // Add product (with image upload)
@@ -55,7 +59,8 @@ router.post('/', authenticateToken, upload.single('image'), async (req, res) => 
                 imageUrl,
                 features,
                 sectors: sectors || null,
-                isVisible: isVisible === undefined ? true : parseBool(isVisible)
+                isVisible: isVisible === undefined ? true : parseBool(isVisible),
+                ...translationData(req.body, TRANSLATABLE)
             }
         });
         res.json(product);
@@ -73,7 +78,7 @@ router.put('/:id', authenticateToken, upload.single('image'), async (req, res) =
         imageUrl = 'uploads/' + req.file.filename;
     }
 
-    const data = { name, description, category, imageUrl, features };
+    const data = { name, description, category, imageUrl, features, ...translationData(req.body, TRANSLATABLE) };
     if (isVisible !== undefined) data.isVisible = parseBool(isVisible);
     if (sectors !== undefined) data.sectors = sectors || null;
 

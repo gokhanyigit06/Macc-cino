@@ -330,6 +330,33 @@
                     <input type="hidden" id="crud-image-existing">
                 </div>
 
+                <!-- Translations (optional; empty fields fall back to Turkish) -->
+                <div class="form-group" style="border-top:1px solid #eee; padding-top:14px; margin-top:6px;">
+                    <label style="font-weight:700;">🌐 Çeviriler (opsiyonel — boş bırakılırsa Türkçe gösterilir)</label>
+                </div>
+                <div class="form-group">
+                    <label>İsim / Başlık — Almanca (DE)</label>
+                    <input type="text" id="crud-name-de">
+                </div>
+                <div class="form-group">
+                    <label>İsim / Başlık — İngilizce (EN)</label>
+                    <input type="text" id="crud-name-en">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama / İçerik — Almanca (DE)</label>
+                    <textarea id="crud-desc-de" rows="3" style="width:100%;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Açıklama / İçerik — İngilizce (EN)</label>
+                    <textarea id="crud-desc-en" rows="3" style="width:100%;"></textarea>
+                </div>
+                <div class="form-group" id="group-features-trans">
+                    <label>Özellikler — Almanca (DE)</label>
+                    <input type="text" id="crud-features-de">
+                    <label style="margin-top:8px; display:block;">Özellikler — İngilizce (EN)</label>
+                    <input type="text" id="crud-features-en">
+                </div>
+
                 <div style="display:flex; justify-content: space-between;">
                     <button type="button" class="btn btn-secondary" onclick="closeModal()">İptal</button>
                     <button type="submit" class="btn">Kaydet</button>
@@ -364,6 +391,18 @@
                 <div class="form-group">
                     <label>Altyazı (Opsiyonel)</label>
                     <input type="text" id="slide-subtitle">
+                </div>
+                <!-- Translations (optional; fall back to base fields) -->
+                <div class="form-group" style="border-top:1px solid #eee; padding-top:12px;">
+                    <label style="font-weight:700;">🌐 Çeviriler (opsiyonel)</label>
+                    <label style="margin-top:8px; display:block;">Başlık — DE</label>
+                    <input type="text" id="slide-title-de">
+                    <label style="margin-top:8px; display:block;">Başlık — EN</label>
+                    <input type="text" id="slide-title-en">
+                    <label style="margin-top:8px; display:block;">Altyazı — DE</label>
+                    <input type="text" id="slide-subtitle-de">
+                    <label style="margin-top:8px; display:block;">Altyazı — EN</label>
+                    <input type="text" id="slide-subtitle-en">
                 </div>
                 <div class="form-group">
                     <label>Sıra (küçük olan önce gösterilir)</label>
@@ -664,6 +703,10 @@
                 document.getElementById('slide-type').value = slide.type;
                 document.getElementById('slide-title').value = slide.title || '';
                 document.getElementById('slide-subtitle').value = slide.subtitle || '';
+                document.getElementById('slide-title-de').value = slide.title_de || '';
+                document.getElementById('slide-title-en').value = slide.title_en || '';
+                document.getElementById('slide-subtitle-de').value = slide.subtitle_de || '';
+                document.getElementById('slide-subtitle-en').value = slide.subtitle_en || '';
                 document.getElementById('slide-order').value = slide.order || 0;
                 document.getElementById('slide-media-existing').value = slide.mediaUrl || '';
                 if (slide.mediaUrl) {
@@ -730,6 +773,10 @@
             formData.append('type', document.getElementById('slide-type').value);
             formData.append('title', document.getElementById('slide-title').value);
             formData.append('subtitle', document.getElementById('slide-subtitle').value);
+            formData.append('title_de', document.getElementById('slide-title-de').value);
+            formData.append('title_en', document.getElementById('slide-title-en').value);
+            formData.append('subtitle_de', document.getElementById('slide-subtitle-de').value);
+            formData.append('subtitle_en', document.getElementById('slide-subtitle-en').value);
             formData.append('order', document.getElementById('slide-order').value || '0');
 
             try {
@@ -917,10 +964,12 @@
                 document.getElementById('group-category').style.display = 'block';
                 document.getElementById('group-features').style.display = 'block';
                 document.getElementById('group-sectors').style.display = 'block';
+                document.getElementById('group-features-trans').style.display = 'block';
             } else {
                 document.getElementById('group-category').style.display = 'none';
                 document.getElementById('group-features').style.display = 'none';
                 document.getElementById('group-sectors').style.display = 'none';
+                document.getElementById('group-features-trans').style.display = 'none';
             }
             // Reset sector checkboxes
             document.querySelectorAll('.sector-cb').forEach(cb => cb.checked = false);
@@ -930,6 +979,10 @@
             document.getElementById('crud-image-preview').style.display = 'none';
             quill.setText('');
 
+            // Reset translation fields (reset() above already clears them, but be explicit)
+            ['crud-name-de', 'crud-name-en', 'crud-desc-de', 'crud-desc-en', 'crud-features-de', 'crud-features-en']
+                .forEach(idf => { const el = document.getElementById(idf); if (el) el.value = ''; });
+
             if (item) {
                 document.getElementById('crud-id').value = item.id;
                 document.getElementById('crud-name').value = item.name || item.title;
@@ -937,6 +990,14 @@
                 // Set Quill content
                 const content = item.description || item.content || '';
                 quill.clipboard.dangerouslyPasteHTML(0, content);
+
+                // Translation fields
+                document.getElementById('crud-name-de').value = item.name_de || item.title_de || '';
+                document.getElementById('crud-name-en').value = item.name_en || item.title_en || '';
+                document.getElementById('crud-desc-de').value = item.description_de || item.content_de || '';
+                document.getElementById('crud-desc-en').value = item.description_en || item.content_en || '';
+                document.getElementById('crud-features-de').value = item.features_de || '';
+                document.getElementById('crud-features-en').value = item.features_en || '';
 
                 if (item.imageUrl) {
                     document.getElementById('crud-image-preview').src = '/' + item.imageUrl;
@@ -986,6 +1047,11 @@
                 if (existing) formData.append('imageUrl', existing);
             }
 
+            const nameDe = document.getElementById('crud-name-de').value;
+            const nameEn = document.getElementById('crud-name-en').value;
+            const descDe = document.getElementById('crud-desc-de').value;
+            const descEn = document.getElementById('crud-desc-en').value;
+
             if (type === 'product') {
                 formData.append('name', titleName);
                 formData.append('description', quill.getText()); // Plain text for products
@@ -993,9 +1059,21 @@
                 formData.append('features', document.getElementById('crud-features').value);
                 const selectedSectors = Array.from(document.querySelectorAll('.sector-cb:checked')).map(cb => cb.value);
                 formData.append('sectors', selectedSectors.join(','));
+                // Translations
+                formData.append('name_de', nameDe);
+                formData.append('name_en', nameEn);
+                formData.append('description_de', descDe);
+                formData.append('description_en', descEn);
+                formData.append('features_de', document.getElementById('crud-features-de').value);
+                formData.append('features_en', document.getElementById('crud-features-en').value);
             } else {
                 formData.append('title', titleName);
                 formData.append('content', contentDesc); // Rich text for blogs
+                // Translations
+                formData.append('title_de', nameDe);
+                formData.append('title_en', nameEn);
+                formData.append('content_de', descDe);
+                formData.append('content_en', descEn);
             }
 
             try {

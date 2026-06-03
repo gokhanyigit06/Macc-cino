@@ -5,7 +5,8 @@
 
     async function loadSlides() {
         try {
-            const res = await fetch('/api/hero/slides');
+            const url = window.I18N ? window.I18N.apiUrl('/api/hero/slides') : '/api/hero/slides';
+            const res = await fetch(url);
             if (!res.ok) return;
             const slides = await res.json();
             if (!slides.length) return; // keep default static hero

@@ -23,9 +23,10 @@
         const containers = document.querySelectorAll('[data-products-section]');
         if (!containers.length) return;
 
+        const API = (p) => (window.I18N ? window.I18N.apiUrl(p) : p);
         const [settings, allProducts] = await Promise.all([
             fetch('/api/settings').then(r => r.ok ? r.json() : {}).catch(() => ({})),
-            fetch('/api/products').then(r => r.ok ? r.json() : []).catch(() => [])
+            fetch(API('/api/products')).then(r => r.ok ? r.json() : []).catch(() => [])
         ]);
 
         const globallyHidden = settings.products_section_visible === 'false';

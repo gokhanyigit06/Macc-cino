@@ -10,9 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let allProducts = [];
 
+const T = (s) => (window.I18N ? window.I18N.t(s) : s);
+const API = (p) => (window.I18N ? window.I18N.apiUrl(p) : p);
+
 async function loadProducts() {
     const grid = document.getElementById('productGrid');
-    grid.innerHTML = '<div class="loader-content" style="width:100%; text-align:center;"><img src="assets/misc/coffee_bean_icon.png" class="loader-icon"> Yükleniyor...</div>';
+    if (window.I18N && window.I18N.ready) { try { await window.I18N.ready; } catch (_) {} }
+    grid.innerHTML = '<div class="loader-content" style="width:100%; text-align:center;"><img src="assets/misc/coffee_bean_icon.png" class="loader-icon"> ' + T('Yükleniyor...') + '</div>';
 
     // Respect the global "hide products section" admin flag
     try {
@@ -20,14 +24,14 @@ async function loadProducts() {
         if (sRes.ok) {
             const settings = await sRes.json();
             if (settings.products_section_visible === 'false') {
-                grid.innerHTML = '<p style="text-align:center; width:100%; padding:60px 20px; font-size:1.1rem;">Kahve makinelerimiz şu anda yenileniyor. En kısa zamanda sizlerle olacağız.</p>';
+                grid.innerHTML = '<p style="text-align:center; width:100%; padding:60px 20px; font-size:1.1rem;">' + T('Kahve makinelerimiz şu anda yenileniyor. En kısa zamanda sizlerle olacağız.') + '</p>';
                 return;
             }
         }
     } catch (_) { /* non-fatal */ }
 
     try {
-        const res = await fetch('/api/products');
+        const res = await fetch(API('/api/products'));
         allProducts = await res.json();
 
         renderProducts(allProducts);
@@ -35,7 +39,7 @@ async function loadProducts() {
         filterProducts();
     } catch (err) {
         console.error('Error loading products:', err);
-        grid.innerHTML = '<p style="text-align:center;">Ürünler yüklenirken bir hata oluştu.</p>';
+        grid.innerHTML = '<p style="text-align:center;">' + T('Ürünler yüklenirken bir hata oluştu.') + '</p>';
     }
 }
 
@@ -44,7 +48,7 @@ function renderProducts(products) {
     grid.innerHTML = '';
 
     if (products.length === 0) {
-        grid.innerHTML = '<p style="text-align:center; width:100%;">Aradığınız kriterlere uygun ürün bulunamadı.</p>';
+        grid.innerHTML = '<p style="text-align:center; width:100%;">' + T('Aradığınız kriterlere uygun ürün bulunamadı.') + '</p>';
         return;
     }
 
@@ -71,7 +75,7 @@ function renderProducts(products) {
                     data-img="${imgUrl}"
                     data-desc="${product.description}"
                     data-features="${product.features || ''}">
-                    İncele <i class="fas fa-arrow-right"></i>
+                    ${T('İncele')} <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         `;

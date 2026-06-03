@@ -3,11 +3,13 @@ const router = express.Router();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const authenticateToken = require('./middleware');
+const { normLang, localizeMany, translationData } = require('./localize');
+const TRANSLATABLE = ['title', 'content'];
 
-// Get all blogs
+// Get all blogs (localized for public ?lang=de|en; raw otherwise)
 router.get('/', async (req, res) => {
     const blogs = await prisma.blogPost.findMany({ orderBy: { createdAt: 'desc' } });
-    res.json(blogs);
+    res.json(localizeMany(blogs, normLang(req.query.lang), TRANSLATABLE));
 });
 
 const upload = require('./upload_middleware');
@@ -21,7 +23,7 @@ router.post('/', authenticateToken, upload.single('image'), async (req, res) => 
 
     try {
         const blog = await prisma.blogPost.create({
-            data: { title, content, imageUrl }
+            data: { title, content, imageUrl, ...translationData(req.body, TRANSLATABLE) }
         });
         res.json(blog);
     } catch (error) {
@@ -40,7 +42,7 @@ router.put('/:id', authenticateToken, upload.single('image'), async (req, res) =
     try {
         const blog = await prisma.blogPost.update({
             where: { id: parseInt(id) },
-            data: { title, content, imageUrl }
+            data: { title, content, imageUrl, ...translationData(req.body, TRANSLATABLE) }
         });
         res.json(blog);
     } catch (error) {
