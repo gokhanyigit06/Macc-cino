@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  // Path comes from DATABASE_URL so production can point at a persistent volume
-  // (e.g. file:/app/data/prod.db). Local dev uses file:./dev.db via .env.
+  provider = "postgresql"
+  // Connection string is provided by the host (Coolify) via DATABASE_URL.
   url      = env("DATABASE_URL")
 }
 
