@@ -896,11 +896,9 @@
                 }
                 if (s.primary_color) document.getElementById('setting-primary').value = s.primary_color;
                 if (s.accent_color) document.getElementById('setting-accent').value = s.accent_color;
-                // Default: visible (checked) when setting unset
-                const productsVisible = s.products_section_visible === undefined
-                    ? true
-                    : s.products_section_visible !== 'false';
-                document.getElementById('setting-products-visible').checked = productsVisible;
+                // Default: HIDDEN (unchecked) unless explicitly enabled.
+                document.getElementById('setting-products-visible').checked =
+                    s.products_section_visible === 'true';
             } catch (err) {
                 console.error(err);
             }

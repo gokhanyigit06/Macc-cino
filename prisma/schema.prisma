@@ -4,7 +4,9 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  // Path comes from DATABASE_URL so production can point at a persistent volume
+  // (e.g. file:/app/data/prod.db). Local dev uses file:./dev.db via .env.
+  url      = env("DATABASE_URL")
 }
 
 model AdminUser {

@@ -18,17 +18,20 @@
         if (!section || !grid) return;
         if (window.I18N && window.I18N.ready) { try { await window.I18N.ready; } catch (_) {} }
 
-        // Check section visibility flag first
+        // Section is HIDDEN by default — only shown when an admin explicitly
+        // enables it (products_section_visible === 'true'). This keeps the home
+        // grid hidden even on a fresh/reset database.
         try {
             const sRes = await fetch('/api/settings');
-            if (sRes.ok) {
-                const settings = await sRes.json();
-                if (settings.products_section_visible === 'false') {
-                    section.style.display = 'none';
-                    return;
-                }
+            const settings = sRes.ok ? await sRes.json() : {};
+            if (settings.products_section_visible !== 'true') {
+                section.style.display = 'none';
+                return;
             }
-        } catch (_) { /* non-fatal */ }
+        } catch (_) {
+            section.style.display = 'none';
+            return;
+        }
 
         // Load visible products
         try {
